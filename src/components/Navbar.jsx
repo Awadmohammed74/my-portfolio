@@ -193,15 +193,15 @@ export default function Navbar({
             className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full"
             aria-label="Toggle menu"
           >
-            <div className="w-5 flex flex-col gap-1.5">
+            <div className="w-5 h-5 flex flex-col justify-center items-center gap-1">
               <span
-                className={`block h-0.5 w-5 bg-white transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[4px]" : ""}`}
+                className={`block h-0.5 w-full bg-white transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[5px]" : ""}`}
               />
               <span
-                className={`block h-0.5 w-5 bg-white transition-all duration-300 ${mobileOpen ? "opacity-0 scale-0" : ""}`}
+                className={`block h-0.5 w-full bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`}
               />
               <span
-                className={`block h-0.5 w-5 bg-white transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`}
+                className={`block h-0.5 w-full bg-white transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[5px]" : ""}`}
               />
             </div>
           </button>
