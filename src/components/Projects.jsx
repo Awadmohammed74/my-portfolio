@@ -176,10 +176,10 @@ export default function Projects() {
         {/* Section header */}
         <div className="text-center mb-12">
           <div
-            className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm mb-4"
-            style={{ color: "#fb7185" }} // لون ثابت لـ My Work
+            onMouseEnter={() => soundManager.playTick()}
+            className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
             My Work
           </div>
           <h2
@@ -191,7 +191,7 @@ export default function Projects() {
           <p className="text-gray-400 text-lg max-w-xl mx-auto mb-8">
             Professional websites and e-commerce stores I've built
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-red-500 rounded-full mx-auto" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
         </div>
 
         {/* Premium Tabs - تم تصغير الخط في الشاشات الصغيرة */}
