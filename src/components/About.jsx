@@ -371,7 +371,7 @@ export default function About() {
                 </p>
 
                 {/* Quick Info Grid */}
-                <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                   {[
                     { label: "Engineering Lead", value: "Awad Mohammed" },
                     { label: "Location Coordinates", value: "Egypt (GMT+3)" },
@@ -386,7 +386,7 @@ export default function About() {
                       <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">
                         {item.label}
                       </div>
-                      <div className="text-xs sm:text-sm font-semibold text-white">
+                      <div className="text-xs sm:text-sm font-semibold text-white break-all">
                         {item.value}
                       </div>
                     </div>
