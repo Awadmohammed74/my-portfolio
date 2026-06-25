@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           {/* GitHub */}
           <a
-            href="https://github.com/awadmohammed"
+            href="https://github.com/Awadmohammed74"
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => soundManager.playTick()}
@@ -67,7 +67,7 @@ export default function Footer() {
           </a>
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/awadmohammed"
+            href="https://www.linkedin.com/in/awad-mohammed-6047b3360/"
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => soundManager.playTick()}
