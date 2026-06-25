@@ -205,7 +205,7 @@ export default function Hero() {
 
         {/* Stats with Lucide Icons */}
         <div
-          className="grid grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto animate-fade-in"
           style={{ animationDelay: "0.9s" }}
         >
           {[
@@ -215,16 +215,16 @@ export default function Hero() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="group relative glass rounded-2xl p-5 hover:border-[var(--accent-primary)]/30 transition-all duration-300 cursor-pointer"
+              className="group relative glass rounded-2xl p-4 sm:p-5 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-2 hover:border-[var(--accent-primary)]/30 transition-all duration-300 cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/5 to-[var(--accent-secondary)]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col items-center sm:items-start w-full">
                 <stat.icon
                   className="w-6 h-6 mb-1"
                   style={{ color: "var(--accent-primary)" }}
                 />
                 <div
-                  className="text-3xl font-black mb-1"
+                  className="text-2xl sm:text-3xl font-black mb-0 sm:mb-1"
                   style={{
                     background:
                       "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
