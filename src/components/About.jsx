@@ -3,7 +3,6 @@ import {
   Monitor,
   Code2,
   Briefcase,
-  FolderOpen,
   Terminal as TerminalIcon,
 } from "lucide-react";
 import { soundManager } from "../utils/sound";
@@ -243,38 +242,25 @@ export default function About() {
           <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
 
           {/* Mode Switcher Buttons */}
-          <div className="mt-8 flex justify-center gap-3">
-            <button
-              onClick={() => {
-                soundManager.playClick();
-                setIsTerminalMode(false);
-                setMatrixActive(false);
-              }}
-              onMouseEnter={() => soundManager.playTick()}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all border cursor-pointer ${
-                !isTerminalMode
-                  ? "bg-accent-primary text-white border-accent-primary shadow-lg shadow-accent-primary/20"
-                  : "text-gray-400 hover:text-white border-white/5 glass"
-              }`}
-            >
-              <Monitor className="w-3.5 h-3.5" />
-              Standard Card View
-            </button>
-            <button
-              onClick={() => {
-                soundManager.playClick();
-                setIsTerminalMode(true);
-              }}
-              onMouseEnter={() => soundManager.playTick()}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all border cursor-pointer ${
-                isTerminalMode
-                  ? "bg-accent-primary text-white border-accent-primary shadow-lg shadow-accent-primary/20"
-                  : "text-gray-400 hover:text-white border-white/5 glass"
-              }`}
-            >
-              <TerminalIcon className="w-3.5 h-3.5" />
-              Developer Hacker console
-            </button>
+          <div className="mt-8 flex justify-center">
+            <div className="inline-flex p-1 bg-white/5 rounded-full border border-white/10">
+              <button
+                onClick={() => {
+                  soundManager.playClick();
+                  setIsTerminalMode(false);
+                  setMatrixActive(false);
+                }}
+                onMouseEnter={() => soundManager.playTick()}
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold transition-all ${
+                  !isTerminalMode
+                    ? "bg-accent-primary text-white shadow-lg"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                <Monitor className="w-3.5 h-3.5" />
+                Standard View
+              </button>
+            </div>
           </div>
         </div>
 
