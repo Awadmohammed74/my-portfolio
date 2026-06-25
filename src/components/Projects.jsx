@@ -175,11 +175,17 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-pink-400 mb-4">
+          <div
+            className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm mb-4"
+            style={{ color: "#fb7185" }} // لون ثابت لـ My Work
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse" />
             My Work
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4">
+          <h2
+            className="text-4xl sm:text-5xl font-black mb-4"
+            style={{ color: "#ffffff" }} // لون ثابت للعنوان
+          >
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto mb-8">
@@ -188,12 +194,12 @@ export default function Projects() {
           <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-red-500 rounded-full mx-auto" />
         </div>
 
-        {/* Premium Tabs */}
+        {/* Premium Tabs - تم تصغير الخط في الشاشات الصغيرة */}
         <div className="flex items-center justify-center mb-12">
           <div className="inline-flex p-1 bg-white/5 rounded-full border border-white/10">
             <button
               onClick={() => setActiveTab("ecommerce")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeTab === "ecommerce"
                   ? "bg-accent-primary text-white shadow-lg"
                   : "text-gray-400 hover:text-white"
@@ -203,7 +209,7 @@ export default function Projects() {
             </button>
             <button
               onClick={() => setActiveTab("corporate")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeTab === "corporate"
                   ? "bg-accent-primary text-white shadow-lg"
                   : "text-gray-400 hover:text-white"
