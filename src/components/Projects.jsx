@@ -189,31 +189,29 @@ export default function Projects() {
         </div>
 
         {/* Premium Tabs */}
-        <div className="flex items-center justify-center gap-3 mb-12">
-          <button
-            onClick={() => setActiveTab("ecommerce")}
-            className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeTab === "ecommerce"
-                ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
-                : "text-gray-400 hover:text-white glass hover:border-white/20"
-            }`}
-          >
-            <span className="relative z-10 flex items-center gap-2">
+        <div className="flex items-center justify-center mb-12">
+          <div className="inline-flex p-1 bg-white/5 rounded-full border border-white/10">
+            <button
+              onClick={() => setActiveTab("ecommerce")}
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === "ecommerce"
+                  ? "bg-accent-primary text-white shadow-lg"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
               🛒 E-Commerce ({allProjects.ecommerce.length})
-            </span>
-          </button>
-          <button
-            onClick={() => setActiveTab("corporate")}
-            className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeTab === "corporate"
-                ? "text-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-500/25"
-                : "text-gray-400 hover:text-white glass hover:border-white/20"
-            }`}
-          >
-            <span className="relative z-10 flex items-center gap-2">
+            </button>
+            <button
+              onClick={() => setActiveTab("corporate")}
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === "corporate"
+                  ? "bg-accent-primary text-white shadow-lg"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
               🏢 Corporate ({allProjects.corporate.length})
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
 
         {/* Projects Grid */}
