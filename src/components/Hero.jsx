@@ -218,7 +218,7 @@ export default function Hero() {
               className="group relative glass rounded-2xl p-4 sm:p-5 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-2 hover:border-[var(--accent-primary)]/30 transition-all duration-300 cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/5 to-[var(--accent-secondary)]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10 flex flex-col items-center sm:items-start w-full">
+              <div className="relative z-10 flex flex-col items-center justify-center sm:items-start w-full">
                 <stat.icon
                   className="w-6 h-6 mb-1"
                   style={{ color: "var(--accent-primary)" }}
