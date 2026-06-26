@@ -209,7 +209,7 @@ export default function Navbar({
       </div>
 
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${mobileOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0 pointer-events-none"}`}
+        className={`md:hidden transition-all duration-300 overflow-y-auto ${mobileOpen ? "max-h-[calc(100vh-80px)] opacity-100 mt-2" : "max-h-0 opacity-0 pointer-events-none"}`}
       >
         <div className="mx-4 p-4 rounded-2xl bg-[#050508]/95 backdrop-blur-xl border border-white/10 shadow-2xl">
           <div className="flex flex-col gap-1.5">
