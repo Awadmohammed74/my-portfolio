@@ -173,18 +173,14 @@ export default function Projects() {
       </div>
 
       <div className="max-w-6xl mx-auto">
-        {/* Section header */}
         <div className="text-center mb-12">
-          <div
-            onMouseEnter={() => soundManager.playTick()}
-            className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10"
-          >
+          <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10">
             <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
             My Projects
           </div>
           <h2
             className="text-4xl sm:text-5xl font-black mb-4"
-            style={{ color: "#ffffff" }} // لون ثابت للعنوان
+            style={{ color: "#ffffff" }}
           >
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -194,7 +190,6 @@ export default function Projects() {
           <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
         </div>
 
-        {/* Premium Tabs - تم تصغير الخط في الشاشات الصغيرة */}
         <div className="flex items-center justify-center mb-12">
           <div className="inline-flex p-1 bg-white/5 rounded-full border border-white/10">
             <button
@@ -220,29 +215,22 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {allProjects[activeTab].map((project, idx) => (
-            <a
+            <div
               key={project.title}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
               className="group relative glass rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/30"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              {/* Top gradient bar */}
               <div
                 className={`h-2 bg-gradient-to-r ${project.color} transition-all duration-500 group-hover:h-3`}
               />
 
-              {/* Project Image with Hover Overlay */}
-              <div className="relative h-48 overflow-hidden group">
+              <div className="relative h-48 overflow-hidden">
                 <ProjectImage project={project} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-transparent" />
 
-                {/* Hover Buttons Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                <div className="absolute inset-0 flex items-center justify-center gap-3">
                   <a
                     href={project.link}
                     target="_blank"
@@ -257,10 +245,7 @@ export default function Projects() {
                     Live Demo
                   </a>
                   <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setSelectedProject(project);
-                    }}
+                    onClick={() => setSelectedProject(project)}
                     className="px-4 py-2 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:scale-105"
                     style={{
                       background: "var(--accent-secondary)",
@@ -274,50 +259,32 @@ export default function Projects() {
               </div>
 
               <div className="p-6">
-                {/* Icon */}
                 <div
                   className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white font-bold text-lg mb-4 group-hover:scale-110 transition-transform duration-300 -mt-16 relative z-10 shadow-xl`}
                 >
                   {project.title[0]}
                 </div>
-
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   {project.desc}
                 </p>
-
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-3 py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 transition-all"
+                      className="text-xs px-3 py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-
-                {/* View Project Link */}
-                <div className="flex items-center gap-2 text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
-                  <span>View Website</span>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
               </div>
-
-              {/* Hover glow effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl" />
-                <div className="absolute -top-20 -left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
-              </div>
-            </a>
+            </div>
           ))}
         </div>
 
-        {/* Modal */}
         {selectedProject && (
           <ProjectModal
             project={selectedProject}
@@ -325,7 +292,6 @@ export default function Projects() {
           />
         )}
 
-        {/* Coming Soon Notice */}
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
             More projects coming soon... 🚀
