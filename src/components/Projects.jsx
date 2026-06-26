@@ -180,7 +180,7 @@ export default function Projects() {
             className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-            My Work
+            My Projects
           </div>
           <h2
             className="text-4xl sm:text-5xl font-black mb-4"
