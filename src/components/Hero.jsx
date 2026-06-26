@@ -209,9 +209,9 @@ export default function Hero() {
           style={{ animationDelay: "0.9s" }}
         >
           {[
-            { value: "3+", label: "Years Exp", icon: Clock },
-            { value: "20+", label: "Projects", icon: Rocket },
-            { value: "90+", label: "Lighthouse", icon: Zap },
+            { value: "+3", label: "Years Exp", icon: Clock },
+            { value: "+20", label: "Projects", icon: Rocket },
+            { value: "+90", label: "Lighthouse", icon: Zap },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -222,7 +222,7 @@ export default function Hero() {
               {/* تم تغيير التنسيق هنا ليكون التوسيط متوافقاً في جميع الشاشات */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center w-full">
                 <stat.icon
-                  className="w-6 h-6 mb-2"
+                  className="w-8 h-8 mb-2"
                   style={{ color: "var(--accent-primary)" }}
                 />
                 <div
