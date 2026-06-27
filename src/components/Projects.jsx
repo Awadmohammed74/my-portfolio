@@ -385,11 +385,9 @@ export default function Projects() {
               <button
                 key={filter.id}
                 onClick={() => setSubFilter(filter.id)}
-                // تم تغيير px-5 إلى px-3 sm:px-5 وتغيير text-sm إلى text-xs sm:text-sm
-                className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${subFilter === filter.id ? "text-white border border-accent-primary/30" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${subFilter === filter.id ? "text-white border border-accent-primary/40 bg-white/10" : "text-gray-300 hover:text-white bg-white/[0.02] border border-white/5"}`}
               >
-                <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />{" "}
-                {/* تصغير حجم الأيقونة أيضاً في الموبايل */}
+                <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>{filter.label}</span>
                 <span className="text-[10px] sm:text-xs opacity-60">
                   ({filter.count})
@@ -414,33 +412,33 @@ export default function Projects() {
               {/* Image with Overlay Buttons */}
               <div className="relative h-48 overflow-hidden">
                 <ProjectImage project={project} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-transparent opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 md:translate-y-4 md:group-hover:translate-y-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/90 via-[#0a0a0f]/40 to-transparent opacity-100 transition-all duration-500" />
+                <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-100 transition-all duration-500 p-2">
                   <button
                     onClick={(e) => {
                       e.preventDefault();
                       window.open(project.link, "_blank");
                     }}
-                    className="px-4 py-2 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:scale-105"
+                    className="px-2.5 py-1.5 text-white text-[11px] sm:text-xs font-semibold rounded-md flex items-center gap-1 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80"
                     style={{
                       background: "var(--accent-primary)",
-                      boxShadow: "0 10px 25px -5px var(--accent-glow)",
+                      boxShadow: "0 4px 12px -2px var(--accent-glow)",
                     }}
                   >
-                    <ExternalLink className="w-4 h-4" /> Live Demo
+                    <ExternalLink className="w-3 h-3" /> Live Demo
                   </button>
                   <button
                     onClick={(e) => {
                       e.preventDefault();
                       setSelectedProject(project);
                     }}
-                    className="px-4 py-2 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:scale-105"
+                    className="px-2.5 py-1.5 text-white text-[11px] sm:text-xs font-semibold rounded-md flex items-center gap-1 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80"
                     style={{
                       background: "var(--accent-secondary)",
-                      boxShadow: "0 10px 25px -5px var(--accent-glow)",
+                      boxShadow: "0 4px 12px -2px var(--accent-glow)",
                     }}
                   >
-                    <FileText className="w-4 h-4" /> Case Study
+                    <FileText className="w-3 h-3" /> Case Study
                   </button>
                 </div>
               </div>
