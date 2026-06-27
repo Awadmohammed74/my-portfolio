@@ -367,7 +367,7 @@ export default function Projects() {
 
         {/* Sub Filter */}
         {activeTab === "wordpress" && (
-          <div className="flex items-center justify-center gap-4 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-10">
             {[
               {
                 id: "corporate",
@@ -385,11 +385,15 @@ export default function Projects() {
               <button
                 key={filter.id}
                 onClick={() => setSubFilter(filter.id)}
-                className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${subFilter === filter.id ? "text-white border border-accent-primary/30" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+                // تم تغيير px-5 إلى px-3 sm:px-5 وتغيير text-sm إلى text-xs sm:text-sm
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${subFilter === filter.id ? "text-white border border-accent-primary/30" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
               >
-                <filter.icon className="w-4 h-4" />
+                <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />{" "}
+                {/* تصغير حجم الأيقونة أيضاً في الموبايل */}
                 <span>{filter.label}</span>
-                <span className="text-xs opacity-60">({filter.count})</span>
+                <span className="text-[10px] sm:text-xs opacity-60">
+                  ({filter.count})
+                </span>
               </button>
             ))}
           </div>
