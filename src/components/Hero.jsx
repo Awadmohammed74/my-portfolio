@@ -52,7 +52,7 @@ export default function Hero() {
           style={{
             background:
               "radial-gradient(circle, var(--accent-glow) 0%, transparent 70%)",
-            transform: `translate(${-mousePos.x}px, ${-mousePos.y}px)`,
+            transform: `translate(${-mousePos.x}px, ${mousePos.y}px)`,
             animationDelay: "-4s",
           }}
         />
@@ -205,7 +205,7 @@ export default function Hero() {
 
         {/* Stats with Lucide Icons */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto animate-fade-in"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto animate-fade-in"
           style={{ animationDelay: "0.9s" }}
         >
           {[
@@ -215,18 +215,21 @@ export default function Hero() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="group relative glass rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center gap-2 hover:border-[var(--accent-primary)]/30 transition-all duration-300 cursor-pointer"
+              className="group relative backdrop-blur-md bg-white/[0.02] border border-white/5 rounded-2xl p-5 sm:p-6 flex flex-col items-center justify-center gap-2 hover:border-[var(--accent-primary)]/40 hover:-translate-y-1 shadow-lg shadow-black/20 transition-all duration-400 cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/5 to-[var(--accent-secondary)]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* Glow and Backdrop Layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/5 via-transparent to-[var(--accent-secondary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-[var(--accent-primary)]/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              {/* تم تغيير التنسيق هنا ليكون التوسيط متوافقاً في جميع الشاشات */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center w-full">
-                <stat.icon
-                  className="w-8 h-8 mb-2"
-                  style={{ color: "var(--accent-primary)" }}
-                />
+                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 group-hover:border-[var(--accent-primary)]/20 group-hover:bg-[var(--accent-primary)]/5 transition-all duration-300 mb-2 group-hover:-translate-y-1">
+                  <stat.icon
+                    className="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
+                    style={{ color: "var(--accent-primary)" }}
+                  />
+                </div>
                 <div
-                  className="text-2xl sm:text-3xl font-black mb-1"
+                  className="text-2xl sm:text-3xl font-black mb-1 tracking-tight"
                   style={{
                     background:
                       "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
@@ -237,7 +240,7 @@ export default function Hero() {
                 >
                   {stat.value}
                 </div>
-                <div className="text-xs text-gray-500 font-medium">
+                <div className="text-xs text-gray-400 font-semibold group-hover:text-gray-300 transition-colors uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
