@@ -494,12 +494,6 @@ export default function Projects() {
             onClose={() => setSelectedProject(null)}
           />
         )}
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm">
-            More projects coming soon... 🚀
-          </p>
-        </div>
       </div>
     </section>
   );
