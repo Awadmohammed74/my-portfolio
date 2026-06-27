@@ -1,9 +1,222 @@
 import { useState } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import {
+  ExternalLink,
+  FileText,
+  Globe,
+  ShoppingCart,
+  Code,
+} from "lucide-react";
 import ProjectModal from "./ProjectModal";
 
 const allProjects = {
-  ecommerce: [
+  wordpress: [
+    {
+      title: "MIVANO Interior",
+      desc: "Luxury interior design & finishing company website in UAE. Full custom WordPress development from Figma to WordPress with bilingual support (Arabic/English).",
+      tags: [
+        "WordPress",
+        "Elementor Pro",
+        "Arabic/English",
+        "Interior Design",
+        "UAE",
+      ],
+      color: "from-amber-500 to-orange-600",
+      image: "/assets/mivanointerior.jpg",
+      fallback: "🏛️",
+      link: "https://mivanointerior.com",
+      category: "corporate",
+      fullDesc:
+        "Designed and developed a luxury corporate website for MIVANO, an interior design and finishing company in the UAE. The project involved a complete Figma-to-WordPress conversion with full customization, bilingual support (Arabic/English RTL/LTR), and a premium user experience showcasing the company's high-end design services.",
+      caseStudy: {
+        challenge:
+          "The client needed a luxury digital presence that reflects their high-end interior design brand in the UAE market. Key challenges included: pixel-perfect Figma conversion, seamless Arabic/English bilingual experience with RTL/LTR support, interactive service pages, and a lead generation system for consultation requests.",
+        solution:
+          "Built a fully custom WordPress site using Elementor Pro with pixel-perfect Figma conversion. Implemented full bilingual support with RTL/LTR direction switching, dynamic service pages for each design category, interactive project galleries with modern animations, and integrated professional contact forms with strategic CTAs for lead generation.",
+        results:
+          "Delivered a luxury, fast, and secure bilingual digital platform that effectively represents MIVANO's brand in the UAE market. The site showcases services professionally with smooth animations and sliders, achieving high engagement rates and increased consultation requests through optimized lead generation forms.",
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "JavaScript",
+          "Figma to WordPress",
+          "SEO",
+          "RTL/LTR",
+        ],
+      },
+    },
+    {
+      title: "Speed Solutions",
+      desc: "Financial consulting & company formation services website in UAE. Full custom WordPress development with dynamic cost calculator and automation.",
+      tags: [
+        "WordPress",
+        "Elementor",
+        "Financial Consulting",
+        "UAE",
+        "RTL/LTR",
+      ],
+      color: "from-blue-600 to-cyan-500",
+      image: "/assets/speed-solution.png",
+      fallback: "📊",
+      link: "https://speedsolution.ae",
+      category: "corporate",
+      fullDesc:
+        "Designed and developed the official website for Speed Solutions, a UAE-based company specializing in business formation, financial auditing, and tax solutions. The project involved a complete Figma-to-WordPress conversion with full customization, bilingual support, and optimized user experience for investors and entrepreneurs.",
+      caseStudy: {
+        challenge:
+          "The client needed a professional digital platform targeting investors and entrepreneurs in the UAE market. Main challenges included: converting a complex Figma design with multiple service pages, building a bilingual site with perfect RTL/LTR compatibility, and creating an effective lead generation system for consultation requests.",
+        solution:
+          "Developed using WordPress + Elementor Pro with full customization. Created dedicated service pages for each offering (company formation, corporate tax, VAT, e-invoicing, bookkeeping, auditing), integrated a 'Request Free Consultation' system for lead generation, and added smooth JavaScript animations and sliders without compromising performance.",
+        results:
+          "Delivered a premium, fast, and secure bilingual website that clearly showcases Speed Solutions' services. The site effectively builds trust with entrepreneurs through client testimonials and social proof elements, resulting in increased conversion rates and consultation requests.",
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "JavaScript",
+          "Figma to WordPress",
+          "SEO",
+          "Performance Optimization",
+        ],
+      },
+    },
+    {
+      title: "Shams City",
+      desc: "Company formation & visa services website in UAE. Full custom WordPress with interactive cost calculator and automated lead generation via Make.",
+      tags: ["WordPress", "Elementor", "Business Setup", "UAE", "Automation"],
+      color: "from-blue-600 to-cyan-500",
+      image: "/assets/shams city.png",
+      fallback: "🏢",
+      link: "https://shamscity.com",
+      category: "corporate",
+      fullDesc:
+        "Official website for Shams City, a UAE-based company formation and visa services provider. Built with full custom WordPress development featuring a dynamic cost calculator that automates lead generation through Make integration.",
+      caseStudy: {
+        challenge:
+          "Client needed a professional corporate website with an interactive cost estimation tool for business setup services. The main challenges were: creating a dynamic calculator that provides accurate cost estimates, automating the lead collection process, and maintaining high performance with complex interactive elements.",
+        solution:
+          "Developed a fully custom WordPress site with Elementor Pro. Engineered a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs in simple steps. Connected the calculator to Make (formerly Integromat) for full automation — sending detailed cost breakdowns via email and logging data to Google Sheets for the sales team.",
+        results:
+          "Delivered a fast, secure, and interactive corporate website with a fully automated lead generation system. The cost calculator significantly improves user engagement and conversion rates, while the automation pipeline streamlines the sales process and data management.",
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "Custom JavaScript",
+          "Make Automation",
+          "Google Sheets",
+          "SEO",
+        ],
+      },
+    },
+    {
+      title: "Khaleej Tech",
+      desc: "Digital marketing agency website in UAE. Full custom WordPress development with dynamic portfolio showcase and interactive service tabs.",
+      tags: ["WordPress", "Elementor", "Digital Marketing", "UAE", "Portfolio"],
+      color: "from-indigo-500 to-violet-600",
+      image: "/assets/khaleejtech.jpg",
+      fallback: "💼",
+      link: "https://khaleejtech.ae",
+      category: "corporate",
+      fullDesc:
+        "Official website for Khaleej Tech, a UAE-based digital marketing and technology services company. Built with full custom WordPress development featuring a dynamic portfolio section, interactive service tabs, and modern animations.",
+      caseStudy: {
+        challenge:
+          "The client needed a modern digital agency website that showcases their portfolio, services, and expertise in the competitive UAE digital market. Key challenges included: creating dynamic service presentation sections, building an interactive portfolio showcase, and ensuring the site reflects the agency's own digital capabilities.",
+        solution:
+          "Developed using WordPress + Elementor with full customization. Created dynamic Tab sections for presenting services interactively, built a professional Portfolio section showcasing client work, added custom JavaScript for smooth animations and sliders, and optimized for SEO and performance.",
+        results:
+          "Delivered a professional, fast, and secure digital agency website that effectively showcases Khaleej Tech's capabilities. The dynamic portfolio and interactive service tabs provide an engaging user experience that builds trust with potential clients and demonstrates the company's technical expertise.",
+        techStack: [
+          "WordPress",
+          "Elementor",
+          "Custom JavaScript",
+          "SEO",
+          "Performance Optimization",
+        ],
+      },
+    },
+    {
+      title: "Pyramids Zone",
+      desc: "Legal consulting & company formation landing page in Egypt. Full custom WordPress with interactive cost calculator and email automation.",
+      tags: ["WordPress", "Landing Page", "Legal", "Egypt", "Automation"],
+      color: "from-purple-600 to-pink-500",
+      image: "/assets/pyramids-zone.png",
+      fallback: "⚖️",
+      link: "https://pyramidszone.com",
+      category: "corporate",
+      fullDesc:
+        "Designed and developed a high-converting landing page for Pyramids Zone, an accredited company formation and investor residency services provider in Egypt. The project features a custom interactive cost calculator with full email automation for lead generation.",
+      caseStudy: {
+        challenge:
+          "Client needed a professional landing page with an interactive cost estimation tool for company formation services in Egypt. Main challenges were: converting a complex Figma design with multiple interactive elements, building a dynamic calculator supporting EGP and USD currencies, and automating the lead follow-up process.",
+        solution:
+          "Built a fully custom WordPress landing page using Elementor Pro. Developed a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs instantly in both EGP and USD. Connected the calculator to SMTP email automation for automatic lead data collection and cost breakdown delivery to prospects.",
+        results:
+          "Delivered a high-converting, fast, and interactive landing page with a fully automated lead generation system. The cost calculator significantly increases visitor engagement and conversion rates, while the email automation pipeline enables the sales team to follow up with qualified leads instantly.",
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "Custom JavaScript",
+          "SMTP Automation",
+          "Figma to WordPress",
+          "SEO",
+        ],
+      },
+    },
+    {
+      title: "Tmayoz Store",
+      desc: "High-converting WooCommerce e-commerce store in Egypt with full custom development. Features urgency engine, smart cross-selling, and WhatsApp instant checkout.",
+      tags: ["WooCommerce", "E-commerce", "Egypt", "Full Custom", "Automation"],
+      color: "from-green-600 to-emerald-500",
+      image: "/assets/tmayoz.png",
+      fallback: "🛒",
+      link: "https://tmayoz.com",
+      category: "ecommerce",
+      fullDesc:
+        "Designed and developed a professional WooCommerce e-commerce store for 'Tmayoz' in Egypt with full custom development. Features include a golden countdown urgency engine, smart cross-selling system, geolocation address fill, dynamic tax incentives, and WhatsApp instant checkout loop — all built with custom PHP/JS.",
+      caseStudy: {
+        challenge:
+          "Client needed a high-converting e-commerce store in the Egyptian market with advanced features to reduce cart abandonment and increase conversion rates. Main challenges included: building a custom urgency system, creating smart cross-selling that respects cart contents, automating checkout processes, and implementing dynamic tax calculations.",
+        solution:
+          "Built a fully custom WooCommerce store using WoodMart + Elementor with custom PHP/JS snippets and hooks. Implemented: a floating golden countdown timer on product cards (urgency engine), smart cross-selling widget with auto-exclusion of cart items, HTML5 geolocation for auto-filling shipping addresses, dynamic tax adjustment system using MutationObserver API, and WhatsApp instant checkout integration on the thank-you page.",
+        results:
+          "Delivered a highly automated, conversion-optimized e-commerce store in the Egyptian market. The urgency engine and smart cross-selling features significantly reduce cart abandonment. The geolocation and WhatsApp checkout minimize friction in the buying process, while the dynamic tax system provides real-time savings visibility to customers.",
+        techStack: [
+          "WooCommerce",
+          "WoodMart",
+          "Elementor",
+          "Custom PHP",
+          "Custom JavaScript",
+          "WhatsApp API",
+          "Geolocation API",
+        ],
+      },
+    },
+    {
+      title: "The Sun Shop",
+      desc: "WooCommerce e-commerce store for a UAE business with customized shop layout and user experience improvements.",
+      tags: ["WooCommerce", "E-commerce", "UX/UI", "UAE"],
+      color: "from-yellow-500 to-amber-600",
+      image: "/assets/the sun shop.png",
+      fallback: "🛍️",
+      link: "https://thesunshop.ae",
+      category: "ecommerce",
+      fullDesc:
+        "E-commerce platform for a UAE retail business specializing in premium products. Required custom shop layouts, advanced filtering, and optimized checkout flow.",
+      caseStudy: {
+        challenge:
+          "Client needed a modern e-commerce solution with custom product filtering, wishlist functionality, and a streamlined checkout process. The site had to compete with major regional retailers.",
+        solution:
+          "Developed custom WooCommerce templates, implemented AJAX-based product filtering, added wishlist functionality, and optimized the checkout flow. Integrated with local shipping providers.",
+        results:
+          "Achieved 90+ Lighthouse score with 50% improvement in page load speed. Increased conversion rate by 25% within the first month of launch.",
+        techStack: [
+          "WooCommerce",
+          "Custom Theme",
+          "AJAX Filtering",
+          "MySQL",
+          "REST API",
+        ],
+      },
+    },
     {
       title: "Cofeano Store",
       desc: "Bilingual WooCommerce store (Arabic & English) for a UAE brand with customized product pages and store layout.",
@@ -12,6 +225,7 @@ const allProjects = {
       image: "/assets/cofeano website.png",
       fallback: "☕",
       link: "https://cofeano.com",
+      category: "ecommerce",
       fullDesc:
         "Built a complete bilingual e-commerce experience for a UAE-based coffee brand. The store required seamless Arabic-English switching, custom product filtering, and a unique checkout flow tailored for the local market.",
       caseStudy: {
@@ -31,110 +245,34 @@ const allProjects = {
         ],
       },
     },
-    {
-      title: "The Sun Shop",
-      desc: "WooCommerce e-commerce store for a UAE business with customized shop layout and user experience improvements.",
-      tags: ["WooCommerce", "E-commerce", "UX/UI", "UAE"],
-      color: "from-yellow-500 to-amber-600",
-      image: "/assets/the sun shop.png",
-      fallback: "🛍️",
-      link: "https://thesunshop.ae",
-      fullDesc:
-        "E-commerce platform for a UAE retail business specializing in premium products. Required custom shop layouts, advanced filtering, and optimized checkout flow.",
-      caseStudy: {
-        challenge:
-          "Client needed a modern e-commerce solution with custom product filtering, wishlist functionality, and a streamlined checkout process. The site had to compete with major regional retailers.",
-        solution:
-          "Developed custom WooCommerce templates, implemented AJAX-based product filtering, added wishlist functionality, and optimized the checkout flow. Integrated with local shipping providers.",
-        results:
-          "Achieved 90+ Lighthouse score with 50% improvement in page load speed. Increased conversion rate by 25% within the first month of launch.",
-        techStack: [
-          "WooCommerce",
-          "Custom Theme",
-          "AJAX Filtering",
-          "MySQL",
-          "REST API",
-        ],
-      },
-    },
   ],
-  corporate: [
+  react: [
     {
-      title: "Shams City",
-      desc: "Corporate website for a UAE-based company. WordPress customization, UI improvements, and layout adjustments.",
-      tags: ["WordPress", "Corporate", "UAE", "UI/UX"],
-      color: "from-blue-600 to-cyan-500",
-      image: "/assets/shams city.png",
-      fallback: "🏢",
-      link: "https://shamscity.com",
+      title: "Awad Mohammed Portfolio",
+      desc: "My personal portfolio built with React 19 + Tailwind CSS v4. Features interactive backgrounds, theme switcher, case studies, and a command palette.",
+      tags: ["React", "Tailwind CSS", "Vite", "Lucide", "Netlify"],
+      color: "from-blue-600 to-cyan-400",
+      image: "/assets/my-portfolio.png",
+      fallback: "⚛️",
+      link: "https://awad-mohammed-portfolio.netlify.app",
+      category: "react",
       fullDesc:
-        "Corporate website for a UAE-based real estate development company. The project involved complete WordPress customization, modern UI design, and optimized performance for lead generation.",
+        "A premium interactive portfolio website showcasing my work as a WordPress & React developer. Built from scratch using React 19, Tailwind CSS v4, and Vite 6 for blazing-fast performance.",
       caseStudy: {
         challenge:
-          "Client needed a professional corporate website that would establish trust with potential investors and buyers. The site needed to showcase properties effectively while maintaining fast performance.",
+          "Needed a modern portfolio that reflects my technical skills in both WordPress/PHP backend and modern React frontend development. The site had to be visually stunning, performant, and show real case studies with live project links.",
         solution:
-          "Custom WordPress theme development with ACF for flexible content management. Implemented modern UI with smooth animations, property showcase galleries, and optimized for Core Web Vitals.",
+          "Architected a single-page React app with interactive canvas background, 4 dynamic themes (Neon Blue, Cyberpunk, Emerald Grid, Electric Gold), custom cursor with spring animation, Command Palette (Ctrl+K), Matrix rain terminal effect in About section, and detailed project case studies with images and hover overlays.",
         results:
-          "Achieved 95+ Lighthouse performance score. Increased user engagement by 60% with average session duration of 4+ minutes. Generated 30% more qualified leads in the first quarter.",
+          "Built a 90+ Lighthouse scoring portfolio with zero external backend. Features interactive particle canvas, 8 project case studies with real screenshots, and a premium glass-morphism design system that dynamically inherits theme colors via CSS variables.",
         techStack: [
-          "WordPress",
-          "ACF",
-          "Custom PHP",
-          "JavaScript",
-          "CSS3",
-          "SEO Optimization",
-        ],
-      },
-    },
-    {
-      title: "Hoque Builds",
-      desc: "Construction company website for a US-based business with responsive layout and customized service sections.",
-      tags: ["Construction", "Responsive", "US Market", "Services"],
-      color: "from-purple-600 to-pink-500",
-      image: "/assets/hoquebuilds website.png",
-      fallback: "🏗️",
-      link: "https://hoquebuilds.com",
-      fullDesc:
-        "Professional construction company website targeting the US market. Featured project portfolios, service showcases, and lead generation forms.",
-      caseStudy: {
-        challenge:
-          "US-based construction company needed a website that would showcase their portfolio effectively and generate qualified leads. Required responsive design and professional imagery integration.",
-        solution:
-          "Built custom WordPress theme with project portfolio management, service detail pages, and optimized contact forms. Implemented modern animations and parallax effects for visual appeal.",
-        results:
-          "Reduced bounce rate by 35%, achieved 92/100 Lighthouse score. The contact form conversion rate increased by 40% after redesign.",
-        techStack: [
-          "WordPress",
-          "Custom Post Types",
-          "Responsive Design",
-          "JavaScript",
-          "PHP",
-        ],
-      },
-    },
-    {
-      title: "Khaleej Tech",
-      desc: "Marketing agency website for a UAE company with custom layout sections and optimized UI.",
-      tags: ["Marketing", "Agency", "Custom Layout", "UAE"],
-      color: "from-indigo-500 to-violet-600",
-      image: "/assets/khaleejtech.jpg",
-      fallback: "💼",
-      link: "https://khaleejtech.ae",
-      fullDesc:
-        "Marketing agency website with dynamic content sections, case studies showcase, and optimized user experience for B2B clients.",
-      caseStudy: {
-        challenge:
-          "Marketing agency needed a dynamic website that could showcase their portfolio, services, and case studies while maintaining fast performance and modern aesthetics.",
-        solution:
-          "Developed custom Gutenberg blocks for flexible content editing, built dynamic case study sections, and implemented advanced caching for optimal performance.",
-        results:
-          "Achieved 97/100 performance score. Page load time reduced by 60%. Organic traffic increased by 45% within 3 months.",
-        techStack: [
-          "WordPress",
-          "Gutenberg",
-          "Custom Blocks",
-          "SEO",
-          "Performance Optimization",
+          "React 19",
+          "Tailwind CSS v4",
+          "Vite 6",
+          "Lucide React",
+          "CSS Variables",
+          "Canvas API",
+          "Netlify",
         ],
       },
     },
@@ -143,7 +281,6 @@ const allProjects = {
 
 function ProjectImage({ project }) {
   const [imgError, setImgError] = useState(false);
-
   if (imgError) {
     return (
       <div className="absolute inset-0 flex items-center justify-center text-8xl bg-gradient-to-br from-white/5 to-transparent">
@@ -151,7 +288,6 @@ function ProjectImage({ project }) {
       </div>
     );
   }
-
   return (
     <img
       src={project.image}
@@ -163,8 +299,21 @@ function ProjectImage({ project }) {
 }
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("ecommerce");
+  const [activeTab, setActiveTab] = useState("wordpress");
+  const [subFilter, setSubFilter] = useState("corporate");
   const [selectedProject, setSelectedProject] = useState(null);
+
+  const filteredProjects = allProjects[activeTab].filter((p) => {
+    if (activeTab === "react") return true;
+    return p.category === subFilter;
+  });
+
+  const wordpressCounts = {
+    corporate: allProjects.wordpress.filter((p) => p.category === "corporate")
+      .length,
+    ecommerce: allProjects.wordpress.filter((p) => p.category === "ecommerce")
+      .length,
+  };
 
   return (
     <section id="projects" className="relative py-32 px-6">
@@ -190,96 +339,150 @@ export default function Projects() {
           <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
         </div>
 
-        <div className="flex items-center justify-center mb-12">
+        {/* Main Tabs */}
+        <div className="flex items-center justify-center mb-8">
           <div className="inline-flex p-1 bg-white/5 rounded-full border border-white/10">
             <button
-              onClick={() => setActiveTab("ecommerce")}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                activeTab === "ecommerce"
-                  ? "bg-accent-primary text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
-              }`}
+              onClick={() => {
+                setActiveTab("wordpress");
+                setSubFilter("corporate");
+              }}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${activeTab === "wordpress" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
             >
-              🛒 E-Commerce ({allProjects.ecommerce.length})
+              <Globe className="w-4 h-4" />
+              <span>WordPress ({allProjects.wordpress.length})</span>
             </button>
             <button
-              onClick={() => setActiveTab("corporate")}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                activeTab === "corporate"
-                  ? "bg-accent-primary text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
-              }`}
+              onClick={() => {
+                setActiveTab("react");
+                setSubFilter("corporate");
+              }}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${activeTab === "react" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
             >
-              🏢 Corporate ({allProjects.corporate.length})
+              <Code className="w-4 h-4" />
+              <span>React ({allProjects.react.length})</span>
             </button>
           </div>
         </div>
 
+        {/* Sub Filter */}
+        {activeTab === "wordpress" && (
+          <div className="flex items-center justify-center gap-4 mb-10">
+            {[
+              {
+                id: "corporate",
+                label: "Corporate Sites",
+                count: wordpressCounts.corporate,
+                icon: ExternalLink,
+              },
+              {
+                id: "ecommerce",
+                label: "E-Commerce Stores",
+                count: wordpressCounts.ecommerce,
+                icon: ShoppingCart,
+              },
+            ].map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setSubFilter(filter.id)}
+                className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${subFilter === filter.id ? "text-white border border-accent-primary/30" : "text-gray-500 hover:text-gray-300 border border-transparent"}`}
+              >
+                <filter.icon className="w-4 h-4" />
+                <span>{filter.label}</span>
+                <span className="text-xs opacity-60">({filter.count})</span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allProjects[activeTab].map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.title}
-              className="group relative glass rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/30"
+              className="group relative glass rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-accent-primary/30 cursor-pointer"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <div
                 className={`h-2 bg-gradient-to-r ${project.color} transition-all duration-500 group-hover:h-3`}
               />
 
+              {/* Image with Overlay Buttons */}
               <div className="relative h-48 overflow-hidden">
                 <ProjectImage project={project} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-transparent" />
-
-                <div className="absolute inset-0 flex items-center justify-center gap-3">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/80 to-transparent opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500" />
+                <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 md:translate-y-4 md:group-hover:translate-y-0">
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(project.link, "_blank");
+                    }}
                     className="px-4 py-2 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:scale-105"
                     style={{
                       background: "var(--accent-primary)",
                       boxShadow: "0 10px 25px -5px var(--accent-glow)",
                     }}
                   >
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
-                  </a>
+                    <ExternalLink className="w-4 h-4" /> Live Demo
+                  </button>
                   <button
-                    onClick={() => setSelectedProject(project)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedProject(project);
+                    }}
                     className="px-4 py-2 text-white text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:scale-105"
                     style={{
                       background: "var(--accent-secondary)",
                       boxShadow: "0 10px 25px -5px var(--accent-glow)",
                     }}
                   >
-                    <FileText className="w-4 h-4" />
-                    Case Study
+                    <FileText className="w-4 h-4" /> Case Study
                   </button>
                 </div>
               </div>
 
+              {/* Card Content */}
               <div className="p-6">
                 <div
                   className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white font-bold text-lg mb-4 group-hover:scale-110 transition-transform duration-300 -mt-16 relative z-10 shadow-xl`}
                 >
                   {project.title[0]}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">
+
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent-primary transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
                   {project.desc}
                 </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-3 py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5"
+                      className="text-xs px-3 py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 transition-all"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
+
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(project.link, "_blank");
+                  }}
+                  className="flex items-center gap-2 text-sm text-accent-primary group-hover:text-accent-secondary transition-colors"
+                >
+                  <span>View Website</span>
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+
+              {/* Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent-primary/10 rounded-full blur-3xl" />
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-accent-secondary/10 rounded-full blur-3xl" />
               </div>
             </div>
           ))}
