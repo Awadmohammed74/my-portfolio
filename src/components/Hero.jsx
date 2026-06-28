@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Mail, Clock, Rocket, Zap } from "lucide-react";
 
-const roles = [
-  "WordPress & WooCommerce Expert",
-  "Frontend Engineer",
-  "Computer Engineering Student",
-];
+const roles = ["WordPress & WooCommerce Expert", "Frontend Engineer"];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
