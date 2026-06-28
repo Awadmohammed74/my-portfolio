@@ -254,7 +254,7 @@ const allProjects = {
       color: "from-blue-600 to-cyan-400",
       image: "/assets/my-portfolio.png",
       fallback: "⚛️",
-      link: "https://awad-mohammed-portfolio.netlify.app",
+      link: "https://awad-portfolio-umber.vercel.app/",
       category: "react",
       fullDesc:
         "A premium interactive portfolio website showcasing my work as a WordPress & React developer. Built from scratch using React 19, Tailwind CSS v4, and Vite 6 for blazing-fast performance.",
