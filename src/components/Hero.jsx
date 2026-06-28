@@ -174,11 +174,10 @@ export default function Hero() {
           className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in"
           style={{ animationDelay: "0.5s" }}
         >
-          Computer Engineering student and full-stack web developer with 3+
-          years of professional experience. Specialized in engineering
-          full-custom WooCommerce ecosystems, premium responsive themes, custom
-          plugins, and building high-performance modern React frontend
-          applications.
+          Computer Engineering student and Web Developer with 3+ years of
+          professional experience. Specialized in engineering full-custom
+          WooCommerce ecosystems, premium responsive themes, custom plugins, and
+          building high-performance modern React frontend applications.
         </p>
 
         {/* Theme-aware CTA Buttons */}
