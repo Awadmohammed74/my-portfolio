@@ -367,7 +367,7 @@ export default function Projects() {
 
         {/* Sub Filter */}
         {activeTab === "wordpress" && (
-          <div className="flex flex-row md:flex-wrap items-center justify-start md:justify-center gap-3 sm:gap-4 mb-12 overflow-x-auto max-w-full no-scrollbar pb-2">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12">
             {[
               {
                 id: "corporate",
