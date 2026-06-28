@@ -347,7 +347,7 @@ export default function Projects() {
                 setActiveTab("wordpress");
                 setSubFilter("corporate");
               }}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${activeTab === "wordpress" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === "wordpress" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
             >
               <Globe className="w-4 h-4" />
               <span>WordPress ({allProjects.wordpress.length})</span>
@@ -357,7 +357,7 @@ export default function Projects() {
                 setActiveTab("react");
                 setSubFilter("corporate");
               }}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${activeTab === "react" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === "react" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
             >
               <Code className="w-4 h-4" />
               <span>React ({allProjects.react.length})</span>
@@ -367,7 +367,7 @@ export default function Projects() {
 
         {/* Sub Filter */}
         {activeTab === "wordpress" && (
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-10">
+          <div className="flex flex-row md:flex-wrap items-center justify-start md:justify-center gap-3 sm:gap-4 mb-12 overflow-x-auto max-w-full no-scrollbar pb-2">
             {[
               {
                 id: "corporate",
@@ -385,12 +385,12 @@ export default function Projects() {
               <button
                 key={filter.id}
                 onClick={() => setSubFilter(filter.id)}
-                className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${subFilter === filter.id ? "text-white border border-accent-primary/40 bg-white/10" : "text-gray-300 hover:text-white bg-white/[0.02] border border-white/5"}`}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 backdrop-blur-md cursor-pointer ${subFilter === filter.id ? "text-white border border-accent-primary/60 bg-white/15 shadow-md shadow-accent-primary/5" : "text-gray-300 hover:text-white bg-white/[0.04] border border-white/10"}`}
               >
-                <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-primary" />
                 <span>{filter.label}</span>
-                <span className="text-[10px] sm:text-xs opacity-60">
-                  ({filter.count})
+                <span className="text-[10px] sm:text-xs bg-white/10 px-1.5 py-0.5 rounded-md font-normal opacity-80">
+                  {filter.count}
                 </span>
               </button>
             ))}
@@ -419,7 +419,7 @@ export default function Projects() {
                       e.preventDefault();
                       window.open(project.link, "_blank");
                     }}
-                    className="px-3.5 py-2 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80"
+                    className="px-3.5 py-2 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80 cursor-pointer"
                     style={{
                       background: "var(--accent-primary)",
                       boxShadow: "0 4px 12px -2px var(--accent-glow)",
@@ -432,7 +432,7 @@ export default function Projects() {
                       e.preventDefault();
                       setSelectedProject(project);
                     }}
-                    className="px-3.5 py-2 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80"
+                    className="px-3.5 py-2 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80 cursor-pointer"
                     style={{
                       background: "var(--accent-secondary)",
                       boxShadow: "0 4px 12px -2px var(--accent-glow)",
@@ -474,7 +474,7 @@ export default function Projects() {
                     e.stopPropagation();
                     window.open(project.link, "_blank");
                   }}
-                  className="flex items-center gap-2 text-sm text-accent-primary group-hover:text-accent-secondary transition-colors"
+                  className="flex items-center gap-2 text-sm text-accent-primary group-hover:text-accent-secondary transition-colors cursor-pointer"
                 >
                   <span>View Website</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
