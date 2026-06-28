@@ -21,7 +21,7 @@ const skillCategories = [
     icon: Layout,
     skills: [
       { name: "React 19 / Single Page Apps", level: 90 },
-      { name: "Redux Toolkit / State Management", level: 85 },
+      { name: "State Management (Context API / Hooks)", level: 85 },
       { name: "JavaScript ES6+ Core Logic", level: 90 },
       { name: "Tailwind CSS v4 & Responsive Grid", level: 85 },
       { name: "HTML5 / CSS3 Hardware Effects", level: 95 },
@@ -90,7 +90,6 @@ export default function Skills() {
   const [animateBars, setAnimateBars] = useState(false);
   const sectionRef = useRef(null);
 
-  // Intersection observer to trigger bar progress load on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -118,7 +117,6 @@ export default function Skills() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-primary/25 to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
-        {/* Section header */}
         <div className="text-center mb-16 relative">
           <div
             onMouseEnter={() => soundManager.playTick()}
@@ -137,12 +135,11 @@ export default function Skills() {
           <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto mt-4" />
         </div>
 
-        {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-12 animate-fade-in">
           {[
             { id: "all", label: "All Systems", icon: Code2 },
             { id: "wordpress", label: "WordPress", icon: Globe },
-            { id: "frontend", label: "Frontend (React & Redux)", icon: Layout },
+            { id: "frontend", label: "Frontend (React)", icon: Layout },
             { id: "backend", label: "Backend", icon: Terminal },
             { id: "devops", label: "DevOps", icon: Cloud },
             { id: "seo", label: "SEO", icon: Zap },
@@ -168,7 +165,6 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Skill Category Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredCategories.map((category) => {
             const IconComponent = category.icon;
@@ -178,7 +174,6 @@ export default function Skills() {
                 onMouseEnter={() => soundManager.playTick()}
                 className="glass rounded-2xl p-6 border border-white/5 hover:border-accent-primary/20 transition-all duration-300 group cursor-default"
               >
-                {/* Category header */}
                 <div className="flex items-center gap-3.5 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-accent-primary/10 flex items-center justify-center group-hover:bg-accent-primary/20 transition-all duration-300">
                     <IconComponent className="w-5 h-5 text-accent-primary" />
@@ -193,7 +188,6 @@ export default function Skills() {
                   </div>
                 </div>
 
-                {/* Skill Bars */}
                 <div className="space-y-3">
                   {category.skills.map((skill, idx) => (
                     <SkillBar
@@ -210,7 +204,6 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Master badge */}
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 text-sm text-gray-400 border border-white/5">
             <Zap className="w-4 h-4 text-accent-primary" />

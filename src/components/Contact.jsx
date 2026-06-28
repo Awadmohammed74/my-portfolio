@@ -77,7 +77,7 @@ export default function Contact() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10">
             <Mail className="w-3.5 h-3.5" />
-            Contact Terminal
+            Contact Me
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4">
             Let's{" "}
@@ -264,7 +264,7 @@ export default function Contact() {
                   onMouseEnter={() => soundManager.playTick()}
                   className="w-full py-3 rounded-xl bg-gradient-to-r from-accent-primary to-accent-secondary hover:from-accent-primary/90 hover:to-accent-secondary/90 text-white font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent-primary/20 hover:shadow-accent-primary/40"
                 >
-                  <Send className="w-4 h-4" /> Spawn Project Brief
+                  <Send className="w-4 h-4" /> Send Message
                 </button>
               </form>
             ) : (
@@ -273,11 +273,10 @@ export default function Contact() {
                   <CheckCircle className="w-8 h-8 text-accent-primary" />
                 </div>
                 <h3 className="text-2xl font-black text-white mb-2">
-                  Message Launched!
+                  Message Sent!
                 </h3>
                 <p className="text-gray-400 text-sm max-w-sm mx-auto mb-6">
-                  Your encrypted transmission has been received. I'll decode
-                  your requirements and respond within 24 business hours.
+                  Your message has been received. I will review your requirements and respond within 24 hours.
                 </p>
                 <Sparkles className="w-12 h-12 text-accent-primary animate-pulse" />
               </div>

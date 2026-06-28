@@ -262,7 +262,7 @@ const allProjects = {
         challenge:
           "Needed a modern portfolio that reflects my technical skills in both WordPress/PHP backend and modern React frontend development. The site had to be visually stunning, performant, and show real case studies with live project links.",
         solution:
-          "Architected a single-page React app with interactive canvas background, 4 dynamic themes (Neon Blue, Cyberpunk, Emerald Grid, Electric Gold), custom cursor with spring animation, Command Palette (Ctrl+K), Matrix rain terminal effect in About section, and detailed project case studies with images and hover overlays.",
+          "Architected a single-page React app with interactive canvas background, 4 dynamic themes (Neon Blue, Cyberpunk, Emerald Grid, Electric Gold), custom cursor with spring animation, Command Palette (Ctrl+K), and detailed project case studies with images and hover overlays.",
         results:
           "Built a 90+ Lighthouse scoring portfolio with zero external backend. Features interactive particle canvas, 8 project case studies with real screenshots, and a premium glass-morphism design system that dynamically inherits theme colors via CSS variables.",
         techStack: [
