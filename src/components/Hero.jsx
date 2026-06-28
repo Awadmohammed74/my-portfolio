@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Mail, Clock, Rocket, Zap } from "lucide-react";
 
-const roles = ["WordPress Developer", "React Developer"];
+const roles = [
+  "WordPress & WooCommerce Expert",
+  "Frontend Engineer",
+  "Computer Engineering Student",
+];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -170,9 +174,11 @@ export default function Hero() {
           className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in"
           style={{ animationDelay: "0.5s" }}
         >
-          WordPress Developer with 3+ years of experience crafting
-          high-performance websites. Specialized in custom themes, plugins,
-          WooCommerce, and headless CMS solutions.
+          Computer Engineering student and full-stack web developer with 3+
+          years of professional experience. Specialized in engineering
+          full-custom WooCommerce ecosystems, premium responsive themes, custom
+          plugins, and building high-performance modern React frontend
+          applications.
         </p>
 
         {/* Theme-aware CTA Buttons */}
@@ -217,7 +223,6 @@ export default function Hero() {
               key={stat.label}
               className="group relative backdrop-blur-md bg-white/[0.02] border border-white/5 rounded-2xl p-5 sm:p-6 flex flex-col items-center justify-center gap-2 hover:border-[var(--accent-primary)]/40 hover:-translate-y-1 shadow-lg shadow-black/20 transition-all duration-400 cursor-pointer overflow-hidden"
             >
-              {/* Glow and Backdrop Layers */}
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/5 via-transparent to-[var(--accent-secondary)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-[var(--accent-primary)]/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

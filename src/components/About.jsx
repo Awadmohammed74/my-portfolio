@@ -16,7 +16,8 @@ export default function About() {
             About Me
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4">
-            Passionate About <span className="gradient-text font-black">Engineering</span>
+            Passionate About{" "}
+            <span className="gradient-text font-black">Engineering</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
         </div>
@@ -62,7 +63,7 @@ export default function About() {
                 {[
                   { name: "WordPress", icon: Code2 },
                   { name: "PHP OOP", icon: Code2 },
-                  { name: "React CMS", icon: Briefcase },
+                  { name: "React Ecosystem", icon: Briefcase },
                 ].map((item, i) => (
                   <div
                     key={item.name}
@@ -90,15 +91,15 @@ export default function About() {
                 <span className="text-accent-primary font-bold">
                   WordPress Specialist
                 </span>{" "}
-                with 3+ years of professional history developing custom
-                plugins, high-converting WooCommerce storefronts, REST API
-                automations, and optimized servers.
+                with 3+ years of professional history developing custom plugins,
+                high-converting WooCommerce storefronts, REST API automations,
+                and optimized servers.
               </p>
 
               <p className="text-gray-400 leading-relaxed text-sm">
                 I construct clean code structures combining the robust MVC/OOP
-                capabilities of PHP backend frameworks with the
-                high-performance modern user interfaces of React. Currently
+                capabilities of PHP backend frameworks with the high-performance
+                dynamic architectures of the React ecosystem. Currently
                 completing computer engineering studies at Misr Higher
                 Institute.
               </p>

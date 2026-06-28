@@ -20,8 +20,8 @@ const skillCategories = [
     title: "Frontend Engineering",
     icon: Layout,
     skills: [
-      { name: "React 19 / Single Page Apps", level: 90 },
-      { name: "State Management (Context API / Hooks)", level: 85 },
+      { name: "React Framework & Advanced Architecture", level: 90 },
+      { name: "Global State (Redux / Context / Hooks)", level: 85 },
       { name: "JavaScript ES6+ Core Logic", level: 90 },
       { name: "Tailwind CSS v4 & Responsive Grid", level: 85 },
       { name: "HTML5 / CSS3 Hardware Effects", level: 95 },
@@ -139,7 +139,7 @@ export default function Skills() {
           {[
             { id: "all", label: "All Systems", icon: Code2 },
             { id: "wordpress", label: "WordPress", icon: Globe },
-            { id: "frontend", label: "Frontend (React)", icon: Layout },
+            { id: "frontend", label: "React Ecosystem", icon: Layout },
             { id: "backend", label: "Backend", icon: Terminal },
             { id: "devops", label: "DevOps", icon: Cloud },
             { id: "seo", label: "SEO", icon: Zap },
