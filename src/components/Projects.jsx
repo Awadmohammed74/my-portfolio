@@ -99,7 +99,7 @@ const allProjects = {
         "Official website for Shams City, a UAE-based company formation and visa services provider. Built with full custom WordPress development featuring a dynamic cost calculator that automates lead generation through Make integration.",
       caseStudy: {
         challenge:
-          "Client needed a professional corporate website with an interactive cost estimation tool for business setup services. The main challenges were: creating a dynamic calculator that provides accurate cost estimates, automating the lead collection process, and maintaining high performance with complex interactive elements.",
+          "Client needed a professional corporate website with an interactive cost estimation tool for business setup services. The main challenges were: creating a dynamic calculator that provides accurate cost estimates, automation of the lead collection process, and maintaining high performance with complex interactive elements.",
         solution:
           "Developed a fully custom WordPress site with Elementor Pro. Engineered a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs in simple steps. Connected the calculator to Make (formerly Integromat) for full automation — sending detailed cost breakdowns via email and logging data to Google Sheets for the sales team.",
         results:
@@ -421,49 +421,64 @@ export default function Projects() {
               {/* Image with Overlay Buttons */}
               <div className="relative h-48 overflow-hidden">
                 <ProjectImage project={project} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/90 via-[#0a0a0f]/40 to-transparent opacity-100 transition-all duration-500" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-100 transition-all duration-500 p-3 sm:flex-row sm:flex-wrap sm:gap-2">
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(project.link, "_blank");
-                    }}
-                    className="w-full sm:w-auto px-3 py-1.5 text-white text-xs font-semibold rounded-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md cursor-pointer"
-                    style={{
-                      background: "var(--accent-primary)",
-                      boxShadow: "0 4px 12px -2px var(--accent-glow)",
-                    }}
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 shrink-0" /> Live Demo
-                  </button>
-                  {project.github && (
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/95 via-[#0a0a0f]/60 to-transparent sm:opacity-0 group-hover:opacity-100 transition-all duration-300" />
+
+                {/* الحاوية الأساسية المحسنة للموبايل والديسكتب والمانعة لأي انضغاط */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 p-4 sm:opacity-0 group-hover:opacity-100 transition-all duration-300">
+
+                  {/* الأزرار ترتب رأسيًا في الموبايل لتعطي مساحة كاملة وأفقيًا في الشاشات الأكبر */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full max-w-[180px] sm:max-w-none">
                     <button
                       onClick={(e) => {
                         e.preventDefault();
-                        window.open(project.github, "_blank");
+                        e.stopPropagation();
+                        window.open(project.link, "_blank");
                       }}
-                      className="w-full sm:w-auto px-3 py-1.5 text-white text-xs font-semibold rounded-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md cursor-pointer"
+                      className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full sm:w-auto sm:min-w-[110px]"
                       style={{
-                        background: "rgba(31, 41, 55, 0.8)",
-                        border: "1px solid rgba(255, 255, 255, 0.15)",
-                        boxShadow: "0 4px 12px -2px rgba(0, 0, 0, 0.5)",
+                        background: "var(--accent-primary)",
+                        boxShadow: "0 4px 12px -2px var(--accent-glow)",
                       }}
                     >
-                      <Github className="w-3.5 h-3.5 shrink-0" /> GitHub
+                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                      <span className="whitespace-nowrap">Live Demo</span>
                     </button>
-                  )}
+
+                    {project.github && (
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(project.github, "_blank");
+                        }}
+                        className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full sm:w-auto sm:min-w-[100px]"
+                        style={{
+                          background: "rgba(31, 41, 55, 0.8)",
+                          border: "1px solid rgba(255, 255, 255, 0.15)",
+                          boxShadow: "0 4px 12px -2px rgba(0, 0, 0, 0.5)",
+                        }}
+                      >
+                        <Github className="w-3.5 h-3.5 shrink-0" />
+                        <span className="whitespace-nowrap">GitHub</span>
+                      </button>
+                    )}
+                  </div>
+
+                  {/* زر الـ Case Study */}
                   <button
                     onClick={(e) => {
                       e.preventDefault();
+                      e.stopPropagation();
                       setSelectedProject(project);
                     }}
-                    className="w-full sm:w-auto px-3 py-1.5 text-white text-xs font-semibold rounded-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md cursor-pointer"
+                    className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full max-w-[180px] sm:w-auto sm:min-w-[115px]"
                     style={{
                       background: "var(--accent-secondary)",
                       boxShadow: "0 4px 12px -2px var(--accent-glow)",
                     }}
                   >
-                    <FileText className="w-3.5 h-3.5 shrink-0" /> Case Study
+                    <FileText className="w-3.5 h-3.5 shrink-0" />
+                    <span className="whitespace-nowrap">Case Study</span>
                   </button>
                 </div>
               </div>
@@ -509,7 +524,6 @@ export default function Projects() {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        window.open(project.github, "_blank");
                       }}
                       className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
                     >
