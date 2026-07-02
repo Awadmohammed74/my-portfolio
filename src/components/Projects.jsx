@@ -422,19 +422,19 @@ export default function Projects() {
               <div className="relative h-48 overflow-hidden">
                 <ProjectImage project={project} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/90 via-[#0a0a0f]/40 to-transparent opacity-100 transition-all duration-500" />
-                <div className="absolute inset-0 flex flex-wrap items-center justify-center gap-2 opacity-100 transition-all duration-500 p-2">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-100 transition-all duration-500 p-3 sm:flex-row sm:flex-wrap sm:gap-2">
                   <button
                     onClick={(e) => {
                       e.preventDefault();
                       window.open(project.link, "_blank");
                     }}
-                    className="px-3 py-1.5 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80 cursor-pointer"
+                    className="w-full sm:w-auto px-3 py-1.5 text-white text-xs font-semibold rounded-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md cursor-pointer"
                     style={{
                       background: "var(--accent-primary)",
                       boxShadow: "0 4px 12px -2px var(--accent-glow)",
                     }}
                   >
-                    <ExternalLink className="w-3.5 h-3.5" /> Live Demo
+                    <ExternalLink className="w-3.5 h-3.5 shrink-0" /> Live Demo
                   </button>
                   {project.github && (
                     <button
@@ -442,14 +442,14 @@ export default function Projects() {
                         e.preventDefault();
                         window.open(project.github, "_blank");
                       }}
-                      className="px-3 py-1.5 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80 cursor-pointer"
+                      className="w-full sm:w-auto px-3 py-1.5 text-white text-xs font-semibold rounded-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md cursor-pointer"
                       style={{
                         background: "rgba(31, 41, 55, 0.8)",
                         border: "1px solid rgba(255, 255, 255, 0.15)",
                         boxShadow: "0 4px 12px -2px rgba(0, 0, 0, 0.5)",
                       }}
                     >
-                      <Github className="w-3.5 h-3.5" /> GitHub
+                      <Github className="w-3.5 h-3.5 shrink-0" /> GitHub
                     </button>
                   )}
                   <button
@@ -457,53 +457,53 @@ export default function Projects() {
                       e.preventDefault();
                       setSelectedProject(project);
                     }}
-                    className="px-3 py-1.5 text-white text-xs sm:text-sm font-semibold rounded-md flex items-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md bg-opacity-80 cursor-pointer"
+                    className="w-full sm:w-auto px-3 py-1.5 text-white text-xs font-semibold rounded-md flex items-center justify-center gap-1.5 transition-all duration-300 hover:scale-105 backdrop-blur-md cursor-pointer"
                     style={{
                       background: "var(--accent-secondary)",
                       boxShadow: "0 4px 12px -2px var(--accent-glow)",
                     }}
                   >
-                    <FileText className="w-3.5 h-3.5" /> Case Study
+                    <FileText className="w-3.5 h-3.5 shrink-0" /> Case Study
                   </button>
                 </div>
               </div>
 
               {/* Card Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div
                   className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white font-bold text-lg mb-4 group-hover:scale-110 transition-transform duration-300 -mt-16 relative z-10 shadow-xl`}
                 >
                   {project.title[0]}
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent-primary transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
                   {project.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-3 py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 transition-all"
+                      className="text-[10px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 transition-all"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between mt-4">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-0 sm:justify-between mt-4">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(project.link, "_blank");
                     }}
-                    className="flex items-center gap-2 text-sm text-accent-primary group-hover:text-accent-secondary transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-accent-primary group-hover:text-accent-secondary transition-colors cursor-pointer"
                   >
                     <span>View Website</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                   {project.github && (
                     <button
@@ -511,9 +511,9 @@ export default function Projects() {
                         e.stopPropagation();
                         window.open(project.github, "_blank");
                       }}
-                      className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+                      className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       <span>GitHub</span>
                     </button>
                   )}
