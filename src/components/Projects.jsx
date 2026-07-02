@@ -314,6 +314,9 @@ export default function Projects() {
 
   const filteredProjects = allProjects[activeTab].filter((p) => {
     if (activeTab === "react") return true;
+    return p.category === p.category; // الحفاظ على الشرط الأصلي
+  }).filter((p) => {
+    if (activeTab === "react") return true;
     return p.category === subFilter;
   });
 
@@ -421,13 +424,13 @@ export default function Projects() {
               {/* Image with Overlay Buttons */}
               <div className="relative h-48 overflow-hidden">
                 <ProjectImage project={project} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/95 via-[#0a0a0f]/60 to-transparent sm:opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/95 via-[#0a0a0f]/75 to-transparent transition-all duration-300" />
 
-                {/* الحاوية الأساسية المحسنة للموبايل والديسكتب والمانعة لأي انضغاط */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 p-4 sm:opacity-0 group-hover:opacity-100 transition-all duration-300">
+                {/* الحاوية الأساسية المحسنة - ثابتة وظاهرة دائماً من غير هوفر */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 p-4 transition-all duration-300">
 
-                  {/* الأزرار ترتب رأسيًا في الموبايل لتعطي مساحة كاملة وأفقيًا في الشاشات الأكبر */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full max-w-[180px] sm:max-w-none">
+                  {/* الأزرار ترتب رأسيًا في الموبايل بعرض أصغر (145px) ومتباعدة بـ gap-2، وفي الديسكتب طبيعية */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 w-full max-w-[145px] sm:max-w-none">
                     <button
                       onClick={(e) => {
                         e.preventDefault();
@@ -464,14 +467,14 @@ export default function Projects() {
                     )}
                   </div>
 
-                  {/* زر الـ Case Study */}
+                  {/* زر الـ Case Study ملموم ومحدد على الموبايل بـ max-w-[145px] */}
                   <button
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
                       setSelectedProject(project);
                     }}
-                    className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full max-w-[180px] sm:w-auto sm:min-w-[115px]"
+                    className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full max-w-[145px] sm:w-auto sm:min-w-[115px]"
                     style={{
                       background: "var(--accent-secondary)",
                       boxShadow: "0 4px 12px -2px var(--accent-glow)",
@@ -509,7 +512,8 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 sm:gap-0 sm:justify-between mt-4">
+                {/* الحاوية السفلية - Space Between كامل */}
+                <div className="flex items-center justify-between w-full mt-4">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -524,6 +528,7 @@ export default function Projects() {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
+                        window.open(project.github, "_blank");
                       }}
                       className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
                     >
