@@ -1,13 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  Globe,
-  Layout,
-  Terminal,
-  Cloud,
-  Zap,
-  Code2,
-  Download,
-} from "lucide-react";
+import { Globe, Layout, Terminal, Cloud, Zap, Code2, Download } from "lucide-react";
 import { soundManager } from "../utils/sound";
 
 const skillCategories = [

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Mail, Clock, Rocket, Zap } from "lucide-react";
+import { ArrowRight, Mail, Clock, Rocket, Zap, Download } from "lucide-react";
 
 const roles = ["WordPress & WooCommerce Expert", "Frontend Engineer"];
 
@@ -194,12 +194,13 @@ export default function Hero() {
             </span>
           </a>
           <a
-            href="#contact"
+            href="/assets/Awad_Resme.pdf"
+            download
             className="px-8 py-3.5 rounded-full font-semibold text-white text-base border transition-all duration-300 hover:scale-105 active:scale-95 glass"
             style={{ borderColor: "var(--accent-border)" }}
           >
             <span className="flex items-center gap-2">
-              Get In Touch <Mail className="w-4 h-4" />
+              Download CV <Download className="w-4 h-4" />
             </span>
           </a>
         </div>
