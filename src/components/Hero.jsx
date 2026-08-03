@@ -211,9 +211,9 @@ export default function Hero() {
           style={{ animationDelay: "0.9s" }}
         >
           {[
-            { value: "+3", label: "Years Exp", icon: Clock },
-            { value: "+20", label: "Projects", icon: Rocket },
-            { value: "+90", label: "Lighthouse", icon: Zap },
+            { value: "3+", label: "Years Exp", icon: Clock },
+            { value: "20+", label: "Projects", icon: Rocket },
+            { value: "90+", label: "Lighthouse", icon: Zap },
           ].map((stat) => (
             <div
               key={stat.label}
