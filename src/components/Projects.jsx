@@ -345,15 +345,11 @@ export default function Projects() {
   const [subFilter, setSubFilter] = useState("corporate");
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = allProjects[activeTab]
-    .filter((p) => {
-      if (activeTab === "react") return true;
-      return p.category === p.category; // الحفاظ على الشرط الأصلي
-    })
-    .filter((p) => {
-      if (activeTab === "react") return true;
-      return p.category === subFilter;
-    });
+  // تبسيط وتصحيح منطق الفلترة
+  const filteredProjects = allProjects[activeTab].filter((p) => {
+    if (activeTab === "react") return true;
+    return p.category === subFilter;
+  });
 
   const wordpressCounts = {
     corporate: allProjects.wordpress.filter((p) => p.category === "corporate")
@@ -394,7 +390,11 @@ export default function Projects() {
                 setActiveTab("wordpress");
                 setSubFilter("corporate");
               }}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === "wordpress" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                activeTab === "wordpress"
+                  ? "bg-accent-primary text-white shadow-lg"
+                  : "text-gray-400 hover:text-white"
+              }`}
             >
               <Globe className="w-4 h-4" />
               <span>WordPress ({allProjects.wordpress.length})</span>
@@ -404,7 +404,11 @@ export default function Projects() {
                 setActiveTab("react");
                 setSubFilter("corporate");
               }}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${activeTab === "react" ? "bg-accent-primary text-white shadow-lg" : "text-gray-400 hover:text-white"}`}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                activeTab === "react"
+                  ? "bg-accent-primary text-white shadow-lg"
+                  : "text-gray-400 hover:text-white"
+              }`}
             >
               <Code className="w-4 h-4" />
               <span>React ({allProjects.react.length})</span>
@@ -432,7 +436,11 @@ export default function Projects() {
               <button
                 key={filter.id}
                 onClick={() => setSubFilter(filter.id)}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 backdrop-blur-md cursor-pointer ${subFilter === filter.id ? "text-white border border-accent-primary/60 bg-white/15 shadow-md shadow-accent-primary/5" : "text-gray-300 hover:text-white bg-white/[0.04] border border-white/10"}`}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 backdrop-blur-md cursor-pointer ${
+                  subFilter === filter.id
+                    ? "text-white border border-accent-primary/60 bg-white/15 shadow-md shadow-accent-primary/5"
+                    : "text-gray-300 hover:text-white bg-white/[0.04] border border-white/10"
+                }`}
               >
                 <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-primary" />
                 <span>{filter.label}</span>
@@ -461,9 +469,7 @@ export default function Projects() {
                 <ProjectImage project={project} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/95 via-[#0a0a0f]/75 to-transparent transition-all duration-300" />
 
-                {/* الحاوية الأساسية المحسنة - ثابتة وظاهرة دائماً من غير هوفر */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 p-4 transition-all duration-300">
-                  {/* الأزرار ترتب رأسيًا في الموبايل بعرض أصغر (145px) ومتباعدة بـ gap-2، وفي الديسكتب طبيعية */}
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-2 w-full max-w-[145px] sm:max-w-none">
                     <button
                       onClick={(e) => {
@@ -501,7 +507,6 @@ export default function Projects() {
                     )}
                   </div>
 
-                  {/* زر الـ Case Study ملموم ومحدد على الموبايل بـ max-w-[145px] */}
                   <button
                     onClick={(e) => {
                       e.preventDefault();
@@ -546,17 +551,17 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* الحاوية السفلية - Space Between كامل */}
-                <div className="flex items-center justify-between w-full mt-4">
+                {/* Card Footer Actions */}
+                <div className="flex items-center justify-between w-full mt-4 pt-4 border-t border-white/5">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(project.link, "_blank");
                     }}
-                    className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-accent-primary group-hover:text-accent-secondary transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs text-accent-primary hover:text-accent-secondary transition-colors cursor-pointer"
                   >
                     <span>View Website</span>
-                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </button>
                   {project.github && (
                     <button
@@ -564,31 +569,26 @@ export default function Projects() {
                         e.stopPropagation();
                         window.open(project.github, "_blank");
                       }}
-                      className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+                      className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors cursor-pointer"
                     >
-                      <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                      <span>GitHub</span>
+                      <Github className="w-3.5 h-3.5" />
+                      <span>Repository</span>
                     </button>
                   )}
                 </div>
               </div>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent-primary/10 rounded-full blur-3xl" />
-                <div className="absolute -top-20 -left-20 w-40 h-40 bg-accent-secondary/10 rounded-full blur-3xl" />
-              </div>
             </div>
           ))}
         </div>
-
-        {selectedProject && (
-          <ProjectModal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
       </div>
+
+      {/* Render Modal if project is selected */}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }
