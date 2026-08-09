@@ -44,6 +44,7 @@ const skillCategories = [
       { name: "PHP OOP / MVC Abstractions", level: 90 },
       { name: "MySQL Database Relational Schema", level: 85 },
       { name: "REST API Design & Webhooks", level: 88 },
+      { name: "Postman API Testing & Automation", level: 88 }, // <-- تم الإضافة هنا
       { name: "Linux Bash CLI & Shell Automation", level: 78 },
     ],
   },
@@ -60,9 +61,10 @@ const skillCategories = [
   },
   {
     id: "firebase",
-    title: "Firebase & Auth",
+    title: "Firebase, Supabase & Auth", // <-- تم تحديث العنوان ليناسب المهارة الجديدة
     icon: Cloud,
     skills: [
+      { name: "Supabase PostgreSQL, Auth & Realtime", level: 85 }, // <-- تم الإضافة هنا
       { name: "Firebase Realtime Database & Firestore", level: 85 },
       { name: "Firebase Authentication (Email, Google, Phone)", level: 88 },
       { name: "Firebase Cloud Messaging (FCM)", level: 80 },
