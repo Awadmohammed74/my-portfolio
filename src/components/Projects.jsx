@@ -264,7 +264,7 @@ const allProjects = {
     {
       title: "Awad Mohammed Portfolio",
       desc: "My personal portfolio built with React 19 + Tailwind CSS v4. Features interactive backgrounds, theme switcher, case studies, and a command palette.",
-      tags: ["React", "Tailwind CSS", "Vite", "Lucide", "Netlify"],
+      tags: ["React", "Tailwind CSS", "Vite", "Lucide", "Vercel"],
       color: "from-blue-600 to-cyan-400",
       image: "/assets/my-portfolio.png",
       fallback: "⚛️",
@@ -279,7 +279,7 @@ const allProjects = {
         solution:
           "Architected a single-page React app with interactive canvas background, 4 dynamic themes (Neon Blue, Cyberpunk, Emerald Grid, Electric Gold), custom cursor with spring animation, Command Palette (Ctrl+K), and detailed project case studies with images and hover overlays.",
         results:
-          "Built a 90+ Lighthouse scoring portfolio with zero external backend. Features interactive particle canvas, 8 project case studies with real screenshots, and a premium glass-morphism design system that dynamically inherits theme colors via CSS variables.",
+          "Built a 90+ Lighthouse scoring portfolio deployed on Vercel with zero external backend. Features interactive particle canvas, 8 project case studies with real screenshots, and a premium glass-morphism design system that dynamically inherits theme colors via CSS variables.",
         techStack: [
           "React 19",
           "Tailwind CSS v4",
@@ -287,7 +287,7 @@ const allProjects = {
           "Lucide React",
           "CSS Variables",
           "Canvas API",
-          "Netlify",
+          "Vercel",
         ],
       },
     },
