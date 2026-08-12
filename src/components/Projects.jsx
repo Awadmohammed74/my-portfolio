@@ -24,6 +24,34 @@ function Github({ className, ...props }) {
 const allProjects = {
   wordpress: [
     {
+      title: "Khaleej Tech",
+      desc: "Digital marketing agency website in UAE. Custom Gutenberg development with dynamic portfolio showcase and interactive service blocks.",
+      tags: ["WordPress", "Gutenberg", "Digital Marketing", "UAE", "Portfolio"],
+      color: "from-indigo-500 to-violet-600",
+      image: "/assets/khaleejtech.jpg",
+      fallback: "💼",
+      link: "https://khaleejtech.ae",
+      category: "corporate",
+      fullDesc:
+        "Official website for Khaleej Tech, a UAE-based digital marketing and technology services company. Built with custom Gutenberg blocks and custom HTML/CSS/JS sections featuring a dynamic portfolio section, interactive service tabs, and modern animations.",
+      caseStudy: {
+        challenge:
+          "The client needed a modern digital agency website that showcases their portfolio, services, and expertise in the competitive UAE digital market. Key challenges included: creating dynamic service presentation sections, building an interactive portfolio showcase, and ensuring the site reflects the agency's own digital capabilities.",
+        solution:
+          "Developed using WordPress with custom Gutenberg blocks and tailored HTML/CSS/JS code sections instead of page builders for optimal performance. Created dynamic tab sections for presenting services interactively, built a professional portfolio section showcasing client work, added custom JavaScript for smooth animations and sliders, and optimized for SEO and speed.",
+        results:
+          "Delivered a lightweight, ultra-fast, and secure digital agency website that effectively showcases Khaleej Tech's capabilities. The clean custom codebase provides an engaging user experience that builds trust with potential clients and demonstrates the company's technical expertise.",
+        techStack: [
+          "WordPress",
+          "Gutenberg",
+          "Custom HTML/CSS",
+          "Custom JavaScript",
+          "SEO",
+          "Performance Optimization",
+        ],
+      },
+    },
+    {
       title: "MIVANO Interior",
       desc: "Luxury interior design & finishing company website in UAE. Full custom WordPress development from Figma to WordPress with bilingual support (Arabic/English).",
       tags: [
@@ -116,33 +144,6 @@ const allProjects = {
           "Make Automation",
           "Google Sheets",
           "SEO",
-        ],
-      },
-    },
-    {
-      title: "Khaleej Tech",
-      desc: "Digital marketing agency website in UAE. Full custom WordPress development with dynamic portfolio showcase and interactive service tabs.",
-      tags: ["WordPress", "Elementor", "Digital Marketing", "UAE", "Portfolio"],
-      color: "from-indigo-500 to-violet-600",
-      image: "/assets/khaleejtech.jpg",
-      fallback: "💼",
-      link: "https://khaleejtech.ae",
-      category: "corporate",
-      fullDesc:
-        "Official website for Khaleej Tech, a UAE-based digital marketing and technology services company. Built with full custom WordPress development featuring a dynamic portfolio section, interactive service tabs, and modern animations.",
-      caseStudy: {
-        challenge:
-          "The client needed a modern digital agency website that showcases their portfolio, services, and expertise in the competitive UAE digital market. Key challenges included: creating dynamic service presentation sections, building an interactive portfolio showcase, and ensuring the site reflects the agency's own digital capabilities.",
-        solution:
-          "Developed using WordPress + Elementor with full customization. Created dynamic Tab sections for presenting services interactively, built a professional Portfolio section showcasing client work, added custom JavaScript for smooth animations and sliders, and optimized for SEO and performance.",
-        results:
-          "Delivered a professional, fast, and secure digital agency website that effectively showcases Khaleej Tech's capabilities. The dynamic portfolio and interactive service tabs provide an engaging user experience that builds trust with potential clients and demonstrates the company's technical expertise.",
-        techStack: [
-          "WordPress",
-          "Elementor",
-          "Custom JavaScript",
-          "SEO",
-          "Performance Optimization",
         ],
       },
     },
