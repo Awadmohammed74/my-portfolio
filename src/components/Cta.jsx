@@ -20,9 +20,7 @@ function TechMarquee() {
     if (!track) return;
 
     // JS-driven rAF marquee — runs reliably on mobile regardless of
-    // OS-level "reduce animations" CSS behavior. Pause when off-screen
-    // or when the user explicitly prefers reduced motion.
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // OS-level animation settings. Pauses only when off-screen to save battery.
     let raf = 0;
     let x = 0;
     let half = track.scrollWidth / 2;
@@ -46,7 +44,7 @@ function TechMarquee() {
     const tick = (now) => {
       const dt = now - last;
       last = now;
-      if (visible && !media.matches) {
+      if (visible) {
         x -= dt * 0.035; // px per ms
         if (half > 0 && -x >= half) x += half;
         track.style.transform = `translate3d(${x}px, 0, 0)`;
