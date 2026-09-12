@@ -79,18 +79,18 @@ export default function Navbar() {
         >
           <span className="relative block h-3.5 w-5">
             <span
-              className={`absolute left-0 top-0 h-0.5 w-full bg-ink transition-all duration-300 ${
-                open ? "top-1.5 rotate-45" : ""
+              className={`absolute left-0 top-[6px] h-0.5 w-full bg-ink transition-transform duration-300 ${
+                open ? "rotate-45" : "-translate-y-[6px]"
               }`}
             />
             <span
-              className={`absolute left-0 top-1.5 h-0.5 w-full bg-ink transition-all duration-300 ${
+              className={`absolute left-0 top-[6px] h-0.5 w-full bg-ink transition-[opacity,transform] duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`absolute left-0 top-3 h-0.5 w-full bg-ink transition-all duration-300 ${
-                open ? "top-1.5 -rotate-45" : ""
+              className={`absolute left-0 top-[6px] h-0.5 w-full bg-ink transition-transform duration-300 ${
+                open ? "-rotate-45" : "translate-y-[6px]"
               }`}
             />
           </span>
@@ -116,6 +116,15 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li className="mt-2">
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="btn btn-accent w-full justify-center text-sm"
+            >
+              Let&apos;s Talk
+            </a>
+          </li>
         </ul>
       </div>
     </header>
