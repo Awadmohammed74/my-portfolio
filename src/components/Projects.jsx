@@ -1,25 +1,5 @@
-import { useState } from "react";
-import {
-  ExternalLink,
-  FileText,
-  Globe,
-  ShoppingCart,
-  Code,
-} from "lucide-react";
-import ProjectModal from "./ProjectModal";
-
-function Github({ className, ...props }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      {...props}
-    >
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-    </svg>
-  );
-}
+import { useEffect, useState } from "react";
+import { ArrowUpRight, BookOpenText, X } from "lucide-react";
 
 const allProjects = {
   wordpress: [
@@ -27,9 +7,7 @@ const allProjects = {
       title: "Khaleej Tech",
       desc: "Digital marketing agency website in UAE. Custom Gutenberg development with dynamic portfolio showcase and interactive service blocks.",
       tags: ["WordPress", "Gutenberg", "Digital Marketing", "UAE", "Portfolio"],
-      color: "from-indigo-500 to-violet-600",
       image: "/assets/khaleejtech.jpg",
-      fallback: "💼",
       link: "https://khaleejtech.ae",
       category: "corporate",
       fullDesc:
@@ -41,29 +19,14 @@ const allProjects = {
           "Developed using WordPress with custom Gutenberg blocks and tailored HTML/CSS/JS code sections instead of page builders for optimal performance. Created dynamic tab sections for presenting services interactively, built a professional portfolio section showcasing client work, added custom JavaScript for smooth animations and sliders, and optimized for SEO and speed.",
         results:
           "Delivered a lightweight, ultra-fast, and secure digital agency website that effectively showcases Khaleej Tech's capabilities. The clean custom codebase provides an engaging user experience that builds trust with potential clients and demonstrates the company's technical expertise.",
-        techStack: [
-          "WordPress",
-          "Gutenberg",
-          "Custom HTML/CSS",
-          "Custom JavaScript",
-          "SEO",
-          "Performance Optimization",
-        ],
+        techStack: ["WordPress", "Gutenberg", "Custom HTML/CSS", "Custom JavaScript", "SEO", "Performance Optimization"],
       },
     },
     {
       title: "MIVANO Interior",
-      desc: "Luxury interior design & finishing company website in UAE. Full custom WordPress development from Figma to WordPress with bilingual support (Arabic/English).",
-      tags: [
-        "WordPress",
-        "Elementor Pro",
-        "Arabic/English",
-        "Interior Design",
-        "UAE",
-      ],
-      color: "from-amber-500 to-orange-600",
+      desc: "Luxury interior design & finishing company website in UAE. Full custom WordPress development from Figma with bilingual support (Arabic/English).",
+      tags: ["WordPress", "Elementor Pro", "Arabic/English", "Interior Design", "UAE"],
       image: "/assets/mivanointerior.jpg",
-      fallback: "🏛️",
       link: "https://mivanointerior.com",
       category: "corporate",
       fullDesc:
@@ -75,57 +38,33 @@ const allProjects = {
           "Built a fully custom WordPress site using Elementor Pro with pixel-perfect Figma conversion. Implemented full bilingual support with RTL/LTR direction switching, dynamic service pages for each design category, interactive project galleries with modern animations, and integrated professional contact forms with strategic CTAs for lead generation.",
         results:
           "Delivered a luxury, fast, and secure bilingual digital platform that effectively represents MIVANO's brand in the UAE market. The site showcases services professionally with smooth animations and sliders, achieving high engagement rates and increased consultation requests through optimized lead generation forms.",
-        techStack: [
-          "WordPress",
-          "Elementor Pro",
-          "JavaScript",
-          "Figma to WordPress",
-          "SEO",
-          "RTL/LTR",
-        ],
+        techStack: ["WordPress", "Elementor Pro", "JavaScript", "Figma to WordPress", "SEO", "RTL/LTR"],
       },
     },
     {
       title: "Speed Solutions",
-      desc: "Financial consulting & company formation services website in UAE. Full custom WordPress development with bilingual support and interactive lead generation.",
-      tags: [
-        "WordPress",
-        "Elementor Pro",
-        "Financial Consulting",
-        "UAE",
-        "RTL/LTR",
-      ],
-      color: "from-blue-600 to-cyan-500",
+      desc: "Financial consulting & company formation services website in UAE. Full custom WordPress with bilingual support and interactive lead generation.",
+      tags: ["WordPress", "Elementor Pro", "Financial Consulting", "UAE", "RTL/LTR"],
       image: "/assets/speed-solution.png",
-      fallback: "📊",
       link: "https://speedsolution.ae",
       category: "corporate",
       fullDesc:
-        "Designed and developed the official website for Speed Solutions, a UAE-based company specializing in business formation, financial auditing, and tax solutions. The project involved a complete Figma-to-WordPress conversion with full customization, bilingual support, and optimized user experience for investors and entrepreneurs.",
+        "Designed and developed the official website for Speed Solutions, a UAE-based company specializing in business formation, financial auditing, and tax solutions. The project involved a complete Figma-to-WordPress conversion with full customization, bilingual support, and optimized user experience.",
       caseStudy: {
         challenge:
-          "The client needed a professional digital platform targeting investors and entrepreneurs in the UAE market with a seamless bilingual user experience. Key challenges included: converting a complex Figma design with multiple service pages, building a bilingual site with perfect RTL/LTR compatibility, and creating an effective lead generation system for consultation requests.",
+          "The client needed a professional digital platform targeting investors and entrepreneurs in the UAE market with a seamless bilingual user experience. Key challenges included: converting a complex Figma design with multiple service pages, building a bilingual site with perfect RTL/LTR compatibility, and creating an effective lead generation system.",
         solution:
-          "Built a fully custom WordPress site using Elementor Pro with pixel-perfect Figma conversion. Implemented full bilingual support (Arabic/English) with RTL/LTR compatibility, created dedicated service pages for each corporate offering, integrated advanced lead generation forms for free consultations, and added custom JavaScript for smooth animations and sliders.",
+          "Built a fully custom WordPress site using Elementor Pro with pixel-perfect Figma conversion. Implemented full bilingual support (Arabic/English) with RTL/LTR compatibility, created dedicated service pages for each corporate offering, integrated advanced lead generation forms, and added custom JavaScript for smooth animations and sliders.",
         results:
           "Delivered a premium, fast, and secure bilingual website that clearly showcases Speed Solutions' services in the UAE market. The site effectively builds trust with entrepreneurs, resulting in increased conversion rates and consultation requests.",
-        techStack: [
-          "WordPress",
-          "Elementor Pro",
-          "JavaScript",
-          "Figma to WordPress",
-          "SEO",
-          "Performance Optimization",
-        ],
+        techStack: ["WordPress", "Elementor Pro", "JavaScript", "Figma to WordPress", "SEO", "Performance Optimization"],
       },
     },
-    {
+{
       title: "Shams City",
       desc: "Company formation & visa services website in UAE. Full custom WordPress with interactive cost calculator and automated lead generation via Make.",
       tags: ["WordPress", "Elementor", "Business Setup", "UAE", "Automation"],
-      color: "from-blue-600 to-cyan-500",
       image: "/assets/shams city.png",
-      fallback: "🏢",
       link: "https://shamscity.com",
       category: "corporate",
       fullDesc:
@@ -137,23 +76,14 @@ const allProjects = {
           "Developed a fully custom WordPress site with Elementor Pro. Engineered a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs in simple steps. Connected the calculator to Make (formerly Integromat) for full automation — sending detailed cost breakdowns via email and logging data to Google Sheets for the sales team.",
         results:
           "Delivered a fast, secure, and interactive corporate website with a fully automated lead generation system. The cost calculator significantly improves user engagement and conversion rates, while the automation pipeline streamlines the sales process and data management.",
-        techStack: [
-          "WordPress",
-          "Elementor Pro",
-          "Custom JavaScript",
-          "Make Automation",
-          "Google Sheets",
-          "SEO",
-        ],
+        techStack: ["WordPress", "Elementor Pro", "Custom JavaScript", "Make Automation", "Google Sheets", "SEO"],
       },
     },
     {
       title: "Pyramids Zone",
       desc: "Legal consulting & company formation landing page in Egypt. Full custom WordPress with interactive cost calculator and email automation.",
       tags: ["WordPress", "Landing Page", "Legal", "Egypt", "Automation"],
-      color: "from-purple-600 to-pink-500",
       image: "/assets/pyramids-zone.png",
-      fallback: "⚖️",
       link: "https://pyramidszone.com",
       category: "corporate",
       fullDesc:
@@ -162,55 +92,36 @@ const allProjects = {
         challenge:
           "Client needed a professional landing page with an interactive cost estimation tool for company formation services in Egypt. Main challenges were: converting a complex Figma design with multiple interactive elements, building a dynamic calculator supporting EGP and USD currencies, and automating the lead follow-up process.",
         solution:
-          "Built a fully custom WordPress landing page using Elementor Pro. Developed a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs instantly in both EGP and USD. Connected the calculator to SMTP email automation for automatic lead data collection and cost breakdown delivery to prospects.",
+          "Built a fully custom WordPress landing page using Elementor Pro. Developed a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs instantly in both EGP and USD. Connected the calculator to SMTP email automation for automatic lead data collection and cost breakdown delivery.",
         results:
           "Delivered a high-converting, fast, and interactive landing page with a fully automated lead generation system. The cost calculator significantly increases visitor engagement and conversion rates, while the email automation pipeline enables the sales team to follow up with qualified leads instantly.",
-        techStack: [
-          "WordPress",
-          "Elementor Pro",
-          "Custom JavaScript",
-          "SMTP Automation",
-          "Figma to WordPress",
-          "SEO",
-        ],
+        techStack: ["WordPress", "Elementor Pro", "Custom JavaScript", "SMTP Automation", "Figma to WordPress", "SEO"],
       },
     },
-    {
+{
       title: "Tmayoz Store",
-      desc: "High-converting WooCommerce e-commerce store in Egypt with full custom development. Features urgency engine, smart cross-selling, and WhatsApp instant checkout.",
+      desc: "High-converting WooCommerce e-commerce store in Egypt with full custom development. Features urgency engine, smart cross-selling, and WhatsApp checkout.",
       tags: ["WooCommerce", "E-commerce", "Egypt", "Full Custom", "Automation"],
-      color: "from-green-600 to-emerald-500",
       image: "/assets/tmayoz.png",
-      fallback: "🛒",
       link: "https://tmayoz.com",
       category: "ecommerce",
       fullDesc:
         "Designed and developed a professional WooCommerce e-commerce store for 'Tmayoz' in Egypt with full custom development. Features include a golden countdown urgency engine, smart cross-selling system, geolocation address fill, dynamic tax incentives, and WhatsApp instant checkout loop — all built with custom PHP/JS.",
       caseStudy: {
         challenge:
-          "Client needed a high-converting e-commerce store in the Egyptian market with advanced features to reduce cart abandonment and increase conversion rates. Main challenges included: building a custom urgency system, creating smart cross-selling that respects cart contents, automating checkout processes, and implementing dynamic tax calculations.",
+          "Client needed a high-converting e-commerce store in the Egyptian market with advanced features to reduce cart abandonment and increase conversion rates. Main challenges included: building a custom urgency system, creating smart cross-selling that respects cart contents, automating checkout processes, and dynamic tax calculations.",
         solution:
           "Built a fully custom WooCommerce store using WoodMart + Elementor with custom PHP/JS snippets and hooks. Implemented: a floating golden countdown timer on product cards (urgency engine), smart cross-selling widget with auto-exclusion of cart items, HTML5 geolocation for auto-filling shipping addresses, dynamic tax adjustment system using MutationObserver API, and WhatsApp instant checkout integration on the thank-you page.",
         results:
           "Delivered a highly automated, conversion-optimized e-commerce store in the Egyptian market. The urgency engine and smart cross-selling features significantly reduce cart abandonment. The geolocation and WhatsApp checkout minimize friction in the buying process, while the dynamic tax system provides real-time savings visibility to customers.",
-        techStack: [
-          "WooCommerce",
-          "WoodMart",
-          "Elementor",
-          "Custom PHP",
-          "Custom JavaScript",
-          "WhatsApp API",
-          "Geolocation API",
-        ],
+        techStack: ["WooCommerce", "WoodMart", "Elementor", "Custom PHP", "Custom JavaScript", "WhatsApp API", "Geolocation API"],
       },
     },
-    {
+{
       title: "The Sun Shop",
       desc: "WooCommerce e-commerce store for a UAE business with customized shop layout and user experience improvements.",
       tags: ["WooCommerce", "E-commerce", "UX/UI", "UAE"],
-      color: "from-yellow-500 to-amber-600",
       image: "/assets/the sun shop.png",
-      fallback: "🛍️",
       link: "https://thesunshop.ae",
       category: "ecommerce",
       fullDesc:
@@ -222,22 +133,14 @@ const allProjects = {
           "Developed custom WooCommerce templates, implemented AJAX-based product filtering, added wishlist functionality, and optimized the checkout flow. Integrated with local shipping providers.",
         results:
           "Achieved 90+ Lighthouse score with 50% improvement in page load speed. Increased conversion rate by 25% within the first month of launch.",
-        techStack: [
-          "WooCommerce",
-          "Custom Theme",
-          "AJAX Filtering",
-          "MySQL",
-          "REST API",
-        ],
+        techStack: ["WooCommerce", "Custom Theme", "AJAX Filtering", "MySQL", "REST API"],
       },
     },
     {
       title: "Cofeano Store",
       desc: "Bilingual WooCommerce store (Arabic & English) for a UAE brand with customized product pages and store layout.",
       tags: ["WooCommerce", "Arabic/English", "Product Pages", "UAE"],
-      color: "from-amber-500 to-orange-600",
       image: "/assets/cofeano website.png",
-      fallback: "☕",
       link: "https://cofeano.com",
       category: "ecommerce",
       fullDesc:
@@ -249,25 +152,16 @@ const allProjects = {
           "I customized WooCommerce with WPML for bilingual content, built custom product page templates with Elementor, and integrated local payment gateways. The design was optimized for mobile-first experience with fast loading times.",
         results:
           "Successfully launched a fully functional bilingual store with 40% faster page load times, achieving 92/100 Lighthouse performance score. The store now handles 200+ daily visitors with 15% conversion rate.",
-        techStack: [
-          "WooCommerce",
-          "WPML",
-          "PHP",
-          "Elementor",
-          "Custom CSS",
-          "Payment Gateway Integration",
-        ],
+        techStack: ["WooCommerce", "WPML", "PHP", "Elementor", "Custom CSS", "Payment Gateway Integration"],
       },
     },
   ],
-  react: [
+react: [
     {
       title: "Awad Mohammed Portfolio",
-      desc: "My personal portfolio built with React 19 + Tailwind CSS v4. Features interactive backgrounds, theme switcher, case studies, and a command palette.",
-      tags: ["React", "Tailwind CSS", "Vite", "Lucide", "Vercel"],
-      color: "from-blue-600 to-cyan-400",
+      desc: "Personal portfolio built with React 19 + Tailwind CSS v4. Fast, minimal, and mobile-first.",
+      tags: ["React", "Tailwind CSS", "Vite", "Vercel"],
       image: "/assets/my-portfolio.png",
-      fallback: "⚛️",
       link: "https://awad-portfolio-umber.vercel.app/",
       github: "https://github.com/Awadmohammed74/my-portfolio",
       category: "react",
@@ -275,29 +169,19 @@ const allProjects = {
         "A premium interactive portfolio website showcasing my work as a WordPress & React developer. Built from scratch using React 19, Tailwind CSS v4, and Vite 6 for blazing-fast performance.",
       caseStudy: {
         challenge:
-          "Needed a modern portfolio that reflects my technical skills in both WordPress/PHP backend and modern React frontend development. The site had to be visually stunning, performant, and show real case studies with live project links.",
+          "Needed a modern portfolio that reflects technical skills in both WordPress/PHP backend and React frontend development. The site had to be fast, accessible, and show real case studies with live links.",
         solution:
-          "Architected a single-page React app with interactive canvas background, 4 dynamic themes (Neon Blue, Cyberpunk, Emerald Grid, Electric Gold), custom cursor with spring animation, Command Palette (Ctrl+K), and detailed project case studies with images and hover overlays.",
+          "Architected a single-page React app with a clean, semantic, mobile-first design system, subtle scroll reveals, and detailed project case studies with real screenshots.",
         results:
-          "Built a 90+ Lighthouse scoring portfolio deployed on Vercel with zero external backend. Features interactive particle canvas, 8 project case studies with real screenshots, and a premium glass-morphism design system that dynamically inherits theme colors via CSS variables.",
-        techStack: [
-          "React 19",
-          "Tailwind CSS v4",
-          "Vite 6",
-          "Lucide React",
-          "CSS Variables",
-          "Canvas API",
-          "Vercel",
-        ],
+          "Built a 90+ Lighthouse scoring portfolio deployed on Vercel with zero external backend, showcasing real client work and case studies.",
+        techStack: ["React 19", "Tailwind CSS v4", "Vite", "Lucide React", "Vercel"],
       },
     },
     {
       title: "PROCMS Application",
       desc: "Professional CMS platform built using React 19, Vite, Tailwind CSS, and Firebase with real-time data sync and SEO management.",
       tags: ["React 19", "Vite", "Tailwind CSS", "Firebase", "CMS"],
-      color: "from-emerald-500 to-teal-600",
       image: "/assets/procms.png",
-      fallback: "💻",
       link: "https://my-cms-project-phi.vercel.app",
       github: "https://github.com/Awadmohammed74/my-cms-project",
       category: "react",
@@ -309,287 +193,295 @@ const allProjects = {
         solution:
           "Developed a scalable single-page application utilizing React 19 and Vite for high performance. Integrated Firebase Firestore and Authentication for secure real-time data synchronization, styled with Tailwind CSS, and structured for optimal SEO management.",
         results:
-          "Delivered a high-performance, responsive CMS platform with instant data syncing and secure authentication, achieving top-tier web vitals and seamless user experience.",
-        techStack: [
-          "React 19",
-          "Vite",
-          "Tailwind CSS",
-          "Firebase (Firestore & Auth)",
-          "SEO Management",
-        ],
+          "Delivered a high-performance, responsive CMS platform with instant data syncing and secure authentication, achieving strong web vitals and a seamless user experience.",
+        techStack: ["React 19", "Vite", "Tailwind CSS", "Firebase (Firestore & Auth)", "SEO Management"],
       },
     },
   ],
 };
-
-function ProjectImage({ project }) {
-  const [imgError, setImgError] = useState(false);
-  if (imgError) {
-    return (
-      <div className="absolute inset-0 flex items-center justify-center text-8xl bg-gradient-to-br from-white/5 to-transparent">
-        {project.fallback}
-      </div>
-    );
-  }
-  return (
-    <img
-      src={project.image}
-      alt={project.title}
-      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-      onError={() => setImgError(true)}
-    />
-  );
-}
+const PROJECT_IMAGE_KEYS = Object.freeze([
+  { id: "wordpress", label: "WordPress" },
+  { id: "react", label: "React" },
+]);
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("wordpress");
-  const [subFilter, setSubFilter] = useState("corporate");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [tab, setTab] = useState("wordpress");
+  const [sub, setSub] = useState("corporate");
+  const [selected, setSelected] = useState(null);
 
-  // تبسيط وتصحيح منطق الفلترة
-  const filteredProjects = allProjects[activeTab].filter((p) => {
-    if (activeTab === "react") return true;
-    return p.category === subFilter;
-  });
+  const filtered = allProjects[tab].filter((p) =>
+    tab === "react" ? true : p.category === sub,
+  );
 
   const wordpressCounts = {
-    corporate: allProjects.wordpress.filter((p) => p.category === "corporate")
-      .length,
-    ecommerce: allProjects.wordpress.filter((p) => p.category === "ecommerce")
-      .length,
+    corporate: allProjects.wordpress.filter((p) => p.category === "corporate").length,
+    ecommerce: allProjects.wordpress.filter((p) => p.category === "ecommerce").length,
   };
 
+  // Close modal on Escape; lock background scroll while open.
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e) => e.key === "Escape" && setSelected(null);
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [selected]);
+
   return (
-    <section id="projects" className="relative py-32 px-6">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-500/30 to-transparent" />
-      </div>
-
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-            My Projects
-          </div>
-          <h2
-            className="text-4xl sm:text-5xl font-black mb-4"
-            style={{ color: "#ffffff" }}
+    <section id="projects" className="section">
+      <div className="container-x">
+        <div className="relative mx-auto max-w-2xl pb-4 text-center" data-reveal>
+          <span
+            aria-hidden="true"
+            className="section-num absolute -top-6 left-1/2 -z-10 -translate-x-1/2"
           >
-            Featured <span className="gradient-text">Projects</span>
+            04
+          </span>
+          <p className="eyebrow justify-center">Selected work</p>
+          <h2 className="mt-4 text-3xl font-extrabold text-ink sm:text-4xl">
+            Projects I&apos;ve <span className="text-gradient">shipped</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto mb-8">
-            Professional websites and e-commerce stores I've built
+          <p className="mt-4 text-mute">
+            Real production sites and applications built for clients across
+            multiple markets.
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
         </div>
 
-        {/* Main Tabs */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="inline-flex p-1 bg-white/5 rounded-full border border-white/10">
+        <div
+          className="mt-10 flex justify-center gap-2"
+          role="tablist"
+          aria-label="Filter projects by platform"
+          data-reveal
+        >
+          {PROJECT_IMAGE_KEYS.map((t) => (
             <button
+              key={t.id}
+              type="button"
+              role="tab"
+              aria-selected={tab === t.id}
               onClick={() => {
-                setActiveTab("wordpress");
-                setSubFilter("corporate");
+                setTab(t.id);
+                setSub("corporate");
               }}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === "wordpress"
-                  ? "bg-accent-primary text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
+              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors ${
+                tab === t.id
+                  ? "border-accent-strong bg-accent text-ink"
+                  : "border-line bg-white text-mute hover:text-ink"
               }`}
             >
-              <Globe className="w-4 h-4" />
-              <span>WordPress ({allProjects.wordpress.length})</span>
+              {t.label} ({allProjects[t.id].length})
             </button>
-            <button
-              onClick={() => {
-                setActiveTab("react");
-                setSubFilter("corporate");
-              }}
-              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                activeTab === "react"
-                  ? "bg-accent-primary text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <Code className="w-4 h-4" />
-              <span>React ({allProjects.react.length})</span>
-            </button>
-          </div>
+          ))}
         </div>
 
-        {/* Sub Filter */}
-        {activeTab === "wordpress" && (
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12">
+        {tab === "wordpress" && (
+          <div
+            className="mt-6 flex flex-wrap justify-center gap-2"
+            role="group"
+            aria-label="Filter WordPress projects by type"
+            data-reveal
+          >
             {[
-              {
-                id: "corporate",
-                label: "Corporate Sites",
-                count: wordpressCounts.corporate,
-                icon: ExternalLink,
-              },
-              {
-                id: "ecommerce",
-                label: "E-Commerce Stores",
-                count: wordpressCounts.ecommerce,
-                icon: ShoppingCart,
-              },
-            ].map((filter) => (
+              { id: "corporate", label: "Corporate Sites" },
+              { id: "ecommerce", label: "E-Commerce Stores" },
+            ].map((f) => (
               <button
-                key={filter.id}
-                onClick={() => setSubFilter(filter.id)}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 backdrop-blur-md cursor-pointer ${
-                  subFilter === filter.id
-                    ? "text-white border border-accent-primary/60 bg-white/15 shadow-md shadow-accent-primary/5"
-                    : "text-gray-300 hover:text-white bg-white/[0.04] border border-white/10"
+                key={f.id}
+                type="button"
+                onClick={() => setSub(f.id)}
+                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all duration-300 ${
+                  sub === f.id
+                    ? "border-accent/60 bg-accent/25 text-ink"
+                    : "border-line bg-white text-mute hover:border-ink/50 hover:text-ink"
                 }`}
               >
-                <filter.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-primary" />
-                <span>{filter.label}</span>
-                <span className="text-[10px] sm:text-xs bg-white/10 px-1.5 py-0.5 rounded-md font-normal opacity-80">
-                  {filter.count}
-                </span>
+                {f.label} · {wordpressCounts[f.id]}
               </button>
             ))}
           </div>
         )}
-
-        {/* Projects Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, idx) => (
-            <div
+<div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project, i) => (
+            <article
               key={project.title}
-              className="group relative glass rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-accent-primary/30 cursor-pointer"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+              data-reveal
+              style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+              className="card group flex flex-col overflow-hidden"
             >
-              <div
-                className={`h-2 bg-gradient-to-r ${project.color} transition-all duration-500 group-hover:h-3`}
-              />
-
-              {/* Image with Overlay Buttons */}
-              <div className="relative h-48 overflow-hidden">
-                <ProjectImage project={project} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/95 via-[#0a0a0f]/75 to-transparent transition-all duration-300" />
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 p-4 transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 w-full max-w-[145px] sm:max-w-none">
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        window.open(project.link, "_blank");
-                      }}
-                      className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full sm:w-auto sm:min-w-[110px]"
-                      style={{
-                        background: "var(--accent-primary)",
-                        boxShadow: "0 4px 12px -2px var(--accent-glow)",
-                      }}
-                    >
-                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                      <span className="whitespace-nowrap">Live Demo</span>
-                    </button>
-
-                    {project.github && (
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          window.open(project.github, "_blank");
-                        }}
-                        className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full sm:w-auto sm:min-w-[100px]"
-                        style={{
-                          background: "rgba(31, 41, 55, 0.8)",
-                          border: "1px solid rgba(255, 255, 255, 0.15)",
-                          boxShadow: "0 4px 12px -2px rgba(0, 0, 0, 0.5)",
-                        }}
-                      >
-                        <Github className="w-3.5 h-3.5 shrink-0" />
-                        <span className="whitespace-nowrap">GitHub</span>
-                      </button>
-                    )}
-                  </div>
-
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setSelectedProject(project);
-                    }}
-                    className="px-4 py-2.5 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 active:scale-95 sm:hover:scale-105 backdrop-blur-md cursor-pointer w-full max-w-[145px] sm:w-auto sm:min-w-[115px]"
-                    style={{
-                      background: "var(--accent-secondary)",
-                      boxShadow: "0 4px 12px -2px var(--accent-glow)",
-                    }}
-                  >
-                    <FileText className="w-3.5 h-3.5 shrink-0" />
-                    <span className="whitespace-nowrap">Case Study</span>
-                  </button>
-                </div>
+              <div className="relative aspect-video overflow-hidden bg-line">
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
               </div>
 
-              {/* Card Content */}
-              <div className="p-4 sm:p-6">
-                <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-white font-bold text-lg mb-4 group-hover:scale-110 transition-transform duration-300 -mt-16 relative z-10 shadow-xl`}
-                >
-                  {project.title[0]}
-                </div>
-
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-accent-primary transition-colors">
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-lg font-bold text-ink">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-mute">
                   {project.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-                  {project.tags.map((tag) => (
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {project.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/5 text-gray-400 border border-white/5 group-hover:border-white/10 transition-all"
+                      className="rounded-full bg-mist px-2.5 py-1 text-[11px] font-medium text-ink"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Card Footer Actions */}
-                <div className="flex items-center justify-between w-full mt-4 pt-4 border-t border-white/5">
+                <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
                   <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      window.open(project.link, "_blank");
-                    }}
-                    className="flex items-center gap-1.5 text-xs text-accent-primary hover:text-accent-secondary transition-colors cursor-pointer"
+                    type="button"
+                    onClick={() => setSelected(project)}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink transition-colors hover:text-accent-strong"
                   >
-                    <span>View Website</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <BookOpenText className="h-4 w-4" /> Case study
                   </button>
-                  {project.github && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.github, "_blank");
-                      }}
-                      className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors cursor-pointer"
-                    >
-                      <Github className="w-3.5 h-3.5" />
-                      <span>Repository</span>
-                    </button>
-                  )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/vbtn inline-flex items-center gap-1.5 border-b-2 border-accent pb-1 text-xs font-semibold uppercase tracking-wider text-ink transition-colors duration-300 hover:border-accent-strong"
+                  >
+                    Visit
+                    <ArrowUpRight className="h-3.5 w-3.5 text-accent transition-transform duration-300 group-hover/vbtn:translate-x-0.5 group-hover/vbtn:-translate-y-0.5" />
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
 
-      {/* Render Modal if project is selected */}
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      )}
+      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
     </section>
+  );
+}
+function ProjectModal({ project, onClose }) {
+  const cs = project.caseStudy;
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/60 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${project.title} case study`}
+    >
+      <div
+        className="flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl bg-surface sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between border-b border-line px-6 py-4">
+          <h3 className="font-display text-lg font-bold text-ink">
+            {project.title}
+          </h3>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close case study"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink transition-colors hover:bg-mist"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="overflow-y-auto">
+          {/* Project image */}
+          <div className="relative aspect-video w-full overflow-hidden border-b border-line bg-line">
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              loading="lazy"
+              className="h-full w-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
+
+          <div className="p-6">
+          {cs && (
+            <div className="space-y-5">
+              <section>
+                <h4 className="font-display text-base font-bold text-ink">
+                  The challenge
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-mute">
+                  {cs.challenge}
+                </p>
+              </section>
+              <section>
+                <h4 className="font-display text-base font-bold text-ink">
+                  The approach
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-mute">
+                  {cs.solution}
+                </p>
+              </section>
+              <section>
+                <h4 className="font-display text-base font-bold text-ink">
+                  Results
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-mute">
+                  {cs.results}
+                </p>
+              </section>
+              {cs.techStack && (
+                <section>
+                  <h4 className="font-display text-base font-bold text-ink">
+                    Technologies used
+                  </h4>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {cs.techStack.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full bg-mist px-3 py-1.5 text-xs font-medium text-ink"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
+          )}
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-accent flex-1 shadow-[0_12px_28px_-14px_rgba(76,127,37,0.9)]"
+            >
+              Visit live site <ArrowUpRight className="h-4 w-4" />
+            </a>
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost flex-1"
+              >
+                View repository
+              </a>
+            )}
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

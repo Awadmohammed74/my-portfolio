@@ -1,131 +1,154 @@
-import { Code2, Briefcase } from "lucide-react";
-import { soundManager } from "../utils/sound";
+import { ArrowUpRight, Check } from "lucide-react";
+
+const differentiators = [
+  "Custom WordPress themes & plugins (PHP OOP, Hooks, REST API)",
+  "High-converting WooCommerce stores with custom logic",
+  "Performance & Core Web Vitals optimization (Lighthouse 90+)",
+  "React / headless frontends and automated DevOps workflows",
+];
+
+const metrics = [
+  { value: "3+", label: "Years" },
+  { value: "20+", label: "Projects" },
+  { value: "10+", label: "Stores" },
+  { value: "90+", label: "Lighthouse" },
+];
+
+const facts = [
+  { label: "Role", value: "Engineering Lead" },
+  { label: "Location", value: "Egypt (GMT+3)" },
+  { label: "Email", value: "awadmhmd666@gmail.com" },
+  { label: "Status", value: "Open for projects" },
+];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 px-6">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-primary/30 to-transparent pointer-events-none" />
+    <section id="about" className="section bg-soft-accent">
+      <div className="container-x">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          {/* Visual vignette card */}
+          <div data-reveal className="relative order-1">
+            <div className="relative overflow-hidden rounded-3xl bg-ink p-8 text-white shadow-[0_30px_60px_-30px_rgba(22,51,0,0.7)] sm:p-10">
+              {/* Decorative top grid */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-24 opacity-30"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, rgba(159,232,112,0.35) 1px, transparent 1px), linear-gradient(to bottom, rgba(159,232,112,0.35) 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }}
+              />
+              <div
+                aria-hidden="true"
+                className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl"
+              />
 
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 relative">
-          <div
-            onMouseEnter={() => soundManager.playTick()}
-            className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 text-sm text-accent-primary mb-4 border border-accent-primary/10"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-            About Me
+              {/* Monogram */}
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-extrabold text-ink">
+                AM
+              </div>
+
+              <p className="relative mt-8 max-w-xs text-2xl font-semibold leading-snug text-white">
+                Turning complex requirements into{" "}
+                <span className="text-accent">clean, fast</span> and maintainable
+                code.
+              </p>
+
+              {/* Metrics */}
+              <dl className="relative mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-white/15 pt-8">
+                {metrics.map((m) => (
+                  <div key={m.label}>
+                    <dd className="font-display text-3xl font-extrabold text-accent sm:text-4xl">
+                      {m.value}
+                    </dd>
+                    <dt className="mt-1 text-xs font-medium text-white/60">
+                      {m.label}
+                    </dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            {/* Floating badge */}
+            <div className="absolute -bottom-5 -right-3 hidden items-center gap-2 rounded-full border border-line bg-white px-4 py-2 shadow-lg sm:flex">
+              <span className="h-2 w-2 rounded-full bg-accent-strong" />
+              <span className="text-xs font-semibold text-ink">
+                Available for freelance
+              </span>
+            </div>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4">
-            Passionate About{" "}
-            <span className="gradient-text font-black">Engineering</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full mx-auto" />
-        </div>
+{/* Copy */}
+          <div data-reveal className="relative order-2">
+            <span
+              aria-hidden="true"
+              className="section-num absolute -top-6 -left-2 -z-10"
+            >
+              01
+            </span>
+            <p className="eyebrow">About me</p>
+            <h2 className="mt-4 text-3xl font-extrabold text-ink sm:text-4xl">
+              A developer focused on{" "}
+              <span className="text-gradient">performance &amp; impact</span>
+            </h2>
 
-        <div className="min-h-[400px]">
-          <div className="grid md:grid-cols-2 gap-12 items-center animate-scale-in">
-            <div className="relative">
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 rounded-full animate-morph blur-2xl pointer-events-none" />
+            <p className="mt-6 text-lg leading-relaxed text-mute">
+              Hello, I&apos;m{" "}
+              <strong className="font-semibold text-ink">
+                Awad Mohammed AbdelAal
+              </strong>
+              , a WordPress specialist with 3+ years of professional experience
+              developing custom plugins, high-converting WooCommerce stores,
+              REST API automations, and optimized servers.
+            </p>
 
-                <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-accent-primary/20 shadow-2xl group">
-                  <img
-                    src="/assets/me.png"
-                    alt="Awad Mohammed"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.nextSibling.style.display = "flex";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-accent-secondary/10 items-center justify-center hidden">
-                    <div className="text-center">
-                      <div className="text-6xl font-black gradient-text tracking-wide mb-2 font-['Outfit']">
-                        AM
-                      </div>
-                      <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
-                        Awad Mohammed
-                      </div>
-                    </div>
-                  </div>
+            <p className="mt-4 leading-relaxed text-mute">
+              I combine the robustness of PHP MVC/OOP architecture with the
+              performance of the React ecosystem to craft clean, maintainable
+              code. I&apos;m currently completing my computer engineering studies
+              at Misr Higher Institute.
+            </p>
 
-                  <div
-                    className="absolute inset-0 rounded-full border border-accent-primary/20 pointer-events-none"
-                    style={{ animation: "spinSlow 20s linear infinite" }}
-                  >
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent-primary rounded-full shadow-lg shadow-accent-primary/50" />
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent-secondary rounded-full shadow-lg shadow-accent-secondary/50" />
-                  </div>
+            {/* Differentiators */}
+            <ul className="mt-7 grid gap-3">
+              {differentiators.map((item, i) => (
+                <li
+                  key={item}
+                  data-reveal
+                  style={{ transitionDelay: `${i * 70}ms` }}
+                  className="flex items-start gap-3 rounded-xl border border-line bg-white p-3.5"
+                >
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-ink">
+                    <Check className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="text-sm text-ink">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Quick facts */}
+            <dl className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {facts.map((fact) => (
+                <div
+                  key={fact.label}
+                  className="rounded-2xl border border-line bg-white p-4"
+                >
+                  <dt className="text-[11px] font-bold uppercase tracking-widest text-mute">
+                    {fact.label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold break-all text-ink">
+                    {fact.value}
+                  </dd>
                 </div>
-              </div>
+              ))}
+            </dl>
 
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-3 flex-wrap justify-center max-w-sm">
-                {[
-                  { name: "WordPress", icon: Code2 },
-                  { name: "PHP OOP", icon: Code2 },
-                  { name: "React Ecosystem", icon: Briefcase },
-                ].map((item, i) => (
-                  <div
-                    key={item.name}
-                    onMouseEnter={() => soundManager.playTick()}
-                    className="glass rounded-full px-4.5 py-2 text-xs font-semibold text-gray-300 border border-white/5 shadow-md hover:border-accent-primary/40 transition-colors cursor-default"
-                  >
-                    <span
-                      className={`inline-flex items-center justify-center mr-2 ${i === 0 ? "text-accent-primary" : i === 1 ? "text-accent-secondary" : "text-pink-500"}`}
-                    >
-                      <item.icon className="w-3 h-3" />
-                    </span>
-                    {item.name}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <p className="text-gray-300 text-lg leading-relaxed font-medium">
-                Hello! I'm{" "}
-                <span className="text-white font-black font-['Outfit']">
-                  Awad Mohammed AbdelAal
-                </span>
-                , a dedicated{" "}
-                <span className="text-accent-primary font-bold">
-                  WordPress Specialist
-                </span>{" "}
-                with 3+ years of professional history developing custom plugins,
-                high-converting WooCommerce storefronts, REST API automations,
-                and optimized servers.
-              </p>
-
-              <p className="text-gray-400 leading-relaxed text-sm">
-                I construct clean code structures combining the robust MVC/OOP
-                capabilities of PHP backend frameworks with the high-performance
-                dynamic architectures of the React ecosystem. Currently
-                completing computer engineering studies at Misr Higher
-                Institute.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                {[
-                  { label: "Engineering Lead", value: "Awad Mohammed" },
-                  { label: "Location", value: "Egypt (GMT+3)" },
-                  { label: "Email", value: "awadmhmd666@gmail.com" },
-                  { label: "Current Status", value: "Open for Projects" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    onMouseEnter={() => soundManager.playTick()}
-                    className="glass rounded-2xl p-4 border border-white/5 hover:border-accent-primary/20 transition-all duration-300 cursor-default"
-                  >
-                    <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">
-                      {item.label}
-                    </div>
-                    <div className="text-xs sm:text-sm font-semibold text-white break-all">
-                      {item.value}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <a
+              href="#projects"
+              className="mt-7 inline-flex items-center gap-1.5 font-semibold text-ink transition-colors hover:text-accent-strong"
+            >
+              See my work <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>
