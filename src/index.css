@@ -203,22 +203,6 @@
   animation: float-soft 7s ease-in-out infinite;
 }
 
-/* Faint marquee of service keywords across the CTA band */
-@keyframes marquee-soft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-.animate-marquee-soft {
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  animation: marquee-soft 28s linear infinite;
-}
-
 /* Editorial index numerals on service cards */
 .service-index {
   font-family: var(--font-display);

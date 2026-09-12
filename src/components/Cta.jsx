@@ -17,46 +17,44 @@ function TechMarquee() {
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || typeof track.animate !== "function") return;
 
-    // JS-driven rAF marquee — runs reliably on mobile regardless of
-    // OS-level animation settings. Pauses only when off-screen to save battery.
-    let raf = 0;
-    let x = 0;
-    let half = track.scrollWidth / 2;
-    let visible = true;
-    let last = performance.now();
+    // WAAPI compositor marquee — immune to global CSS rules and OS
+    // animation-stripping. Pauses automatically when off-screen or tab hidden.
+    let anim = null;
+    let half = 0;
 
-    const measure = () => {
+    const play = () => {
+      if (anim) anim.cancel();
       half = track.scrollWidth / 2;
+      if (half <= 0) return;
+      anim = track.animate(
+        [
+          { transform: "translate3d(0, 0, 0)" },
+          { transform: `translate3d(${-half}px, 0, 0)` },
+        ],
+        { duration: 28000, iterations: Infinity, easing: "linear" }
+      );
     };
-    measure();
-    window.addEventListener("resize", measure);
+    play();
+
+    const onResize = () => play();
+    window.addEventListener("resize", onResize);
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        visible = entry.isIntersecting;
+        if (!anim) return;
+        if (entry.isIntersecting) anim.play();
+        else anim.pause();
       },
       { threshold: 0 }
     );
     io.observe(track);
 
-    const tick = (now) => {
-      const dt = now - last;
-      last = now;
-      if (visible) {
-        x -= dt * 0.035; // px per ms
-        if (half > 0 && -x >= half) x += half;
-        track.style.transform = `translate3d(${x}px, 0, 0)`;
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-
     return () => {
-      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
       io.disconnect();
-      window.removeEventListener("resize", measure);
+      if (anim) anim.cancel();
     };
   }, []);
 
@@ -65,7 +63,7 @@ function TechMarquee() {
       aria-hidden="true"
       className="absolute inset-x-0 top-0 overflow-hidden border-b border-white/10 py-4"
     >
-      <div ref={trackRef} className="flex w-max items-center gap-10 will-change-transform">
+      <div ref={trackRef} className="flex w-max items-center gap-10">
         {[...keywords, ...keywords].map((word, i) => (
           <span
             key={i}
