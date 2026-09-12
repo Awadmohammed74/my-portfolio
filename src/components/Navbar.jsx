@@ -100,7 +100,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         id="mobile-menu"
-        className={`lg:hidden overflow-hidden border-b border-line bg-mist transition-all duration-300 ${
+        className={`lg:hidden overflow-hidden bg-ink text-white transition-all duration-300 ${
           open ? "max-h-96" : "max-h-0"
         }`}
       >
@@ -110,7 +110,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-white"
+                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
               >
                 {link.name}
               </a>

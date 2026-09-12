@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 
 const keywords = [
@@ -11,28 +12,80 @@ const keywords = [
   "DevOps",
 ];
 
-const doubled = [...keywords, ...keywords];
+function TechMarquee() {
+  const trackRef = useRef(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    // JS-driven rAF marquee — runs reliably on mobile regardless of
+    // OS-level "reduce animations" CSS behavior. Pause when off-screen
+    // or when the user explicitly prefers reduced motion.
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let raf = 0;
+    let x = 0;
+    let half = track.scrollWidth / 2;
+    let visible = true;
+    let last = performance.now();
+
+    const measure = () => {
+      half = track.scrollWidth / 2;
+    };
+    measure();
+    window.addEventListener("resize", measure);
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    io.observe(track);
+
+    const tick = (now) => {
+      const dt = now - last;
+      last = now;
+      if (visible && !media.matches) {
+        x -= dt * 0.035; // px per ms
+        if (half > 0 && -x >= half) x += half;
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  return (
+    <div
+      aria-hidden="true"
+      className="absolute inset-x-0 top-0 overflow-hidden border-b border-white/10 py-4"
+    >
+      <div ref={trackRef} className="flex w-max items-center gap-10 will-change-transform">
+        {[...keywords, ...keywords].map((word, i) => (
+          <span
+            key={i}
+            className="flex items-center gap-10 text-xs font-semibold uppercase tracking-[0.2em] text-white/45"
+          >
+            {word}
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Cta() {
   return (
     <section className="relative overflow-hidden bg-ink py-20 text-white">
-      {/* Keyword marquee ribbon */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 overflow-hidden border-b border-white/10 py-4"
-      >
-        <div className="animate-marquee-soft flex w-max items-center gap-10">
-          {doubled.map((word, i) => (
-            <span
-              key={i}
-              className="flex items-center gap-10 text-xs font-semibold uppercase tracking-[0.2em] text-white/45"
-            >
-              {word}
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            </span>
-          ))}
-        </div>
-      </div>
+      <TechMarquee />
 
       <div className="container-x pt-8">
         <div className="mx-auto max-w-2xl text-center" data-reveal>
