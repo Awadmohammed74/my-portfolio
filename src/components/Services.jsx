@@ -94,7 +94,7 @@ export default function Services() {
                 {service.highlights.map((h) => (
                   <li
                     key={h}
-                    className="rounded-full bg-mist px-2.5 py-1 text-[11px] font-medium text-ink"
+                    className="rounded-full bg-mist px-2.5 py-1 text-[11px] font-semibold text-ink transition-colors group-hover:bg-accent/60"
                   >
                     {h}
                   </li>

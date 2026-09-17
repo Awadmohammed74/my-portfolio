@@ -41,7 +41,12 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 top-24 h-80 w-80 rounded-full bg-accent/12 blur-3xl"
+      />
+
       <div className="container-x max-w-4xl">
         <div className="relative mx-auto max-w-2xl pb-4 text-center" data-reveal>
           <span
@@ -83,7 +88,7 @@ export default function Experience() {
                     <h3 className="font-display text-lg font-bold leading-snug text-ink">
                       {exp.role}
                     </h3>
-                    <span className="shrink-0 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-mute">
+                    <span className="shrink-0 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-ink transition-colors hover:border-accent-strong hover:bg-accent/40">
                       {exp.period}
                     </span>
                   </div>

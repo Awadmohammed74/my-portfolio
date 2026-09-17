@@ -69,12 +69,9 @@ export default function Hero() {
             <ul className="mt-8 flex flex-wrap gap-2">
               {["WordPress", "WooCommerce", "React", "PHP OOP", "REST APIs"].map(
                 (tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-accent-strong hover:bg-accent/30"
-                  >
-                    {tag}
-                  </li>
+              <li key={tag} className="chip">
+                {tag}
+              </li>
                 ),
               )}
             </ul>

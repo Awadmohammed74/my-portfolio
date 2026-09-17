@@ -86,7 +86,12 @@ export default function Skills() {
       : skillCategories.filter((c) => c.id === active);
 
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-28 bottom-10 h-72 w-72 rounded-full bg-accent/12 blur-3xl"
+      />
+
       <div className="container-x">
         <div className="relative mx-auto max-w-2xl pb-4 text-center" data-reveal>
           <span
@@ -105,27 +110,25 @@ export default function Skills() {
         </div>
 
         <div
-          className="mt-8 flex flex-wrap justify-center gap-2"
+          className="mt-8 flex justify-center"
           data-reveal
           role="tablist"
           aria-label="Filter skills by category"
         >
-          {filters.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              role="tab"
-              aria-selected={active === f.id}
-              onClick={() => setActive(f.id)}
-              className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
-                active === f.id
-                  ? "border-accent-strong bg-accent text-ink"
-                  : "border-line bg-white text-mute hover:text-ink"
-              }`}
-            >
-              {f.label}
-            </button>
-          ))}
+          <div className="tab-group">
+            {filters.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                role="tab"
+                aria-selected={active === f.id}
+                onClick={() => setActive(f.id)}
+                className={`tab ${active === f.id ? "is-active" : ""}`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

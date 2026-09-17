@@ -52,10 +52,14 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <div className="section-divider" aria-hidden="true" />
         <About />
         <Services />
+        <div className="section-divider" aria-hidden="true" />
         <Skills />
+        <div className="section-divider" aria-hidden="true" />
         <Projects />
+        <div className="section-divider" aria-hidden="true" />
         <Experience />
         <Contact />
         <Cta />

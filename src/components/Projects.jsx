@@ -19,13 +19,26 @@ const allProjects = {
           "Developed using WordPress with custom Gutenberg blocks and tailored HTML/CSS/JS code sections instead of page builders for optimal performance. Created dynamic tab sections for presenting services interactively, built a professional portfolio section showcasing client work, added custom JavaScript for smooth animations and sliders, and optimized for SEO and speed.",
         results:
           "Delivered a lightweight, ultra-fast, and secure digital agency website that effectively showcases Khaleej Tech's capabilities. The clean custom codebase provides an engaging user experience that builds trust with potential clients and demonstrates the company's technical expertise.",
-        techStack: ["WordPress", "Gutenberg", "Custom HTML/CSS", "Custom JavaScript", "SEO", "Performance Optimization"],
+        techStack: [
+          "WordPress",
+          "Gutenberg",
+          "Custom HTML/CSS",
+          "Custom JavaScript",
+          "SEO",
+          "Performance Optimization",
+        ],
       },
     },
     {
       title: "MIVANO Interior",
       desc: "Luxury interior design & finishing company website in UAE. Full custom WordPress development from Figma with bilingual support (Arabic/English).",
-      tags: ["WordPress", "Elementor Pro", "Arabic/English", "Interior Design", "UAE"],
+      tags: [
+        "WordPress",
+        "Elementor Pro",
+        "Arabic/English",
+        "Interior Design",
+        "UAE",
+      ],
       image: "/assets/mivanointerior.jpg",
       link: "https://mivanointerior.com",
       category: "corporate",
@@ -38,13 +51,26 @@ const allProjects = {
           "Built a fully custom WordPress site using Elementor Pro with pixel-perfect Figma conversion. Implemented full bilingual support with RTL/LTR direction switching, dynamic service pages for each design category, interactive project galleries with modern animations, and integrated professional contact forms with strategic CTAs for lead generation.",
         results:
           "Delivered a luxury, fast, and secure bilingual digital platform that effectively represents MIVANO's brand in the UAE market. The site showcases services professionally with smooth animations and sliders, achieving high engagement rates and increased consultation requests through optimized lead generation forms.",
-        techStack: ["WordPress", "Elementor Pro", "JavaScript", "Figma to WordPress", "SEO", "RTL/LTR"],
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "JavaScript",
+          "Figma to WordPress",
+          "SEO",
+          "RTL/LTR",
+        ],
       },
     },
     {
       title: "Speed Solutions",
       desc: "Financial consulting & company formation services website in UAE. Full custom WordPress with bilingual support and interactive lead generation.",
-      tags: ["WordPress", "Elementor Pro", "Financial Consulting", "UAE", "RTL/LTR"],
+      tags: [
+        "WordPress",
+        "Elementor Pro",
+        "Financial Consulting",
+        "UAE",
+        "RTL/LTR",
+      ],
       image: "/assets/speed-solution.png",
       link: "https://speedsolution.ae",
       category: "corporate",
@@ -57,10 +83,17 @@ const allProjects = {
           "Built a fully custom WordPress site using Elementor Pro with pixel-perfect Figma conversion. Implemented full bilingual support (Arabic/English) with RTL/LTR compatibility, created dedicated service pages for each corporate offering, integrated advanced lead generation forms, and added custom JavaScript for smooth animations and sliders.",
         results:
           "Delivered a premium, fast, and secure bilingual website that clearly showcases Speed Solutions' services in the UAE market. The site effectively builds trust with entrepreneurs, resulting in increased conversion rates and consultation requests.",
-        techStack: ["WordPress", "Elementor Pro", "JavaScript", "Figma to WordPress", "SEO", "Performance Optimization"],
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "JavaScript",
+          "Figma to WordPress",
+          "SEO",
+          "Performance Optimization",
+        ],
       },
     },
-{
+    {
       title: "Shams City",
       desc: "Company formation & visa services website in UAE. Full custom WordPress with interactive cost calculator and automated lead generation via Make.",
       tags: ["WordPress", "Elementor", "Business Setup", "UAE", "Automation"],
@@ -76,7 +109,14 @@ const allProjects = {
           "Developed a fully custom WordPress site with Elementor Pro. Engineered a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs in simple steps. Connected the calculator to Make (formerly Integromat) for full automation — sending detailed cost breakdowns via email and logging data to Google Sheets for the sales team.",
         results:
           "Delivered a fast, secure, and interactive corporate website with a fully automated lead generation system. The cost calculator significantly improves user engagement and conversion rates, while the automation pipeline streamlines the sales process and data management.",
-        techStack: ["WordPress", "Elementor Pro", "Custom JavaScript", "Make Automation", "Google Sheets", "SEO"],
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "Custom JavaScript",
+          "Make Automation",
+          "Google Sheets",
+          "SEO",
+        ],
       },
     },
     {
@@ -95,10 +135,17 @@ const allProjects = {
           "Built a fully custom WordPress landing page using Elementor Pro. Developed a dynamic cost calculator using Custom CSS & JS that lets clients estimate formation costs instantly in both EGP and USD. Connected the calculator to SMTP email automation for automatic lead data collection and cost breakdown delivery.",
         results:
           "Delivered a high-converting, fast, and interactive landing page with a fully automated lead generation system. The cost calculator significantly increases visitor engagement and conversion rates, while the email automation pipeline enables the sales team to follow up with qualified leads instantly.",
-        techStack: ["WordPress", "Elementor Pro", "Custom JavaScript", "SMTP Automation", "Figma to WordPress", "SEO"],
+        techStack: [
+          "WordPress",
+          "Elementor Pro",
+          "Custom JavaScript",
+          "SMTP Automation",
+          "Figma to WordPress",
+          "SEO",
+        ],
       },
     },
-{
+    {
       title: "Tmayoz Store",
       desc: "High-converting WooCommerce e-commerce store in Egypt with full custom development. Features urgency engine, smart cross-selling, and WhatsApp checkout.",
       tags: ["WooCommerce", "E-commerce", "Egypt", "Full Custom", "Automation"],
@@ -114,10 +161,18 @@ const allProjects = {
           "Built a fully custom WooCommerce store using WoodMart + Elementor with custom PHP/JS snippets and hooks. Implemented: a floating golden countdown timer on product cards (urgency engine), smart cross-selling widget with auto-exclusion of cart items, HTML5 geolocation for auto-filling shipping addresses, dynamic tax adjustment system using MutationObserver API, and WhatsApp instant checkout integration on the thank-you page.",
         results:
           "Delivered a highly automated, conversion-optimized e-commerce store in the Egyptian market. The urgency engine and smart cross-selling features significantly reduce cart abandonment. The geolocation and WhatsApp checkout minimize friction in the buying process, while the dynamic tax system provides real-time savings visibility to customers.",
-        techStack: ["WooCommerce", "WoodMart", "Elementor", "Custom PHP", "Custom JavaScript", "WhatsApp API", "Geolocation API"],
+        techStack: [
+          "WooCommerce",
+          "WoodMart",
+          "Elementor",
+          "Custom PHP",
+          "Custom JavaScript",
+          "WhatsApp API",
+          "Geolocation API",
+        ],
       },
     },
-{
+    {
       title: "The Sun Shop",
       desc: "WooCommerce e-commerce store for a UAE business with customized shop layout and user experience improvements.",
       tags: ["WooCommerce", "E-commerce", "UX/UI", "UAE"],
@@ -133,7 +188,13 @@ const allProjects = {
           "Developed custom WooCommerce templates, implemented AJAX-based product filtering, added wishlist functionality, and optimized the checkout flow. Integrated with local shipping providers.",
         results:
           "Achieved 90+ Lighthouse score with 50% improvement in page load speed. Increased conversion rate by 25% within the first month of launch.",
-        techStack: ["WooCommerce", "Custom Theme", "AJAX Filtering", "MySQL", "REST API"],
+        techStack: [
+          "WooCommerce",
+          "Custom Theme",
+          "AJAX Filtering",
+          "MySQL",
+          "REST API",
+        ],
       },
     },
     {
@@ -152,11 +213,18 @@ const allProjects = {
           "I customized WooCommerce with WPML for bilingual content, built custom product page templates with Elementor, and integrated local payment gateways. The design was optimized for mobile-first experience with fast loading times.",
         results:
           "Successfully launched a fully functional bilingual store with 40% faster page load times, achieving 92/100 Lighthouse performance score. The store now handles 200+ daily visitors with 15% conversion rate.",
-        techStack: ["WooCommerce", "WPML", "PHP", "Elementor", "Custom CSS", "Payment Gateway Integration"],
+        techStack: [
+          "WooCommerce",
+          "WPML",
+          "PHP",
+          "Elementor",
+          "Custom CSS",
+          "Payment Gateway Integration",
+        ],
       },
     },
   ],
-react: [
+  react: [
     {
       title: "Awad Mohammed Portfolio",
       desc: "Personal portfolio built with React 19 + Tailwind CSS v4. Fast, minimal, and mobile-first.",
@@ -174,7 +242,13 @@ react: [
           "Architected a single-page React app with a clean, semantic, mobile-first design system, subtle scroll reveals, and detailed project case studies with real screenshots.",
         results:
           "Built a 90+ Lighthouse scoring portfolio deployed on Vercel with zero external backend, showcasing real client work and case studies.",
-        techStack: ["React 19", "Tailwind CSS v4", "Vite", "Lucide React", "Vercel"],
+        techStack: [
+          "React 19",
+          "Tailwind CSS v4",
+          "Vite",
+          "Lucide React",
+          "Vercel",
+        ],
       },
     },
     {
@@ -194,14 +268,20 @@ react: [
           "Developed a scalable single-page application utilizing React 19 and Vite for high performance. Integrated Firebase Firestore and Authentication for secure real-time data synchronization, styled with Tailwind CSS, and structured for optimal SEO management.",
         results:
           "Delivered a high-performance, responsive CMS platform with instant data syncing and secure authentication, achieving strong web vitals and a seamless user experience.",
-        techStack: ["React 19", "Vite", "Tailwind CSS", "Firebase (Firestore & Auth)", "SEO Management"],
+        techStack: [
+          "React 19",
+          "Vite",
+          "Tailwind CSS",
+          "Firebase (Firestore & Auth)",
+          "SEO Management",
+        ],
       },
     },
   ],
 };
 const PROJECT_IMAGE_KEYS = Object.freeze([
-  { id: "wordpress", label: "WordPress" },
-  { id: "react", label: "React" },
+  { id: "wordpress", label: "WordPress " },
+  { id: "react", label: "React " },
 ]);
 
 export default function Projects() {
@@ -214,8 +294,10 @@ export default function Projects() {
   );
 
   const wordpressCounts = {
-    corporate: allProjects.wordpress.filter((p) => p.category === "corporate").length,
-    ecommerce: allProjects.wordpress.filter((p) => p.category === "ecommerce").length,
+    corporate: allProjects.wordpress.filter((p) => p.category === "corporate")
+      .length,
+    ecommerce: allProjects.wordpress.filter((p) => p.category === "ecommerce")
+      .length,
   };
 
   // Close modal on Escape; lock background scroll while open.
@@ -231,9 +313,24 @@ export default function Projects() {
   }, [selected]);
 
   return (
-    <section id="projects" className="section">
+    <section
+      id="projects"
+      className="section bg-soft-accent relative overflow-hidden"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 top-40 h-64 w-64 rounded-full bg-accent/15 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 bottom-20 h-72 w-72 rounded-full bg-accent-strong/10 blur-3xl"
+      />
+
       <div className="container-x">
-        <div className="relative mx-auto max-w-2xl pb-4 text-center" data-reveal>
+        <div
+          className="relative mx-auto max-w-2xl pb-4 text-center"
+          data-reveal
+        >
           <span
             aria-hidden="true"
             className="section-num absolute -top-6 left-1/2 -z-10 -translate-x-1/2"
@@ -251,35 +348,34 @@ export default function Projects() {
         </div>
 
         <div
-          className="mt-10 flex justify-center gap-2"
+          className="mt-10 flex justify-center"
           role="tablist"
           aria-label="Filter projects by platform"
           data-reveal
         >
-          {PROJECT_IMAGE_KEYS.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              role="tab"
-              aria-selected={tab === t.id}
-              onClick={() => {
-                setTab(t.id);
-                setSub("corporate");
-              }}
-              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors ${
-                tab === t.id
-                  ? "border-accent-strong bg-accent text-ink"
-                  : "border-line bg-white text-mute hover:text-ink"
-              }`}
-            >
-              {t.label} ({allProjects[t.id].length})
-            </button>
-          ))}
+          <div className="tab-group">
+            {PROJECT_IMAGE_KEYS.map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                role="tab"
+                aria-selected={tab === t.id}
+                onClick={() => {
+                  setTab(t.id);
+                  setSub("corporate");
+                }}
+                className={`tab ${tab === t.id ? "is-active" : ""}`}
+              >
+                {t.label}
+                <span className="tab-count">{allProjects[t.id].length}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {tab === "wordpress" && (
           <div
-            className="mt-6 flex flex-wrap justify-center gap-2"
+            className="mt-5 flex flex-wrap justify-center gap-2"
             role="group"
             aria-label="Filter WordPress projects by type"
             data-reveal
@@ -292,18 +388,21 @@ export default function Projects() {
                 key={f.id}
                 type="button"
                 onClick={() => setSub(f.id)}
-                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all duration-300 ${
-                  sub === f.id
-                    ? "border-accent/60 bg-accent/25 text-ink"
-                    : "border-line bg-white text-mute hover:border-ink/50 hover:text-ink"
-                }`}
+                className={`tab-sub ${sub === f.id ? "is-active" : ""}`}
               >
-                {f.label} · {wordpressCounts[f.id]}
+                <span
+                  aria-hidden="true"
+                  className="h-1.5 w-1.5 rounded-full bg-current opacity-60"
+                />
+                {f.label}
+                <span className="text-[11px] font-bold opacity-70">
+                  {wordpressCounts[f.id]}
+                </span>
               </button>
             ))}
           </div>
         )}
-<div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((project, i) => (
             <article
               key={project.title}
@@ -366,7 +465,9 @@ export default function Projects() {
         </div>
       </div>
 
-      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   );
 }
@@ -413,72 +514,72 @@ function ProjectModal({ project, onClose }) {
           </div>
 
           <div className="p-6">
-          {cs && (
-            <div className="space-y-5">
-              <section>
-                <h4 className="font-display text-base font-bold text-ink">
-                  The challenge
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-mute">
-                  {cs.challenge}
-                </p>
-              </section>
-              <section>
-                <h4 className="font-display text-base font-bold text-ink">
-                  The approach
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-mute">
-                  {cs.solution}
-                </p>
-              </section>
-              <section>
-                <h4 className="font-display text-base font-bold text-ink">
-                  Results
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-mute">
-                  {cs.results}
-                </p>
-              </section>
-              {cs.techStack && (
+            {cs && (
+              <div className="space-y-5">
                 <section>
                   <h4 className="font-display text-base font-bold text-ink">
-                    Technologies used
+                    The challenge
                   </h4>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {cs.techStack.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full bg-mist px-3 py-1.5 text-xs font-medium text-ink"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-mute">
+                    {cs.challenge}
+                  </p>
                 </section>
-              )}
-            </div>
-          )}
+                <section>
+                  <h4 className="font-display text-base font-bold text-ink">
+                    The approach
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-mute">
+                    {cs.solution}
+                  </p>
+                </section>
+                <section>
+                  <h4 className="font-display text-base font-bold text-ink">
+                    Results
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-mute">
+                    {cs.results}
+                  </p>
+                </section>
+                {cs.techStack && (
+                  <section>
+                    <h4 className="font-display text-base font-bold text-ink">
+                      Technologies used
+                    </h4>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {cs.techStack.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full bg-mist px-3 py-1.5 text-xs font-medium text-ink"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </div>
+            )}
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-accent flex-1 shadow-[0_12px_28px_-14px_rgba(76,127,37,0.9)]"
-            >
-              Visit live site <ArrowUpRight className="h-4 w-4" />
-            </a>
-            {project.github && (
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href={project.github}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-ghost flex-1"
+                className="btn btn-accent flex-1 shadow-[0_12px_28px_-14px_rgba(76,127,37,0.9)]"
               >
-                View repository
+                Visit live site <ArrowUpRight className="h-4 w-4" />
               </a>
-            )}
-          </div>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost flex-1"
+                >
+                  View repository
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

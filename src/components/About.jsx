@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Quote } from "lucide-react";
 
 const differentiators = [
   "Custom WordPress themes & plugins (PHP OOP, Hooks, REST API)",
@@ -25,54 +25,89 @@ export default function About() {
   return (
     <section id="about" className="section bg-soft-accent">
       <div className="container-x">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
-          {/* Visual vignette card */}
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          {/* ── Portrait panel ─────────────────────────────── */}
           <div data-reveal className="relative order-1">
-            <div className="relative overflow-hidden rounded-3xl bg-ink p-8 text-white shadow-[0_30px_60px_-30px_rgba(22,51,0,0.7)] sm:p-10">
-              {/* Decorative top grid */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-24 opacity-30"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, rgba(159,232,112,0.35) 1px, transparent 1px), linear-gradient(to bottom, rgba(159,232,112,0.35) 1px, transparent 1px)",
-                  backgroundSize: "28px 28px",
-                }}
-              />
-              <div
-                aria-hidden="true"
-                className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl"
-              />
+            <div
+              aria-hidden="true"
+              className="absolute -left-8 -top-8 -z-10 h-40 w-40 rounded-full bg-accent/40 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-10 -right-6 -z-10 h-44 w-44 rounded-full bg-accent-strong/20 blur-3xl"
+            />
 
-              {/* Monogram */}
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-accent font-display text-4xl font-extrabold text-ink">
-                AM
-              </div>
+            <div className="gradient-ring shadow-[0_36px_70px_-36px_rgba(22,51,0,0.65)]">
+              <div className="relative overflow-hidden bg-ink p-7 text-white sm:p-9">
+                {/* Decorative grid + glow */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-0 top-0 h-28 opacity-25"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, rgba(159,232,112,0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(159,232,112,0.4) 1px, transparent 1px)",
+                    backgroundSize: "26px 26px",
+                    maskImage:
+                      "linear-gradient(to bottom, black, transparent)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black, transparent)",
+                  }}
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/25 blur-3xl"
+                />
 
-              <p className="relative mt-8 max-w-xs text-2xl font-semibold leading-snug text-white">
-                Turning complex requirements into{" "}
-                <span className="text-accent">clean, fast</span> and maintainable
-                code.
-              </p>
-
-              {/* Metrics */}
-              <dl className="relative mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-white/15 pt-8">
-                {metrics.map((m) => (
-                  <div key={m.label}>
-                    <dd className="font-display text-3xl font-extrabold text-accent sm:text-4xl">
-                      {m.value}
-                    </dd>
-                    <dt className="mt-1 text-xs font-medium text-white/60">
-                      {m.label}
-                    </dt>
+                {/* Monogram + role */}
+                <div className="relative flex items-center gap-4">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-accent font-display text-2xl font-extrabold text-ink shadow-[0_14px_28px_-14px_rgba(76,127,37,0.8)]">
+                    AM
                   </div>
-                ))}
-              </dl>
+                  <div>
+                    <p className="font-display text-xl font-extrabold tracking-tight">
+                      Awad Mohammed AbdelAal
+                    </p>
+                    <p className="mt-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                      WordPress &amp; React Engineer
+                    </p>
+                  </div>
+                </div>
+
+                <Quote
+                  aria-hidden="true"
+                  className="relative mt-7 h-6 w-6 text-accent/60"
+                />
+                <p className="relative mt-3 text-2xl font-semibold leading-snug text-white">
+                  Turning complex requirements into{" "}
+                  <span className="text-accent">clean, fast</span> and
+                  maintainable code.
+                </p>
+
+                {/* Glass metrics */}
+                <dl className="relative mt-7 grid grid-cols-2 gap-3">
+                  {metrics.map((m) => (
+                    <div
+                      key={m.label}
+                      className="glass-panel px-4 py-3.5 text-center transition-transform duration-300 hover:-translate-y-1"
+                    >
+                      <dd className="font-display text-2xl font-extrabold text-accent">
+                        {m.value}
+                      </dd>
+                      <dt className="mt-0.5 text-[11px] font-medium text-white/60">
+                        {m.label}
+                      </dt>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-5 -right-3 hidden items-center gap-2 rounded-full border border-line bg-white px-4 py-2 shadow-lg sm:flex">
-              <span className="h-2 w-2 rounded-full bg-accent-strong" />
+            <div className="absolute -bottom-5 right-4 hidden items-center gap-2 rounded-full border border-line bg-white px-4 py-2 shadow-[0_16px_32px_-16px_rgba(22,51,0,0.5)] sm:flex">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-strong opacity-60" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent-strong" />
+              </span>
               <span className="text-xs font-semibold text-ink">
                 Available for freelance
               </span>
@@ -116,27 +151,30 @@ export default function About() {
                   key={item}
                   data-reveal
                   style={{ transitionDelay: `${i * 70}ms` }}
-                  className="flex items-start gap-3 rounded-xl border border-line bg-white p-3.5"
+                  className="feature-row"
                 >
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-ink">
+                  <span className="relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ink text-accent">
                     <Check className="h-3.5 w-3.5" />
                   </span>
-                  <span className="text-sm text-ink">{item}</span>
+                  <span className="relative z-10 text-sm font-medium text-ink">
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>
 
             {/* Quick facts */}
-            <dl className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <dl className="mt-6 flex flex-wrap gap-2">
               {facts.map((fact) => (
                 <div
                   key={fact.label}
-                  className="rounded-2xl border border-line bg-white p-4"
+                  title={fact.value}
+                  className="chip !flex-col !items-start !gap-0 !rounded-xl !px-3.5 !py-2"
                 >
-                  <dt className="text-[11px] font-bold uppercase tracking-widest text-mute">
+                  <dt className="text-[10px] font-bold uppercase tracking-widest text-mute">
                     {fact.label}
                   </dt>
-                  <dd className="mt-1 text-sm font-semibold break-all text-ink">
+                  <dd className="text-xs font-semibold break-all text-ink">
                     {fact.value}
                   </dd>
                 </div>
@@ -145,9 +183,10 @@ export default function About() {
 
             <a
               href="#projects"
-              className="mt-7 inline-flex items-center gap-1.5 font-semibold text-ink transition-colors hover:text-accent-strong"
+              className="group mt-8 inline-flex items-center gap-1.5 font-semibold text-ink transition-colors hover:text-accent-strong"
             >
-              See my work <ArrowUpRight className="h-4 w-4" />
+              See my work
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </div>
         </div>

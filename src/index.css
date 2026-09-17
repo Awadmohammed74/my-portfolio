@@ -131,6 +131,222 @@
     color: var(--color-ink-soft);
   }
 
+  /* ── Premium pill tag (tech chips / highlight chips) ───────────── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+    padding: 0.375rem 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    transition:
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .chip::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: var(--color-accent-strong);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .chip:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent-strong);
+    background-color: var(--color-accent);
+    box-shadow: 0 10px 22px -12px rgba(22, 51, 0, 0.45);
+  }
+
+  .chip:hover::before {
+    opacity: 1;
+  }
+
+  .chip-dark {
+    border-color: rgba(255, 255, 255, 0.14);
+    background-color: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .chip-dark:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* ── Segmented filter tabs (skills) ────────────────────────────── */
+  .tab-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+    padding: 0.4rem;
+    box-shadow: 0 14px 34px -22px rgba(22, 51, 0, 0.4);
+  }
+
+  .tab {
+    position: relative;
+    border-radius: 9999px;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-mute);
+    transition:
+      color 0.25s ease,
+      background-color 0.25s ease,
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tab:hover:not(.is-active) {
+    color: var(--color-ink);
+    background-color: var(--color-mist);
+    transform: translateY(-1px);
+  }
+
+  .tab.is-active {
+    background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-ink-soft) 100%);
+    color: var(--color-accent);
+    box-shadow: 0 10px 22px -12px rgba(22, 51, 0, 0.65);
+  }
+
+  /* Count badge inside a tab */
+  .tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.35rem;
+    border-radius: 9999px;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    background-color: rgba(159, 232, 112, 0.25);
+    color: var(--color-ink-soft);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .tab.is-active .tab-count {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* Smaller sub-filter pills under the main tabs */
+  .tab-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-mute);
+    transition:
+      color 0.25s ease,
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tab-sub:hover {
+    color: var(--color-ink);
+    border-color: var(--color-accent-strong);
+    transform: translateY(-1px);
+  }
+
+  .tab-sub.is-active {
+    border-color: var(--color-accent-strong);
+    background: var(--color-accent);
+    color: var(--color-ink);
+    box-shadow: 0 8px 18px -10px rgba(76, 127, 37, 0.7);
+  }
+
+  /* Soft animated section divider hairline */
+  .section-divider {
+    height: 1px;
+    width: min(72rem, calc(100% - 2.5rem));
+    margin-inline: auto;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-line) 20%,
+      var(--color-accent-strong) 50%,
+      var(--color-line) 80%,
+      transparent
+    );
+    opacity: 0.55;
+  }
+
+  /* ── Premium gradient ring (portrait / feature panel) ──────────── */
+  .gradient-ring {
+    position: relative;
+    border-radius: 1.5rem;
+    background: linear-gradient(140deg, var(--color-accent) 0%, var(--color-ink-soft) 55%, var(--color-ink) 100%);
+    padding: 1.5px;
+  }
+
+  .gradient-ring > * {
+    border-radius: calc(1.5rem - 1.5px);
+  }
+
+  /* Glass panel for stats on dark surfaces */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1.25rem;
+  }
+
+  /* Feature row inside About (differentiators) */
+  .feature-row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+    padding: 0.9rem 1rem;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .feature-row::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(159, 232, 112, 0.16), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .feature-row:hover {
+    transform: translateX(6px);
+    border-color: var(--color-accent-strong);
+    box-shadow: 0 16px 32px -20px rgba(22, 51, 0, 0.4);
+  }
+
+  .feature-row:hover::after {
+    opacity: 1;
+  }
+
   /* Tasteful green-ink gradient for display headings */
   .text-gradient {
     background: linear-gradient(
