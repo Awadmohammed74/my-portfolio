@@ -197,26 +197,33 @@
   }
 
   @media (max-width: 640px) {
-    /* On mobile: 2 tidy rows (4 + 3), no scrolling */
+    /* On mobile: 4-column grid — top row 3 tabs (All is wide), bottom row 4 */
     .tab-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       width: 100%;
       gap: 0.3rem;
       padding: 0.35rem;
       border-radius: 1rem;
     }
 
-    .tab {
-      /* Each tab stretches equally; 4 fit per row, the rest wrap */
-      flex: 1 1 0;
-      min-width: 21%;
+    .tab-group .tab {
       white-space: normal;
       text-align: center;
       padding: 0.4rem 0.25rem;
       font-size: 0.72rem;
       border-radius: 0.6rem;
+    }
+
+    /* "All" takes a double cell → first row = 3 tabs, second row = 4 */
+    .tab:first-child {
+      grid-column: span 2;
+    }
+
+    /* Groups with only 2 tabs (Projects: WordPress / React) split evenly */
+    .tab:first-child:nth-last-child(2),
+    .tab:nth-child(2):last-child {
+      grid-column: span 2;
     }
   }
 
