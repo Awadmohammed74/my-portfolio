@@ -23,11 +23,15 @@ export default function Navbar() {
       // Write directly to the DOM (no React re-render per scroll frame)
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;
-      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
-      if (barRef.current) {
-        barRef.current.style.transform = `scaleX(${p})`;
-      }
+      if (max <= 0 || !barRef.current) return;
+      const p = Math.min(1, window.scrollY / max);
+      // Skip micro-changes (mobile address-bar resize makes these jump around)
+      if (Math.abs(p - lastP) < 0.002) return;
+      lastP = p;
+      barRef.current.style.transform = `scaleX(${p})`;
     };
+
+    let lastP = 0;
 
     // Throttle to one update per animation frame — stops mobile jank
     const onScroll = () => {
@@ -58,7 +62,7 @@ export default function Navbar() {
       <div
         ref={barRef}
         aria-hidden="true"
-        className="absolute left-0 top-0 h-0.5 w-full origin-left bg-accent-strong will-change-transform"
+        className="absolute left-0 top-0 h-0.5 w-full origin-left bg-accent-strong"
         style={{ transform: "scaleX(0)" }}
       />
       <nav className="container-x flex h-16 items-center justify-between">

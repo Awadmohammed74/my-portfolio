@@ -55,43 +55,46 @@ export default function Hero() {
               frontends.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row animate-fade-up delay-300">
-              <a href="#projects" className="btn btn-accent transition-all duration-300 hover:scale-105">
+            {/* CTA buttons — full width on mobile */}
+            <div className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row animate-fade-up delay-300">
+              <a
+                href="#projects"
+                className="btn btn-accent w-full justify-center sm:w-auto transition-all duration-300 hover:scale-105"
+              >
                 View Projects <ArrowDown className="h-4 w-4" />
               </a>
               <a
                 href="/assets/Awad_Resme.pdf"
                 download
-                className="btn btn-ghost transition-all duration-300 hover:scale-105"
+                className="btn btn-ghost w-full justify-center sm:w-auto transition-all duration-300 hover:scale-105"
               >
                 Download CV
               </a>
             </div>
 
-            {/* Tech focus chips */}
-            <ul className="mt-8 flex flex-wrap gap-2">
-              {["WordPress", "WooCommerce", "React", "PHP OOP", "REST APIs"].map(
-                (tag) => (
-              <li key={tag} className="chip">
-                {tag}
-              </li>
-                ),
-              )}
-            </ul>
-
-            {/* Stats */}
-            <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-line pt-8">
+            {/* Stats — premium cards */}
+            <dl className="mt-12 grid grid-cols-3 gap-2.5 sm:gap-4">
               {[
                 { value: "3+", label: "Years of experience" },
                 { value: "20+", label: "Projects delivered" },
                 { value: "90+", label: "Lighthouse score" },
-              ].map((s) => (
-                <div key={s.label}>
+              ].map((s, i) => (
+                <div
+                  key={s.label}
+                  data-reveal
+                  style={{ transitionDelay: `${i * 90}ms` }}
+                  className="group relative overflow-hidden rounded-2xl border border-line bg-white/70 px-2 py-5 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent-strong/50 hover:shadow-[0_20px_40px_-24px_rgba(22,51,0,0.55)] sm:px-4 sm:py-6"
+                >
+                  {/* top accent tick */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-1/2 top-0 h-0.5 w-8 -translate-x-1/2 rounded-full bg-accent-strong transition-all duration-300 group-hover:w-14"
+                  />
                   <dt className="sr-only">{s.label}</dt>
-                  <dd className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
+                  <dd className="text-gradient font-display text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
                     {s.value}
                   </dd>
-                  <p className="mt-1 text-xs font-medium text-mute sm:text-sm">
+                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-mute sm:text-xs">
                     {s.label}
                   </p>
                 </div>

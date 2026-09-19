@@ -185,45 +185,69 @@
 
   /* ── Segmented filter tabs (skills) ────────────────────────────── */
   .tab-group {
-    display: inline-flex;
-    flex-wrap: nowrap;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: stretch;
     gap: 0.375rem;
-    border-radius: 9999px;
+    border-radius: 1rem;
     border: 1px solid var(--color-line);
     background-color: var(--color-surface);
     padding: 0.4rem;
     box-shadow: 0 14px 34px -22px rgba(22, 51, 0, 0.4);
   }
 
+  /* Groups with many tabs stretch full width; 2-tab groups fit their content */
+  .tab-group:not(:has(.tab:nth-child(3))) {
+    width: fit-content;
+  }
+
+  .tab-group:not(:has(.tab:nth-child(3))) .tab {
+    flex: 0 0 auto;
+    padding: 0.5rem 1.4rem;
+  }
+
+  .tab {
+    position: relative;
+    flex: 1 1 0;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0.65rem;
+  }
+
   @media (max-width: 640px) {
-    /* On mobile: 4-column grid — top row 3 tabs (All is wide), bottom row 4 */
+    /* On mobile: 12-col grid — top row 4 tabs, bottom row 3, filling width */
     .tab-group {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(12, 1fr);
       width: 100%;
       gap: 0.3rem;
       padding: 0.35rem;
       border-radius: 1rem;
     }
 
+    .tab-group:not(:has(.tab:nth-child(3))) {
+      width: 100%;
+    }
+
     .tab-group .tab {
+      grid-column: span 3;
       white-space: normal;
       text-align: center;
-      padding: 0.4rem 0.25rem;
-      font-size: 0.72rem;
+      padding: 0.5rem 0.3rem;
+      font-size: 0.78rem;
       border-radius: 0.6rem;
     }
 
-    /* "All" takes a double cell → first row = 3 tabs, second row = 4 */
-    .tab:first-child {
-      grid-column: span 2;
+    /* Last 3 tabs of a 7-tab group stretch to fill the bottom row */
+    .tab-group .tab:nth-last-child(-n + 3) {
+      grid-column: span 4;
     }
 
     /* Groups with only 2 tabs (Projects: WordPress / React) split evenly */
-    .tab:first-child:nth-last-child(2),
-    .tab:nth-child(2):last-child {
-      grid-column: span 2;
+    .tab-group .tab:first-child:nth-last-child(2),
+    .tab-group .tab:nth-child(2):last-child {
+      grid-column: span 6;
     }
   }
 
