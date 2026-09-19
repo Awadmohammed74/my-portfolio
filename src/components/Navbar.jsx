@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -12,18 +12,38 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const barRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
       setScrolled(window.scrollY > 8);
+      // Write directly to the DOM (no React re-render per scroll frame)
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;
-      setProgress(max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0);
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      if (barRef.current) {
+        barRef.current.style.transform = `scaleX(${p})`;
+      }
     };
-    onScroll();
+
+    // Throttle to one update per animation frame — stops mobile jank
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -34,11 +54,12 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      {/* Scroll progress */}
+      {/* Scroll progress — GPU transform, updated via ref (no re-renders) */}
       <div
+        ref={barRef}
         aria-hidden="true"
-        className="absolute left-0 top-0 h-0.5 bg-accent-strong transition-[width] duration-150 ease-out"
-        style={{ width: `${progress}%` }}
+        className="absolute left-0 top-0 h-0.5 w-full origin-left bg-accent-strong will-change-transform"
+        style={{ transform: "scaleX(0)" }}
       />
       <nav className="container-x flex h-16 items-center justify-between">
         <a
