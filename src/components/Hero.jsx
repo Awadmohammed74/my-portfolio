@@ -3,6 +3,7 @@ import { ArrowDown, Download } from "lucide-react";
 
 const roles = [
   "WordPress & WooCommerce Engineer",
+  "Shopify Developer (Custom Code)",
   "React Frontend Developer",
 ];
 
@@ -51,8 +52,8 @@ export default function Hero() {
             <p className="mt-6 max-w-xl text-base leading-relaxed text-mute sm:text-lg animate-fade-up delay-200">
               Computer engineering student and web developer with 3+ years of
               experience shipping high-performance WordPress themes,
-              WooCommerce ecosystems, custom plugins, and modern React
-              frontends.
+              WooCommerce ecosystems, custom plugins, fully custom-coded
+              Shopify stores, and modern React frontends.
             </p>
 
             {/* CTA buttons — full width on mobile */}

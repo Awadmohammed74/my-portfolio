@@ -4,6 +4,40 @@ import { ArrowUpRight, BookOpenText, X } from "lucide-react";
 const allProjects = {
   wordpress: [
     {
+      title: "Sign Beauty",
+      desc: "Luxury bilingual (Arabic/English) beauty & personal care e-commerce store in UAE. Built with WooCommerce, Elementor Pro, and custom HTML/CSS/JS sections.",
+      tags: [
+        "WooCommerce",
+        "Elementor Pro",
+        "Bilingual",
+        "E-commerce",
+        "UAE",
+        "Custom Sections",
+      ],
+      image: "/assets/signbeauty.png",
+      link: "https://signbeauty.ae",
+      category: "ecommerce",
+      fullDesc:
+        "Official bilingual (Arabic & English) e-commerce store for Sign Beauty, a UAE-based personal care and beauty trading company. The homepage features fully custom-coded HTML/CSS/JS sections (such as interactive feature grids) integrated via Elementor Pro, combined with a high-performance WooCommerce architecture reflecting luxury brand identity (#123325 and #D4AF37).",
+      caseStudy: {
+        challenge:
+          "The client needed a luxurious and fast bilingual e-commerce platform in the UAE market that reflects their high-end natural beauty products. Key challenges included: implementing seamless Arabic/English language switching, designing bespoke custom sections on the homepage to match elite visual standards, ensuring seamless mobile responsiveness, and creating a smooth shopping experience for luxury skincare, hair care, and wellness items.",
+        solution:
+          "Developed a fully optimized bilingual WooCommerce store using Elementor Pro paired with bespoke HTML, CSS, and JavaScript code blocks for the homepage features section. Applied a sophisticated color palette (Dark Green #123325 and Gold #D4AF37), organized clear categories ranging from Dead Sea products to organic hair care, and structured the inner pages with Gutenberg blocks for optimal speed and SEO performance.",
+        results:
+          "Delivered an exquisite, high-speed, and secure bilingual e-commerce platform tailored for the UAE market. The custom sections and smooth language switching provide a unique brand presentation that significantly enhances user engagement and trust.",
+        techStack: [
+          "WordPress",
+          "WooCommerce",
+          "Elementor Pro",
+          "Bilingual (AR/EN)",
+          "Custom HTML/CSS/JS",
+          "Gutenberg",
+          "SEO Optimization",
+        ],
+      },
+    },
+    {
       title: "Khaleej Tech",
       desc: "Digital marketing agency website in UAE. Custom Gutenberg development with dynamic portfolio showcase and interactive service blocks.",
       tags: ["WordPress", "Gutenberg", "Digital Marketing", "UAE", "Portfolio"],
@@ -197,32 +231,6 @@ const allProjects = {
         ],
       },
     },
-    {
-      title: "Cofeano Store",
-      desc: "Bilingual WooCommerce store (Arabic & English) for a UAE brand with customized product pages and store layout.",
-      tags: ["WooCommerce", "Arabic/English", "Product Pages", "UAE"],
-      image: "/assets/cofeano website.png",
-      link: "https://cofeano.com",
-      category: "ecommerce",
-      fullDesc:
-        "Built a complete bilingual e-commerce experience for a UAE-based coffee brand. The store required seamless Arabic-English switching, custom product filtering, and a unique checkout flow tailored for the local market.",
-      caseStudy: {
-        challenge:
-          "The client needed a bilingual WooCommerce store that could handle both Arabic and English customers without compromising on UX. The main challenges were: RTL layout support, custom product variants, and local payment integration.",
-        solution:
-          "I customized WooCommerce with WPML for bilingual content, built custom product page templates with Elementor, and integrated local payment gateways. The design was optimized for mobile-first experience with fast loading times.",
-        results:
-          "Successfully launched a fully functional bilingual store with 40% faster page load times, achieving 92/100 Lighthouse performance score. The store now handles 200+ daily visitors with 15% conversion rate.",
-        techStack: [
-          "WooCommerce",
-          "WPML",
-          "PHP",
-          "Elementor",
-          "Custom CSS",
-          "Payment Gateway Integration",
-        ],
-      },
-    },
   ],
   react: [
     {
@@ -278,10 +286,41 @@ const allProjects = {
       },
     },
   ],
+  shopify: [
+    {
+      title: "Flamngoo",
+      desc: "Shopify home appliances store in Egypt. Full custom-coded theme with bespoke homepage sections, product page buy-box, and a custom Service Centers page with filters.",
+      tags: ["Shopify", "E-commerce", "Egypt", "Custom Liquid", "Filters"],
+      image: "/assets/flamngoo.png",
+      link: "https://flamngoo.com",
+      category: "ecommerce",
+      fullDesc:
+        "Official Shopify store for FLAMNGO, an Egyptian home appliances manufacturer. Built on a premium Shopify theme with extensive custom Liquid/HTML/CSS/JS: multiple custom homepage sections, a fixed 'Buy Now' bar on product pages, and a fully custom Service Centers page with category/brand filters.",
+      caseStudy: {
+        challenge:
+          "Client needed a high-converting Egyptian e-commerce store for home appliances with a strong brand identity and advanced UX features. Key challenges included: converting a custom design into a Shopify theme, building multiple bespoke homepage sections, implementing a sticky 'Buy Now' bar on product pages, and creating a custom Service Centers page with dynamic filtering.",
+        solution:
+          "Developed a fully custom Shopify theme based on a premium template, heavily modified with custom Liquid, HTML, CSS, and JavaScript. Implemented: multiple custom homepage sections (hero, categories, bundles, latest products, testimonials, about factory, footer), a fixed 'Buy Now' bar on product pages for higher conversions, and a custom Service Centers page with category/brand filters using custom JS. All other pages (About, Policies, Contact) were also fully custom-coded to match the brand's visual identity.",
+        results:
+          "Delivered a fast, secure, and conversion-optimized Shopify store tailored for the Egyptian market. The custom homepage sections and sticky buy-bar significantly improve user engagement and checkout rates. The custom Service Centers page enhances post-purchase support and brand trust.",
+        techStack: [
+          "Shopify",
+          "Custom Liquid",
+          "HTML/CSS",
+          "JavaScript",
+          "E-commerce",
+          "Custom Filters",
+          "UX Optimization",
+        ],
+      },
+    },
+  ],
 };
+
 const PROJECT_IMAGE_KEYS = Object.freeze([
   { id: "wordpress", label: "WordPress " },
   { id: "react", label: "React " },
+  { id: "shopify", label: "Shopify " },
 ]);
 
 export default function Projects() {
@@ -290,17 +329,18 @@ export default function Projects() {
   const [selected, setSelected] = useState(null);
 
   const filtered = allProjects[tab].filter((p) =>
-    tab === "react" ? true : p.category === sub,
+    tab === "react" || tab === "shopify" ? true : p.category === sub,
   );
 
   const wordpressCounts = {
-    corporate: allProjects.wordpress.filter((p) => p.category === "corporate")
-      .length,
-    ecommerce: allProjects.wordpress.filter((p) => p.category === "ecommerce")
-      .length,
+    corporate:
+      allProjects.wordpress?.filter((p) => p.category === "corporate").length ||
+      0,
+    ecommerce:
+      allProjects.wordpress?.filter((p) => p.category === "ecommerce").length ||
+      0,
   };
 
-  // Close modal on Escape; lock background scroll while open.
   useEffect(() => {
     if (!selected) return;
     const onKey = (e) => e.key === "Escape" && setSelected(null);
@@ -353,7 +393,7 @@ export default function Projects() {
           aria-label="Filter projects by platform"
           data-reveal
         >
-          <div className="tab-group">
+          <div className="tab-group inline-flex">
             {PROJECT_IMAGE_KEYS.map((t) => (
               <button
                 key={t.id}
@@ -471,6 +511,7 @@ export default function Projects() {
     </section>
   );
 }
+
 function ProjectModal({ project, onClose }) {
   const cs = project.caseStudy;
   return (
@@ -500,7 +541,6 @@ function ProjectModal({ project, onClose }) {
         </div>
 
         <div className="overflow-y-auto">
-          {/* Project image */}
           <div className="relative aspect-video w-full overflow-hidden border-b border-line bg-line">
             <img
               src={project.image}

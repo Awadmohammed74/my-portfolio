@@ -4,6 +4,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 const keywords = [
   "WordPress",
   "WooCommerce",
+  "Shopify (Custom Code)",
   "React",
   "Custom Plugins",
   "Headless CMS",
@@ -93,8 +94,9 @@ export default function Cta() {
             </span>
           </h2>
           <p className="mt-4 text-white/70">
-            From WooCommerce stores to React applications, I&apos;ll bring
-            performance, clean code, and measurable results to your next build.
+            From WooCommerce stores to custom-coded Shopify stores to React
+            applications, I&apos;ll bring performance, clean code, and
+            measurable results to your next build.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

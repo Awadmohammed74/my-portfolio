@@ -10,6 +10,7 @@ import {
 const differentiators = [
   "Custom WordPress themes & plugins (PHP OOP, Hooks, REST API)",
   "High-converting WooCommerce stores with custom logic",
+  "Custom-coded Shopify stores (Liquid, HTML/CSS/JS)",
   "Performance & Core Web Vitals optimization (Lighthouse 90+)",
   "React / headless frontends and automated DevOps workflows",
 ];
@@ -75,7 +76,7 @@ export default function About() {
                       Awad Mohammed AbdelAal
                     </p>
                     <p className="mt-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                      WordPress &amp; React Engineer
+                      WordPress, Shopify &amp; React Engineer
                     </p>
                   </div>
                 </div>
@@ -141,17 +142,18 @@ export default function About() {
                 <strong className="font-semibold text-ink">
                   Awad Mohammed AbdelAal
                 </strong>
-                , a WordPress specialist with 3+ years of professional
-                experience developing custom plugins, high-converting
-                WooCommerce stores, REST API automations, and optimized
-                servers.
+                , a WordPress & Shopify specialist with 3+ years of
+                professional experience developing custom plugins,
+                high-converting WooCommerce stores, fully custom-coded Shopify
+                stores, REST API automations, and optimized servers.
               </p>
 
               <p className="mt-4 text-sm leading-relaxed text-mute">
                 I combine the robustness of PHP MVC/OOP architecture with the
-                performance of the React ecosystem to craft clean, maintainable
-                code. I&apos;m currently completing my computer engineering
-                studies at Misr Higher Institute.
+                performance of the React ecosystem and the flexibility of
+                custom-coded Shopify themes to craft clean, maintainable code.
+                I&apos;m currently completing my computer engineering studies
+                at Misr Higher Institute.
               </p>
             </div>
 

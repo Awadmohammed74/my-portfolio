@@ -14,6 +14,12 @@ const services = [
     highlights: ["Custom themes", "WooCommerce", "ACF / CPT"],
   },
   {
+    icon: ShoppingCart,
+    title: "Shopify Custom Development",
+    desc: "Fully custom-coded Shopify stores — bespoke Liquid sections, product page buy-boxes, and tailored pages engineered for conversions.",
+    highlights: ["Custom Liquid", "Custom Sections", "Custom Code"],
+  },
+  {
     icon: Code2,
     title: "React & Headless Frontends",
     desc: "Fast single-page applications and headless CMS integrations bringing modern, dynamic interfaces to your product.",
@@ -66,7 +72,7 @@ export default function Services() {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <article
               key={service.title}

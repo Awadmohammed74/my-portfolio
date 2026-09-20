@@ -24,17 +24,7 @@ const skillCategories = [
       { name: "Figma to Interface", level: 75 },
     ],
   },
-  {
-    id: "backend",
-    title: "Backend & Systems",
-    skills: [
-      { name: "PHP OOP / MVC", level: 90 },
-      { name: "MySQL Relational Schema", level: 85 },
-      { name: "REST API Design & Webhooks", level: 88 },
-      { name: "Postman API Testing", level: 88 },
-      { name: "Linux Bash & Shell Automation", level: 78 },
-    ],
-  },
+
   {
     id: "devops",
     title: "DevOps & Cloud",
@@ -57,6 +47,17 @@ const skillCategories = [
     ],
   },
   {
+    id: "shopify",
+    title: "Shopify Development",
+    skills: [
+      { name: "Custom Theme Development (Liquid)", level: 88 },
+      { name: "Custom Sections & Schema Blocks", level: 86 },
+      { name: "Custom HTML/CSS/JS Integration", level: 92 },
+      { name: "Product & Collection Page Customization", level: 85 },
+      { name: "Checkout & Conversion Optimization", level: 80 },
+    ],
+  },
+  {
     id: "seo",
     title: "Performance & SEO",
     skills: [
@@ -72,9 +73,9 @@ const filters = [
   { id: "all", label: "All" },
   { id: "wordpress", label: "WordPress" },
   { id: "frontend", label: "Frontend" },
-  { id: "backend", label: "Backend" },
   { id: "devops", label: "DevOps" },
   { id: "firebase", label: "Firebase" },
+  { id: "shopify", label: "Shopify" },
   { id: "seo", label: "SEO" },
 ];
 
@@ -93,7 +94,10 @@ export default function Skills() {
       />
 
       <div className="container-x">
-        <div className="relative mx-auto max-w-2xl pb-4 text-center" data-reveal>
+        <div
+          className="relative mx-auto max-w-2xl pb-4 text-center"
+          data-reveal
+        >
           <span
             aria-hidden="true"
             className="section-num absolute -top-6 left-1/2 -z-10 -translate-x-1/2"

@@ -76,8 +76,8 @@ export default function Contact() {
             Let&apos;s build something <span className="text-gradient">great</span>
           </h2>
           <p className="mt-4 text-mute">
-            Have a WooCommerce store, plugin, or React project in mind? I&apos;ll
-            respond within 24 hours.
+            Have a WooCommerce store, Shopify store (custom-coded), plugin, or
+            React project in mind? I&apos;ll respond within 24 hours.
           </p>
         </div>
 
