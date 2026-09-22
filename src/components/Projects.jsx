@@ -264,7 +264,7 @@ const allProjects = {
       desc: "Professional CMS platform built using React 19, Vite, Tailwind CSS, and Firebase with real-time data sync and SEO management.",
       tags: ["React 19", "Vite", "Tailwind CSS", "Firebase", "CMS"],
       image: "/assets/procms.png",
-      link: "https://my-cms-project-git-main-awad-dev.vercel.app/",
+      link: "https://awad-cms-dashboard.vercel.app/",
       github: "https://vercel.com/awad-dev/awad-cms-dashboard",
       category: "react",
       fullDesc:
