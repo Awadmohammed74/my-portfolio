@@ -2,6 +2,18 @@ import { Briefcase, Check } from "lucide-react";
 
 const experiences = [
   {
+    role: "WordPress & Shopify Developer",
+    company: "Combiners",
+    period: "08/2026 — Present",
+    desc: "Building and customizing WordPress and Shopify stores for clients — themes, store setup, and feature development.",
+    achievements: [
+      "Custom WordPress themes and WooCommerce stores",
+      "Shopify store setup, theme customization, and app integrations",
+      "Ongoing client support, performance tuning, and updates",
+      "Reusable components and clean, maintainable codebases",
+    ],
+  },
+  {
     role: "Freelance WordPress Architect & Developer",
     company: "Self-Employed · Remote",
     period: "04/2023 — Present",
