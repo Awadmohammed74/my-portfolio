@@ -23,7 +23,7 @@ const allProjects = {
         challenge:
           "The client needed a luxurious and fast bilingual e-commerce platform in the UAE market that reflects their high-end natural beauty products. Key challenges included: implementing seamless Arabic/English language switching, designing bespoke custom sections on the homepage to match elite visual standards, ensuring seamless mobile responsiveness, and creating a smooth shopping experience for luxury skincare, hair care, and wellness items.",
         solution:
-          "Developed a fully optimized bilingual WooCommerce store using Elementor Pro paired with bespoke HTML, CSS, and JavaScript code blocks for the homepage features section. Applied a sophisticated color palette (Dark Green #123325 and Gold #D4AF37), organized clear categories ranging from Dead Sea products to organic hair care, and structured the inner pages with Gutenberg blocks for optimal speed and SEO performance.",
+          "Developed a fully optimized bilingual WooCommerce store using Elementor Pro, paired with bespoke HTML, CSS, and JavaScript for custom homepage sections and interactive features. Applied a sophisticated color palette (Dark Green #123325 and Gold #D4AF37), organized clear categories ranging from Dead Sea products to organic hair care, and designed complete inner pages using custom Gutenberg layouts and blocks for optimal speed and SEO performance.",
         results:
           "Delivered an exquisite, high-speed, and secure bilingual e-commerce platform tailored for the UAE market. The custom sections and smooth language switching provide a unique brand presentation that significantly enhances user engagement and trust.",
         techStack: [
