@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const skillCategories = [
   {
@@ -81,10 +81,47 @@ const filters = [
 
 export default function Skills() {
   const [active, setActive] = useState("all");
+  // First paint keeps the per-card scroll reveal; once the user filters, cards
+  // mount plain so the grid can cross-fade them in with a light 200ms fade.
+  const [filteredOnce, setFilteredOnce] = useState(false);
+  const tabRefs = useRef([]);
+
   const visible =
     active === "all"
       ? skillCategories
       : skillCategories.filter((c) => c.id === active);
+
+  const selectTab = (id) => {
+    setActive(id);
+    setFilteredOnce(true);
+  };
+
+  // Roving tab stop: arrow keys / Home / End move focus and activate the tab.
+  const onTabKeyDown = (event, index) => {
+    const last = filters.length - 1;
+    let next;
+    switch (event.key) {
+      case "ArrowRight":
+      case "ArrowDown":
+        next = index === last ? 0 : index + 1;
+        break;
+      case "ArrowLeft":
+      case "ArrowUp":
+        next = index === 0 ? last : index - 1;
+        break;
+      case "Home":
+        next = 0;
+        break;
+      case "End":
+        next = last;
+        break;
+      default:
+        return;
+    }
+    event.preventDefault();
+    selectTab(filters[next].id);
+    tabRefs.current[next]?.focus();
+  };
 
   return (
     <section id="skills" className="section relative overflow-hidden">
@@ -114,19 +151,24 @@ export default function Skills() {
         </div>
 
         <div
-          className="mt-8 flex justify-center"
+          className="mt-8"
           data-reveal
           role="tablist"
           aria-label="Filter skills by category"
         >
           <div className="tab-group">
-            {filters.map((f) => (
+            {filters.map((f, index) => (
               <button
                 key={f.id}
+                ref={(el) => {
+                  tabRefs.current[index] = el;
+                }}
                 type="button"
                 role="tab"
                 aria-selected={active === f.id}
-                onClick={() => setActive(f.id)}
+                tabIndex={active === f.id ? 0 : -1}
+                onClick={() => selectTab(f.id)}
+                onKeyDown={(event) => onTabKeyDown(event, index)}
                 className={`tab ${active === f.id ? "is-active" : ""}`}
               >
                 {f.label}
@@ -135,12 +177,19 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          key={active}
+          className="skills-grid mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        >
           {visible.map((category, i) => (
             <article
               key={category.id}
-              data-reveal
-              style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+              data-reveal={filteredOnce ? undefined : true}
+              style={
+                filteredOnce
+                  ? undefined
+                  : { transitionDelay: `${(i % 3) * 80}ms` }
+              }
               className="card p-6"
             >
               <h3 className="font-display text-lg font-bold text-ink">

@@ -256,6 +256,32 @@
     .tab-group .tab:nth-child(2):last-child {
       grid-column: span 6;
     }
+
+    /* ── Skills section overrides inside the shared mobile query ──
+       Cancel the 12-col grid and span rules; #skills uses its own 3-col grid. */
+    #skills .tab-group {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 0 16px;
+      gap: 8px;
+      border-radius: 0;
+    }
+
+    #skills .tab-group .tab {
+      grid-column: auto;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.78rem;
+      border-radius: 12px;
+    }
+
+    /* "All" still spans the full first row */
+    #skills .tab-group .tab:first-child {
+      grid-column: 1 / -1;
+    }
+
+    /* Cancel the span-4 rule applied to last 3 tabs in 7-tab groups */
+    #skills .tab-group .tab:nth-last-child(-n + 3) {
+      grid-column: auto;
+    }
   }
 
   .tab {
@@ -335,6 +361,113 @@
     background: var(--color-accent);
     color: var(--color-ink);
     box-shadow: 0 8px 18px -10px rgba(76, 127, 37, 0.7);
+  }
+
+  /* ── Skills filter tabs: standalone buttons, card shell removed ──
+     Scoped to #skills so the Projects tab-group keeps its card.
+     Mobile-first: 3-column grid. Desktop: single centred flex row. */
+
+  /* ── Mobile (default): 3-column grid, no white card wrapper ── */
+  #skills .tab-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    box-sizing: border-box;
+    padding: 0 16px;
+    /* strip the shared card shell */
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    /* never scroll sideways */
+    overflow: visible;
+  }
+
+  /* "All" owns the entire first row */
+  #skills .tab-group .tab:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Every tab: independent button look */
+  #skills .tab-group .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* reset grid span set by the generic 12-col mobile rule */
+    grid-column: auto;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    color: var(--color-mute);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: normal;
+    /* undo inherited flex-shrink:0 so items stay in grid lanes */
+    flex-shrink: 1;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #skills .tab-group .tab:hover:not(.is-active) {
+    color: var(--color-ink);
+    background-color: var(--color-mist);
+    border-color: #cbd8ba;
+  }
+
+  /* Active tab: dark green bg + light green text */
+  #skills .tab-group .tab.is-active {
+    background-color: #1f4a0a;
+    border-color: #1f4a0a;
+    color: #b6f36b;
+    box-shadow: 0 8px 18px -12px rgba(31, 74, 10, 0.65);
+  }
+
+  /* ── Desktop (≥768px): single centred flex row, "All" is normal width ── */
+  @media (min-width: 768px) {
+    #skills .tab-group {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      width: fit-content;
+      max-width: calc(100% - 2rem);
+      padding: 0;
+      gap: 0.375rem;
+    }
+
+    /* "All" is just a regular tab on desktop */
+    #skills .tab-group .tab:first-child {
+      grid-column: auto;
+    }
+
+    #skills .tab-group .tab {
+      flex: 0 0 auto;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.8125rem;
+      white-space: nowrap;
+      min-height: 44px;
+    }
+  }
+
+  /* Filter switch: cross-fade cards in with a light 200ms fade */
+  @keyframes skills-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .skills-grid {
+    animation: skills-fade 0.2s ease both;
   }
 
   /* Soft animated section divider hairline */
