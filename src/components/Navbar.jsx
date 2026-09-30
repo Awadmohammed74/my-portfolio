@@ -20,7 +20,6 @@ export default function Navbar() {
   const [active, setActive] = useState("");
   const [reduceMotion, setReduceMotion] = useState(false);
   const [pending, setPending] = useState(null);
-  const barRef = useRef(null);
   const headerRef = useRef(null);
   const panelRef = useRef(null);
   const toggleRef = useRef(null);
@@ -33,18 +32,7 @@ export default function Navbar() {
     const update = () => {
       ticking = false;
       setScrolled(window.scrollY > 8);
-      // Write directly to the DOM (no React re-render per scroll frame)
-      const h = document.documentElement;
-      const max = h.scrollHeight - h.clientHeight;
-      if (max <= 0 || !barRef.current) return;
-      const p = Math.min(1, window.scrollY / max);
-      // Skip micro-changes (mobile address-bar resize makes these jump around)
-      if (Math.abs(p - lastP) < 0.002) return;
-      lastP = p;
-      barRef.current.style.transform = `scaleX(${p})`;
     };
-
-    let lastP = 0;
 
     // Throttle to one update per animation frame — stops mobile jank
     const onScroll = () => {
@@ -212,13 +200,6 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-      {/* Scroll progress — GPU transform, updated via ref (no re-renders) */}
-      <div
-        ref={barRef}
-        aria-hidden="true"
-        className="absolute left-0 top-0 h-0.5 w-full origin-left bg-accent-strong"
-        style={{ transform: "scaleX(0)" }}
-      />
       <nav className="container-x flex h-16 items-center justify-between">
         <a
           href="#home"
