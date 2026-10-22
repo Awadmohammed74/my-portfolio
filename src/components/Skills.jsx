@@ -1,4 +1,12 @@
 import { useRef, useState } from "react";
+import {
+  SiWordpress, SiPhp, SiWoocommerce,
+  SiReact, SiRedux, SiJavascript, SiTailwindcss, SiHtml5, SiCss, SiFigma,
+  SiGit, SiGithub, SiDocker, SiZapier,
+  SiFirebase, SiSupabase,
+  SiShopify,
+  SiLighthouse, SiGoogleanalytics, SiRedis,
+} from "react-icons/si";
 
 const skillCategories = [
   {
@@ -11,6 +19,7 @@ const skillCategories = [
       { name: "WooCommerce Engine Customization", level: 88 },
       { name: "Gutenberg Block Architectures", level: 78 },
     ],
+    logos: [SiWordpress, SiPhp, SiWoocommerce],
   },
   {
     id: "frontend",
@@ -23,6 +32,7 @@ const skillCategories = [
       { name: "HTML5 / CSS3", level: 95 },
       { name: "Figma to Interface", level: 75 },
     ],
+    logos: [SiReact, SiRedux, SiJavascript, SiTailwindcss, SiHtml5, SiCss, SiFigma],
   },
 
   {
@@ -34,6 +44,7 @@ const skillCategories = [
       { name: "Workflow Automation (Zapier / Make)", level: 85 },
       { name: "Git & GitHub workflows", level: 80 },
     ],
+    logos: [SiGit, SiGithub, SiDocker, SiZapier],
   },
   {
     id: "firebase",
@@ -45,6 +56,7 @@ const skillCategories = [
       { name: "Firebase Cloud Messaging", level: 80 },
       { name: "Firebase Hosting & Functions", level: 75 },
     ],
+    logos: [SiFirebase, SiSupabase],
   },
   {
     id: "shopify",
@@ -56,6 +68,7 @@ const skillCategories = [
       { name: "Product & Collection Page Customization", level: 85 },
       { name: "Checkout & Conversion Optimization", level: 80 },
     ],
+    logos: [SiShopify, SiJavascript],
   },
   {
     id: "seo",
@@ -66,6 +79,7 @@ const skillCategories = [
       { name: "Caching (LiteSpeed / Redis)", level: 82 },
       { name: "Search Console & Schema JSON", level: 80 },
     ],
+    logos: [SiLighthouse, SiGoogleanalytics, SiRedis],
   },
 ];
 
@@ -226,6 +240,14 @@ export default function Skills() {
                   </li>
                 ))}
               </ul>
+               <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-line pt-4">
+                 {(category.logos || []).map((Icon, idx) => (
+                   <span key={idx} className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink/5 text-ink/70">
+                     <Icon className="h-4 w-4" />
+                   </span>
+                 ))}
+               </div>
+
             </article>
           ))}
         </div>
