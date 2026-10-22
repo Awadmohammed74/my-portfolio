@@ -186,7 +186,7 @@ export default function Skills() {
                 onKeyDown={(event) => onTabKeyDown(event, index)}
                 className={`tab flex items-center gap-1.5 ${active === f.id ? "is-active" : ""}`}
               >
-                {f.icon && <f.icon className={f.id === "wordpress" ? "h-4 w-4 md:h-3.5 md:w-3.5 scale-125 md:scale-100 origin-center" : "h-3.5 w-3.5"} />}
+                {f.icon && <f.icon className={f.id === "wordpress" ? "h-[22px] w-[22px] md:h-3.5 md:w-3.5 flex-shrink-0" : "h-3.5 w-3.5"} />}
                 {f.label}
               </button>
             ))}
