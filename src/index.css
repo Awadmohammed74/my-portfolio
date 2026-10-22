@@ -426,20 +426,7 @@
     border-color: #cbd8ba;
   }
 
-  @media (max-width: 767px) {
-    #skills .tab .wp-icon-wrap,
-    #skills .tab .wp-icon-wrap svg {
-      width: 14px !important;
-      height: 14px !important;
-      min-width: 14px !important;
-      min-height: 14px !important;
-      flex-shrink: 0 !important;
-    }
-    #skills .tab .wp-icon-wrap svg {
-      width: 100% !important;
-      height: 100% !important;
-    }
-  }
+
 
   /* Active tab: dark green bg + light green text */
   #skills .tab-group .tab.is-active {
