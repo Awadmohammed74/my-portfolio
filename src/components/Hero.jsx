@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { ArrowDown, Download } from "lucide-react";
 
 const roles = [
-  "WordPress Engineer",
+  "WordPress Developer",
   "Shopify Developer (Custom Code)",
-  "React Frontend Engineer",
+  "React Frontend Developer",
 ];
 
 export default function Hero() {
