@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { ArrowDown, Download } from "lucide-react";
 
 const roles = [
-  "WordPress & WooCommerce Engineer",
+  "WordPress Engineer",
   "Shopify Developer (Custom Code)",
-  "React Frontend Developer",
+  "React Frontend Engineer",
 ];
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative pt-28 pb-16 sm:pt-32">
+    <section id="home" className="relative pt-24 pb-12 sm:pt-32">
       {/* Decorative depth: soft grid + accent orb */}
       <div
         aria-hidden="true"
@@ -31,33 +31,33 @@ export default function Hero() {
       </div>
 
       <div className="container-x">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="grid items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           {/* Copy */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start order-2 lg:order-1">
             <span className="eyebrow animate-fade-up">
               <span className="h-2 w-2 rounded-full bg-accent-strong" />
               Available for work
             </span>
 
-            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tighter text-ink sm:text-6xl lg:text-7xl animate-fade-up delay-100">
+            <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tighter text-ink sm:text-6xl lg:text-7xl animate-fade-up delay-100">
               Awad Mohammed
-              <span 
-                key={roleIndex} 
-                className="mt-3 block text-2xl font-bold tracking-tight text-mute sm:text-3xl animate-[fade-up_0.5s_ease-out_forwards]"
+              <span
+                key={roleIndex}
+                className="mt-3 block text-xl font-bold tracking-tight text-mute sm:text-3xl animate-[fade-up_0.5s_ease-out_forwards]"
               >
                 {roles[roleIndex]}
               </span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-mute sm:text-lg animate-fade-up delay-200">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-mute sm:text-lg animate-fade-up delay-200">
               Computer engineering student and web developer with 3+ years of
-              experience shipping high-performance WordPress themes,
-              WooCommerce ecosystems, custom plugins, fully custom-coded
-              Shopify stores, and modern React frontends.
+              experience shipping high-performance WordPress themes, WooCommerce
+              ecosystems, custom plugins, fully custom-coded Shopify stores, and
+              modern React frontends.
             </p>
 
             {/* CTA buttons — full width on mobile */}
-            <div className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row animate-fade-up delay-300">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row animate-fade-up delay-300">
               <a
                 href="#projects"
                 className="btn btn-accent w-full justify-center sm:w-auto transition-all duration-300 hover:scale-105"
@@ -74,7 +74,7 @@ export default function Hero() {
             </div>
 
             {/* Stats — premium cards */}
-            <dl className="mt-12 grid grid-cols-3 gap-2.5 sm:gap-4">
+            <dl className="mt-6 grid grid-cols-3 gap-2.5 sm:gap-4">
               {[
                 { value: "3+", label: "Years of experience" },
                 { value: "20+", label: "Projects delivered" },
@@ -104,7 +104,7 @@ export default function Hero() {
           </div>
 
           {/* Portrait */}
-          <div className="mx-auto w-full max-w-sm animate-fade-up delay-400">
+          <div className="mx-auto w-full max-w-[14.5rem] mt-3 mb-5 animate-fade-up delay-400 sm:mt-0 sm:mb-0 sm:max-w-sm order-1 lg:order-2">
             <figure className="relative transition-transform duration-700 ease-out hover:-rotate-1 hover:scale-[1.02]">
               <div
                 aria-hidden="true"
@@ -126,17 +126,19 @@ export default function Hero() {
               </div>
 
               {/* Floating role badge */}
-              <div className="absolute -left-4 top-6 flex items-center gap-3 rounded-2xl border border-white/60 bg-white/90 px-4 py-2.5 shadow-2xl backdrop-blur-md sm:-left-8 transition-transform duration-500 hover:-translate-y-1">
+              <div className="absolute -left-3 top-4 flex items-center gap-2 rounded-xl border border-white/60 bg-white/90 px-3 py-2 shadow-2xl backdrop-blur-md sm:-left-8 sm:top-6 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-2.5 transition-transform duration-500 hover:-translate-y-1">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-strong opacity-60" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent-strong" />
                 </span>
-                <span className="text-sm font-bold tracking-tight text-ink">Open to work</span>
+                <span className="text-xs font-bold tracking-tight text-ink sm:text-sm">
+                  Open to work
+                </span>
               </div>
 
               {/* Floating metric badge */}
-              <div className="absolute -right-3 bottom-8 rounded-3xl border border-white/60 bg-white/90 px-5 py-4 shadow-2xl backdrop-blur-md sm:-right-6 transition-transform duration-500 hover:-translate-y-1">
-                <p className="font-display text-3xl font-extrabold text-ink">
+              <div className="absolute -right-2 bottom-6 rounded-2xl border border-white/60 bg-white/90 px-4 py-3 shadow-2xl backdrop-blur-md sm:-right-6 sm:bottom-8 sm:rounded-3xl sm:px-5 sm:py-4 transition-transform duration-500 hover:-translate-y-1">
+                <p className="font-display text-2xl font-extrabold text-ink sm:text-3xl">
                   90<span className="text-accent-strong">+</span>
                 </p>
                 <p className="mt-0.5 text-xs font-bold uppercase tracking-wider text-mute">

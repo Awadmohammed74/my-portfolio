@@ -601,7 +601,15 @@
   mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 55%, transparent 100%);
 }
 
-/* Gentle float for a soft decorative accent shape */
+button,
+a,
+[role="button"],
+[role="link"],
+[tabindex]:not([tabindex="-1"]),
+label[for],
+summary {
+  cursor: pointer;
+}
 @keyframes float-soft {
   0%,
   100% {
