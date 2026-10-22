@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SiWordpress, SiReact, SiShopify } from "react-icons/si";
 import { ArrowUpRight, BookOpenText, X } from "lucide-react";
 
 const allProjects = {
@@ -318,9 +319,9 @@ const allProjects = {
 };
 
 const PROJECT_IMAGE_KEYS = Object.freeze([
-  { id: "wordpress", label: "WordPress " },
-  { id: "react", label: "React " },
-  { id: "shopify", label: "Shopify " },
+  { id: "wordpress", label: "WordPress ", icon: SiWordpress },
+  { id: "react", label: "React ", icon: SiReact },
+  { id: "shopify", label: "Shopify ", icon: SiShopify },
 ]);
 
 export default function Projects() {
@@ -404,8 +405,10 @@ export default function Projects() {
                   setTab(t.id);
                   setSub("corporate");
                 }}
-                className={`tab ${tab === t.id ? "is-active" : ""}`}
+                className={`tab flex items-center gap-1.5 ${tab === t.id ? "is-active" : ""}`}
               >
+                 {t.icon && <t.icon className="h-3.5 w-3.5" />}
+
                 {t.label}
                 <span className="tab-count">{allProjects[t.id].length}</span>
               </button>
