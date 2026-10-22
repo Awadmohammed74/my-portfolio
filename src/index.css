@@ -429,10 +429,10 @@
   @media (max-width: 767px) {
     #skills .tab .wp-icon-wrap,
     #skills .tab .wp-icon-wrap svg {
-      width: 18px !important;
-      height: 18px !important;
-      min-width: 18px !important;
-      min-height: 18px !important;
+      width: 14px !important;
+      height: 14px !important;
+      min-width: 14px !important;
+      min-height: 14px !important;
       flex-shrink: 0 !important;
     }
     #skills .tab .wp-icon-wrap svg {
