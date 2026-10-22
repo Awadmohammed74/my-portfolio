@@ -205,7 +205,7 @@ export default function Skills() {
                   ? undefined
                   : { transitionDelay: `${(i % 3) * 80}ms` }
               }
-              className="card p-6"
+              className="card flex h-full flex-col p-6"
             >
               <h3 className="font-display text-lg font-bold text-ink">
                 {category.title}
@@ -241,7 +241,7 @@ export default function Skills() {
                   </li>
                 ))}
               </ul>
-               <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-line pt-4">
+               <div className="mt-auto pt-5 flex flex-wrap items-center gap-2 border-t border-line">
                  {(category.logos || []).map((Icon, idx) => (
                    <span key={idx} className="flex h-7 w-7 items-center justify-center rounded-lg bg-ink/5 text-ink/70">
                      <Icon className="h-4 w-4" />
