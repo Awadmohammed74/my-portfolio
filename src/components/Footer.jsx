@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="container-x flex flex-col gap-8 py-12">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <a href="#home" className="font-display text-xl font-extrabold">
-            <img src="/assets/my%20logo.png" alt="Logo" className="h-8 w-auto" />
+            <img src="/assets/my%20logo%20for%20footr.png" alt="Logo" className="h-8 w-auto" />
           </a>
 
           <nav aria-label="Footer">
