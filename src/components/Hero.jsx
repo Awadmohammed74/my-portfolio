@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative pt-24 pb-12 sm:pt-32">
+    <section id="home" className="relative pt-20 pb-12 sm:pt-32">
       {/* Decorative depth: soft grid + accent orb */}
       <div
         aria-hidden="true"
@@ -39,17 +39,17 @@ export default function Hero() {
               Available for work
             </span>
 
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tighter text-ink sm:text-6xl lg:text-7xl animate-fade-up delay-100">
+            <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-tighter text-ink sm:text-6xl lg:text-7xl animate-fade-up delay-100">
               Awad Mohammed
               <span
                 key={roleIndex}
-                className="mt-3 block text-xl font-bold tracking-tight text-mute sm:text-3xl animate-[fade-up_0.5s_ease-out_forwards]"
+                className="mt-2 block text-xl font-bold tracking-tight text-mute sm:text-3xl animate-[fade-up_0.5s_ease-out_forwards]"
               >
                 {roles[roleIndex]}
               </span>
             </h1>
 
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-mute sm:text-lg animate-fade-up delay-200">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-mute sm:text-lg animate-fade-up delay-200">
               Computer engineering student and web developer with 3+ years of
               experience shipping high-performance WordPress themes, WooCommerce
               ecosystems, custom plugins, fully custom-coded Shopify stores, and
@@ -57,7 +57,7 @@ export default function Hero() {
             </p>
 
             {/* CTA buttons — full width on mobile */}
-            <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row animate-fade-up delay-300">
+            <div className="mt-5 flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row animate-fade-up delay-300">
               <a
                 href="#projects"
                 className="btn btn-accent w-full justify-center sm:w-auto transition-all duration-300 hover:scale-105"
@@ -104,7 +104,7 @@ export default function Hero() {
           </div>
 
           {/* Portrait */}
-          <div className="mx-auto w-full max-w-[14.5rem] mt-3 mb-5 animate-fade-up delay-400 sm:mt-0 sm:mb-0 sm:max-w-sm order-1 lg:order-2">
+          <div className="mx-auto w-full max-w-[11rem] mt-2 mb-3 animate-fade-up delay-400 sm:mt-0 sm:mb-0 sm:max-w-sm order-1 lg:order-2">
             <figure className="relative transition-transform duration-700 ease-out hover:-rotate-1 hover:scale-[1.02]">
               <div
                 aria-hidden="true"
