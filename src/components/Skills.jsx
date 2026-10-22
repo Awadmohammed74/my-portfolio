@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
+import { Boxes, Droplets, Zap } from "lucide-react";
 import {
-  SiWordpress, SiPhp, SiWoocommerce,
+  SiWordpress, SiPhp, SiWoocommerce, SiHetzner, SiMake, SiZapier,
   SiReact, SiRedux, SiJavascript, SiTailwindcss, SiHtml5, SiCss, SiFigma,
-  SiGit, SiGithub, SiDocker, SiZapier,
+  SiGit, SiGithub, SiDocker,
   SiFirebase, SiSupabase,
   SiShopify,
   SiLighthouse, SiGoogleanalytics, SiRedis,
@@ -19,7 +20,7 @@ const skillCategories = [
       { name: "WooCommerce Engine Customization", level: 88 },
       { name: "Gutenberg Block Architectures", level: 78 },
     ],
-    logos: [SiWordpress, SiPhp, SiWoocommerce],
+    logos: [SiWordpress, SiPhp, SiWoocommerce, Boxes],
   },
   {
     id: "frontend",
@@ -44,7 +45,7 @@ const skillCategories = [
       { name: "Workflow Automation (Zapier / Make)", level: 85 },
       { name: "Git & GitHub workflows", level: 80 },
     ],
-    logos: [SiGit, SiGithub, SiDocker, SiZapier],
+    logos: [SiGit, SiGithub, SiDocker, SiHetzner, Zap, SiZapier, SiMake],
   },
   {
     id: "firebase",
@@ -68,7 +69,7 @@ const skillCategories = [
       { name: "Product & Collection Page Customization", level: 85 },
       { name: "Checkout & Conversion Optimization", level: 80 },
     ],
-    logos: [SiShopify, SiJavascript],
+    logos: [SiShopify, Droplets, SiJavascript],
   },
   {
     id: "seo",
@@ -79,7 +80,7 @@ const skillCategories = [
       { name: "Caching (LiteSpeed / Redis)", level: 82 },
       { name: "Search Console & Schema JSON", level: 80 },
     ],
-    logos: [SiLighthouse, SiGoogleanalytics, SiRedis],
+    logos: [SiLighthouse, SiGoogleanalytics, Zap, SiRedis],
   },
 ];
 
