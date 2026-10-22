@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative pt-20 pb-12 sm:pt-24 sm:pb-8">
+    <section id="home" className="relative pt-20 pb-12 sm:pt-32 sm:pb-12">
       {/* Decorative depth: soft grid + accent orb */}
       <div
         aria-hidden="true"
@@ -31,7 +31,7 @@ export default function Hero() {
       </div>
 
       <div className="container-x">
-        <div className="grid items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+        <div className="grid items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
           {/* Copy */}
           <div className="flex flex-col items-start order-2 lg:order-1">
             <span className="eyebrow animate-fade-up">
@@ -49,7 +49,7 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-mute sm:mt-2 sm:text-lg animate-fade-up delay-200">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-mute sm:mt-4 sm:text-lg animate-fade-up delay-200">
               Computer engineering student and web developer with 3+ years of
               experience shipping high-performance WordPress themes, WooCommerce
               ecosystems, custom plugins, fully custom-coded Shopify stores, and
@@ -57,7 +57,7 @@ export default function Hero() {
             </p>
 
             {/* CTA buttons — full width on mobile */}
-            <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-4 sm:w-auto sm:flex-row animate-fade-up delay-300">
+            <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-6 sm:w-auto sm:flex-row animate-fade-up delay-300">
               <a
                 href="#projects"
                 className="btn btn-accent w-full justify-center sm:w-auto transition-all duration-300 hover:scale-105"
@@ -74,7 +74,7 @@ export default function Hero() {
             </div>
 
             {/* Stats — premium cards */}
-            <dl className="mt-6 grid grid-cols-3 gap-2.5 sm:mt-4 sm:gap-4">
+            <dl className="mt-6 grid grid-cols-3 gap-2.5 sm:mt-8 sm:gap-4">
               {[
                 { value: "3+", label: "Years of experience" },
                 { value: "20+", label: "Projects delivered" },
