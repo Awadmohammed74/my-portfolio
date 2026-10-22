@@ -405,7 +405,7 @@ export default function Projects() {
                   setTab(t.id);
                   setSub("corporate");
                 }}
-                className={`tab flex items-center gap-1.5 ${tab === t.id ? "is-active" : ""}`}
+                className={`tab flex items-center justify-center gap-1.5 ${tab === t.id ? "is-active" : ""}`}
               >
                  {t.icon && <t.icon className="h-3.5 w-3.5" />}
 
