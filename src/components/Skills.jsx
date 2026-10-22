@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Boxes, Droplets, Zap } from "lucide-react";
+import { Boxes, Droplets, LayoutGrid, Zap } from "lucide-react";
 import {
   SiWordpress, SiPhp, SiWoocommerce, SiHetzner, SiMake, SiZapier,
   SiReact, SiRedux, SiJavascript, SiTailwindcss, SiHtml5, SiCss, SiFigma,
@@ -85,13 +85,13 @@ const skillCategories = [
 ];
 
 const filters = [
-  { id: "all", label: "All" },
-  { id: "wordpress", label: "WordPress" },
-  { id: "frontend", label: "Frontend" },
-  { id: "devops", label: "DevOps" },
-  { id: "firebase", label: "Firebase" },
-  { id: "shopify", label: "Shopify" },
-  { id: "seo", label: "SEO" },
+  { id: "all", label: "All", icon: LayoutGrid },
+  { id: "wordpress", label: "WordPress", icon: SiWordpress },
+  { id: "frontend", label: "Frontend", icon: SiReact },
+  { id: "devops", label: "DevOps", icon: SiGit },
+  { id: "firebase", label: "Firebase", icon: SiFirebase },
+  { id: "shopify", label: "Shopify", icon: SiShopify },
+  { id: "seo", label: "SEO", icon: SiLighthouse },
 ];
 
 export default function Skills() {
@@ -184,8 +184,9 @@ export default function Skills() {
                 tabIndex={active === f.id ? 0 : -1}
                 onClick={() => selectTab(f.id)}
                 onKeyDown={(event) => onTabKeyDown(event, index)}
-                className={`tab ${active === f.id ? "is-active" : ""}`}
+                className={`tab flex items-center gap-1.5 ${active === f.id ? "is-active" : ""}`}
               >
+                {f.icon && <f.icon className="h-3.5 w-3.5" />}
                 {f.label}
               </button>
             ))}
