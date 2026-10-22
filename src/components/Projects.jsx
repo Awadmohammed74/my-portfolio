@@ -407,7 +407,7 @@ export default function Projects() {
                 }}
                 className={`tab flex items-center justify-center gap-1.5 ${tab === t.id ? "is-active" : ""}`}
               >
-                 {t.icon && <t.icon className="h-3 w-3" />}
+                 {t.icon && <t.icon className="h-3 w-3 md:h-[13px] md:w-[13px]" />}
 
                 {t.label}
                 <span className="tab-count">{allProjects[t.id].length}</span>

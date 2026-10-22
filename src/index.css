@@ -462,6 +462,16 @@
     }
   }
 
+  /* Desktop: slightly larger content size for Project category tabs (WordPress / React / Shopify) */
+  @media (min-width: 768px) {
+    .tab-group.inline-flex .tab {
+      font-size: 0.85rem;
+    }
+    .tab-group.inline-flex .tab-count {
+      font-size: 0.65rem;
+    }
+  }
+
   /* Filter switch: cross-fade cards in with a light 200ms fade */
   @keyframes skills-fade {
     from { opacity: 0; }
