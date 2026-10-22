@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SiWordpress, SiReact, SiShopify } from "react-icons/si";
-import { ArrowUpRight, BookOpenText, X } from "lucide-react";
+import { ArrowUpRight, BookOpenText, Building2, ShoppingCart, X } from "lucide-react";
 
 const allProjects = {
   wordpress: [
@@ -424,8 +424,8 @@ export default function Projects() {
             data-reveal
           >
             {[
-              { id: "corporate", label: "Corporate Sites" },
-              { id: "ecommerce", label: "E-Commerce Stores" },
+              { id: "corporate", label: "Corporate Sites", icon: Building2 },
+              { id: "ecommerce", label: "E-Commerce Stores", icon: ShoppingCart },
             ].map((f) => (
               <button
                 key={f.id}
@@ -433,10 +433,7 @@ export default function Projects() {
                 onClick={() => setSub(f.id)}
                 className={`tab-sub ${sub === f.id ? "is-active" : ""}`}
               >
-                <span
-                  aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-current opacity-60"
-                />
+                <f.icon className="h-4 w-4 shrink-0" />
                 {f.label}
                 <span className="text-[11px] font-bold opacity-70">
                   {wordpressCounts[f.id]}
