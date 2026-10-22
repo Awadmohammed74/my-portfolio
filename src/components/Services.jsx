@@ -1,38 +1,39 @@
+import { ArrowUpRight } from "lucide-react";
 import {
-  Globe,
-  ShoppingCart,
-  Boxes,
-  Code2,
-  Wrench,
-} from "lucide-react";
+  SiWordpress,
+  SiShopify,
+  SiReact,
+  SiPhp,
+  SiLighthouse,
+} from "react-icons/si";
 
 const services = [
   {
-    icon: Globe,
+    icon: SiWordpress,
     title: "WordPress & WooCommerce",
     desc: "Custom themes, plugins, and high-converting WooCommerce stores engineered for speed, security, and clean maintainable code.",
     highlights: ["Custom themes", "WooCommerce", "ACF / CPT"],
   },
   {
-    icon: ShoppingCart,
+    icon: SiShopify,
     title: "Shopify Custom Development",
     desc: "Fully custom-coded Shopify stores — bespoke Liquid sections, product page buy-boxes, and tailored pages engineered for conversions.",
     highlights: ["Custom Liquid", "Custom Sections", "Custom Code"],
   },
   {
-    icon: Code2,
+    icon: SiReact,
     title: "React & Headless Frontends",
     desc: "Fast single-page applications and headless CMS integrations bringing modern, dynamic interfaces to your product.",
     highlights: ["React 19", "Vite", "Tailwind CSS"],
   },
   {
-    icon: Boxes,
+    icon: SiPhp,
     title: "Custom Plugin Architecture",
     desc: "Robust PHP OOP plugins and REST API automations that extend WordPress exactly how your business needs.",
     highlights: ["PHP OOP / MVC", "REST APIs", "Hooks"],
   },
   {
-    icon: Wrench,
+    icon: SiLighthouse,
     title: "Performance, SEO & DevOps",
     desc: "Core Web Vitals optimization, caching strategies, and cloud infrastructure that keep sites fast under load.",
     highlights: ["Lighthouse 90+", "LiteSpeed / Redis", "VPS & Bash"],
@@ -68,7 +69,7 @@ export default function Services() {
             href="#contact"
             className="btn btn-ghost shrink-0 px-5! py-2.5! text-sm"
           >
-            Start a project <ShoppingCart className="h-4 w-4" />
+            Start a project <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
 
