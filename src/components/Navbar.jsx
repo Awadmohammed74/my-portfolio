@@ -206,7 +206,7 @@ export default function Navbar() {
           className="font-display text-lg font-extrabold tracking-tight text-ink"
           onClick={(e) => handleNavClick(e, "#home")}
         >
-          <img src="/assets/my%20logo.png" alt="Logo" className="h-10 w-auto" />
+          <img src="/assets/my%20logo.png" alt="Logo" className="h-9 w-auto md:h-10" />
         </a>
 
         {/* Desktop nav */}
