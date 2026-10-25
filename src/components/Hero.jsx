@@ -125,17 +125,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating role badge */}
-              <div className="absolute -left-2 top-3 flex items-center gap-1.5 rounded-lg border border-white/60 bg-white/90 px-2 py-1.5 shadow-2xl backdrop-blur-md sm:-left-8 sm:top-6 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-2.5 transition-transform duration-500 hover:-translate-y-1">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-strong opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-strong" />
-                </span>
-                <span className="text-[10px] font-bold tracking-tight text-ink sm:text-sm">
-                  Open to work
-                </span>
-              </div>
-
               {/* Floating metric badge */}
               <div className="absolute -right-2 bottom-5 rounded-xl border border-white/60 bg-white/90 px-3 py-2 shadow-2xl backdrop-blur-md sm:-right-6 sm:bottom-8 sm:rounded-3xl sm:px-5 sm:py-4 transition-transform duration-500 hover:-translate-y-1">
                 <p className="font-display text-lg font-extrabold text-ink sm:text-3xl">
