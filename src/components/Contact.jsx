@@ -19,7 +19,12 @@ const BRAND_ICONS = {
 function InfoIcon({ icon, label }) {
   if (typeof icon === "string") {
     return (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-5 w-5"
+        aria-hidden="true"
+      >
         <path d={icon} />
       </svg>
     );
@@ -29,16 +34,46 @@ function InfoIcon({ icon, label }) {
 }
 
 const info = [
-  { icon: Mail, label: "Email", value: "awadmhmd666@gmail.com", href: "mailto:awadmhmd666@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+20 101 855 3683", href: "tel:+201018553683" },
-  { icon: MessageCircle, label: "WhatsApp", value: "Chat on WhatsApp", href: "https://wa.me/201018553683" },
-  { icon: BRAND_ICONS.LinkedIn, label: "LinkedIn", value: "awad-mohammed", href: "https://www.linkedin.com/in/awad-mohammed-6047b3360/" },
-  { icon: BRAND_ICONS.GitHub, label: "GitHub", value: "@Awadmohammed74", href: "https://github.com/Awadmohammed74" },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "awadmhmd666@gmail.com",
+    href: "mailto:awadmhmd666@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+20 101 855 3683",
+    href: "tel:+201018553683",
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "Chat on WhatsApp",
+    href: "https://wa.me/201018553683",
+  },
+  {
+    icon: BRAND_ICONS.LinkedIn,
+    label: "LinkedIn",
+    value: "awad-mohammed",
+    href: "https://www.linkedin.com/in/awad-mohammed-6047b3360/",
+  },
+  {
+    icon: BRAND_ICONS.GitHub,
+    label: "GitHub",
+    value: "@Awadmohammed74",
+    href: "https://github.com/Awadmohammed74",
+  },
   { icon: MapPin, label: "Location", value: "Egypt · GMT+3" },
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const update = (field) => (e) =>
@@ -70,7 +105,10 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container-x">
-        <div className="relative mx-auto max-w-2xl pb-4 text-center" data-reveal>
+        <div
+          className="relative mx-auto max-w-2xl pb-4 text-center"
+          data-reveal
+        >
           <span
             aria-hidden="true"
             className="section-num absolute -top-6 left-1/2 -z-10 -translate-x-1/2"
@@ -79,7 +117,8 @@ export default function Contact() {
           </span>
           <p className="eyebrow justify-center">Contact</p>
           <h2 className="mt-4 text-3xl font-extrabold text-ink sm:text-4xl">
-            Let&apos;s build something <span className="text-gradient">great</span>
+            Let&apos;s build something{" "}
+            <span className="text-gradient">great</span>
           </h2>
           <p className="mt-4 text-mute">
             Have a WooCommerce store, Shopify store (custom-coded), plugin, or
@@ -126,8 +165,12 @@ export default function Contact() {
                     <a
                       href={item.href}
                       className={className}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
-                      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                      target={
+                        item.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        item.href.startsWith("http") ? "noreferrer" : undefined
+                      }
                     >
                       {content}
                     </a>
@@ -142,9 +185,24 @@ export default function Contact() {
 
             <div className="mt-4 grid grid-cols-3 gap-2">
               {[
-                { icon: BRAND_ICONS.Facebook, label: "Facebook", username: "Awad Mohammed", href: "https://www.facebook.com/profile.php?id=61595600284804" },
-                { icon: BRAND_ICONS.Instagram, label: "Instagram", username: "@awadmohammmed.dev", href: "https://www.instagram.com/awadmohammmed.dev" },
-                { icon: BRAND_ICONS.TikTok, label: "TikTok", username: "@awadmhmd.dev", href: "https://www.tiktok.com/@awadmhmd.dev" },
+                {
+                  icon: BRAND_ICONS.Facebook,
+                  label: "Facebook",
+                  username: "Awad Mohammed",
+                  href: "https://www.facebook.com/profile.php?id=61595600284804",
+                },
+                {
+                  icon: BRAND_ICONS.Instagram,
+                  label: "Instagram",
+                  username: "@awadmohammmed.dev",
+                  href: "https://www.instagram.com/awadmohammmed.dev",
+                },
+                {
+                  icon: BRAND_ICONS.TikTok,
+                  label: "TikTok",
+                  username: "@awadmhmd.dev",
+                  href: "https://www.tiktok.com/@awadmohammed.dev",
+                },
               ].map((s) => (
                 <a
                   key={s.label}

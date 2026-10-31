@@ -23,7 +23,7 @@ const socials = [
   },
   {
     label: "TikTok",
-    href: "https://www.tiktok.com/@awadmhmd.dev",
+    href: "https://www.tiktok.com/@awadmohammed.dev",
     path: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z",
   },
 ];
@@ -36,7 +36,11 @@ export default function Footer() {
       <div className="container-x flex flex-col gap-8 py-12">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <a href="#home" className="font-display text-xl font-extrabold">
-            <img src="/assets/my%20logo%20for%20footr.png" alt="Logo" className="h-8 w-auto" />
+            <img
+              src="/assets/my%20logo%20for%20footr.png"
+              alt="Logo"
+              className="h-8 w-auto"
+            />
           </a>
 
           <nav aria-label="Footer">
